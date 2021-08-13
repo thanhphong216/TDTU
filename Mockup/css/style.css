@@ -44,9 +44,17 @@ a:hover{
 .cursor-pointer{
     cursor: pointer;
 }
+
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
 .clear-both{
     clear: both;
 }
+
 .position-relative{
     position: relative;
 }
@@ -66,6 +74,9 @@ a:hover{
 
 .display-flex{
     display: flex;
+}
+.flex-wrap{
+    flex-wrap: wrap;
 }
 .align-items-center{
     align-items: center;
