@@ -1,0 +1,173 @@
+/* CSS for Home link */
+.home-link{
+    padding: 1% 0;
+}
+.home-link h2{
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.home-link h2:hover{
+    color: #CD2122;
+}
+
+
+/* CSS for perner */
+.parner{
+    margin: 3% 0 0;
+}
+.parner p{
+    font-size: 1.2rem;
+    color: #333333;
+    font-family: "Roboto", serif;
+}
+.parner p>span{
+    color: #990100;
+}
+
+
+/* CSS for news */
+.news{
+    padding: 2% 0;
+}
+
+.news-title h2{
+    color: #0067ac;
+    font-size: 1.5rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.news-block{
+    margin: 1% 0;
+}
+.news-block>.content h4{
+    padding: 1% 0;
+    font-size: 1.2rem;
+    color: #222222;
+    transition: all 0.35s;
+}
+.news-block>.content h4:hover{
+    color: #CD2122;
+}
+.news-block>.content p{
+    color: #333333;
+    padding: 1% 0;
+}
+.news-block>.content .date{
+    font-size: 0.9rem;
+}
+.news-block>.content .desc{
+    font-size: 1.1rem;
+}
+
+.news-link{
+    color: #990100;
+    padding: 1% 2%;
+    font-family: roboto, arial;
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.news-link:hover{
+    background-color: #CD2122;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* CSS for Cooperation, Human resource, Student */
+.cooperation,
+.human-resource,
+.student{
+    padding: 1% 0;
+}
+
+.cooperation-title h2,
+.human-resource-title h2,
+.student-title h2{
+    font-size: 1.5rem;
+    color: #0067ac !important;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.cooperation-block,
+.human-resource-block,
+.student-block{
+    margin: 1% 0;
+}
+.cooperation-block>.content h4,
+.human-resource-block>.content h4,
+.student-block>.content h4{
+    color: #262C38;
+    font-size: 1rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    padding: 3% 0;
+}
+.cooperation-block>.content p,
+.human-resource-block>.content p,
+.student-block>.content p{
+    color: #333333;
+    font-size: 1rem;
+    margin: 0 0 1%;
+}
+.cooperation-block>.content a,
+.human-resource-block>.content a,
+.student-block>.content a{
+    color: #CD2122;
+    font-size: 0.9rem;
+    font-family: "Roboto", sans-serif;
+}
+.cooperation-block>.content a:hover,
+.human-resource-block>.content a:hover,
+.student-block>.content a:hover{
+    text-decoration: underline;
+}
+
+
+/* CSS for International page */
+.international-page{
+    padding: 1% 0;
+}
+.international-page .row:first-child{
+    background-image: url('../assets/Internationalization-home-banner.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.international-page-title{
+    padding: 3% 0;
+    color: #ffffff;
+    position: relative;
+}
+.international-page-title:after{
+    content: "";
+    width: 80px;
+    height: 2px;
+    background: #ffffff;
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+}
+.international-page-title h2{
+    background: rgba(1,1,1,0.3);
+    width: fit-content;
+    padding: 0 1%;
+    font-size: 2.3rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.international-page-link{
+    padding: 2% 0;
+}
+.international-page-link a{
+    padding: 1% 2%;
+    color: #ffffff;
+    background-color: #CD2122;
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 10%);
+    border: 2px solid #CD2122;
+    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.7rem;
+    transition: all 0.3s;
+}
+.international-page-link a:hover{
+    background-color: #ffffff;
+    color: #CD2122;
+}
