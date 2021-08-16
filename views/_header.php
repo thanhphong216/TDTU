@@ -1,3 +1,12 @@
+<?php
+    $listSubSchool = getListSubSchool();
+    $listFaculties = getListFaculties();
+    $listInstitution = getListInstitution();
+    $listCenter = getListCenter();
+?>
+
+
+
 <header class="header">
 
     <!-- START SECTION HEADER TOP -->
@@ -14,13 +23,19 @@
                         <li class="display-inline dropdown">
                             <a href="#" data-bs-toggle="dropdown" aria-expanded="false">Trường</a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                <div>
-                                    <ul>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                    </ul>
-                                </div>
+                                <ul>
+
+                                    <?php
+                                        if(mysqli_num_rows($listSubSchool) > 0){
+                                            while($row = mysqli_fetch_assoc($listSubSchool)){
+                                    ?>
+                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
+                                    
+                                </ul>
                             </div>
                         </li>
                         <li class="display-inline">
@@ -29,13 +44,19 @@
                         <li class="display-inline dropdown">
                             <a href="#" data-bs-toggle="dropdown" aria-expanded="false">Khoa</a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                <div>
-                                    <ul>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                    </ul>
-                                </div>
+                                <ul>
+
+                                    <?php
+                                        if(mysqli_num_rows($listFaculties) > 0){
+                                            while($row = mysqli_fetch_assoc($listFaculties)){
+                                    ?>
+                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>       
+
+                                </ul>
                             </div>
                         </li>
                         <li class="display-inline">
@@ -44,13 +65,19 @@
                         <li class="display-inline dropdown">
                             <a href="#" data-bs-toggle="dropdown" aria-expanded="false">Viện</a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                <div>
-                                    <ul>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                    </ul>
-                                </div>
+                                <ul>
+
+                                    <?php
+                                        if(mysqli_num_rows($listInstitution) > 0){
+                                            while($row = mysqli_fetch_assoc($listInstitution)){
+                                    ?>
+                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>    
+
+                                </ul>
                             </div>
                         </li>
                         <li class="display-inline">
@@ -59,13 +86,19 @@
                         <li class="display-inline dropdown">
                             <a href="#" data-bs-toggle="dropdown" aria-expanded="false">Trung tâm</a>
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
-                                <div>
-                                    <ul>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                        <li class="display-block"><a href="#">Menu item</a></li>
-                                    </ul>
-                                </div>
+                                <ul>
+
+                                    <?php
+                                        if(mysqli_num_rows($listCenter) > 0){
+                                            while($row = mysqli_fetch_assoc($listCenter)){
+                                    ?>
+                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                    <?php
+                                            }
+                                        }
+                                    ?>  
+
+                                </ul>
                             </div>
                         </li>
                         <li class="display-inline">

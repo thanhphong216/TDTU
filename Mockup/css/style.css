@@ -117,8 +117,9 @@ a:hover{
 .header-top-left>ul>li>a:hover, .header-top-right>ul>li>a:hover{
     text-decoration: underline;
 }
-
-.header-top-left .dropdown-menu div{
+.header-top-left .dropdown-menu{
+    padding: 0 10px 0 0;
+    width: max-content;
     background-color: #F9FADC;
     box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);
 }

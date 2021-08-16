@@ -1,3 +1,11 @@
+<?php
+
+    
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -289,14 +297,37 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-uppercase fw-bold faculty-title">17 Khoa</h2>
+                        <h2 class="text-center text-uppercase fw-bold faculty-title"><?php echo mysqli_num_rows($listFaculties); ?> Khoa</h2>
                     </div>
                 </div>
                 
                 <div class="row">
                     <div class="col-12">
                         <div class="owl-carousel owl-theme faculty-carousel">
-                            <div class="item">
+
+                            <?php
+                                for($i = 0; $i < 9; $i++){
+                            ?>
+                                <div class="item">
+                                    <div class="position-relative faculty-carousel-img">
+                                        <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
+
+                                        <div class="img-bg"></div>
+
+                                        <div class="faculty-link text-center">
+                                            <a class="fw-bold text-uppercase" href="#">Visit the website</a>
+                                        </div>
+                                    </div>
+
+                                    <div class="faculty-carousel-title">
+                                        <a class="fw-bold" href="#"><?php echo "A" . $i ?></a>
+                                    </div>
+                                </div>
+                            <?php
+                                }
+                            ?>
+
+                            <!-- <div class="item">
                                 <div class="position-relative faculty-carousel-img">
                                     <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
 
@@ -308,12 +339,13 @@
                                 </div>
 
                                 <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
+                                    <a class="fw-bold" href="#">TEST</a>
                                 </div>
                             </div>
+
                             <div class="item">
                                 <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
+                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-CNTT-new.jpg">
 
                                     <div class="img-bg"></div>
 
@@ -323,159 +355,10 @@
                                 </div>
 
                                 <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
+                                    <a class="fw-bold" href="#">HiHi</a>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">Luat</a>
-                                </div>
-                            </div>
+                            </div> -->
+                            
                         </div>
                     </div>
                 </div>
