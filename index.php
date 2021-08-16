@@ -1,12 +1,13 @@
 <?php
-    require_once('./config.php');
-    require_once(PATH_ROOT . '/utils/Utils.php');
-    require_once(PATH_ROOT . '/utils/ConnectionUtils.php');
-    require_once(PATH_ROOT . '/includes/functions.php');
+    require_once('utils/constant.php');
 
     // Autoload class trong PHP
     spl_autoload_register(function (string $class_name) {
-        include_once PATH_ROOT . '/' . $class_name . '.php';
+        include_once ROOT_PATH . '/' . $class_name . '.php';
+    });
+
+    Router::get('/TDTU/haha', function(){
+        include_once(ROOT_PATH . '/views/homepage.php');
     });
 
     // Lấy url hiện tại của trang web. Mặc định la /
@@ -16,5 +17,9 @@
     $method_url = !empty($_SERVER['REQUEST_METHOD']) ? $_SERVER['REQUEST_METHOD'] : 'GET';
 
     // map URL
-    Router::map($request_url, $method_url);
+    $page = Router::map($request_url, $method_url);
+
+    if(!$page){
+        include_once(ROOT_PATH . '/views/_404.php');
+    }
 ?>

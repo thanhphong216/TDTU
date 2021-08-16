@@ -1,40 +1,5 @@
 <?php
-    require_once('./config.php');
-
-    Router::get('/', function(){
-        include(PATH_ROOT . '/views/homepage.php');
-    });
-    Router::get('/School_Web/', function(){
-        include(PATH_ROOT . '/views/homepage.php');
-    });
-
-    Router::get('/admin', function(){
-        include(PATH_ROOT . '/views/admin/index.php');
-    });
-
-    Router::get('/introduce', function(){
-        include(PATH_ROOT . '/views/introduce.php');
-    });
-    Router::get('/logofaculty', function(){
-        include(PATH_ROOT . '/views/logofaculty.php');
-    });
-    Router::get('/welcome', function(){
-        include(PATH_ROOT . '/views/welcome.php');
-    });
-    Router::get('/institute', function(){
-        include(PATH_ROOT . '/views/institute.php');
-    });
-    Router::get('/cooperation', function(){
-        include(PATH_ROOT . '/views/cooperation.php');
-    });
-    Router::get('/scientificresearch', function(){
-        include(PATH_ROOT . '/views/scientificresearch.php');
-    });
-    Router::get('/educate', function(){
-        include(PATH_ROOT . '/views/educate.php');
-    });
-    
-    
+    require_once('utils/constant.php');
 
     class Router{
         private const METHOD_GET  = "GET";
@@ -100,13 +65,12 @@
                         array_shift($params);
                         // Call action
                         Router::actionRoute($route['action'], $params);
-                        return;
+                        return true;
                     }
                 }
             }
 
-            include(PATH_ROOT . '/views/404.php');
-            return;
+            return false;
         }
 
         private static function actionRoute($action, $params){
@@ -114,7 +78,7 @@
             if (is_callable($action->getMethod())) {
                 call_user_func_array($action->getMethod(), $params);
             } else {
-                $controller_name = PATH_ROOT . '\\controllers\\' . $action->getController();
+                $controller_name = ROOT_PATH . '\\controllers\\' . $action->getController();
                 $controller = new $controller_name();
                 call_user_func_array([$controller, $action[1]], $params);
             }

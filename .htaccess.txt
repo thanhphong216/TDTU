@@ -15,4 +15,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 # QSA = Query String Append, just in case you've got something like ?like=penguins on the end which you want to keep and pass to index.php.
 
 # Push every request to index.php
-RewriteRule ^(.*)$ /School_Web/index.php/$1 [L,QSA]
+RewriteRule ^(.*)$ /TDTU/index.php/$1 [L,QSA]
