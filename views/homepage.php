@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- LIB -->
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/lib/fontawesome-free-5.15.3-web/css/all.css" ?>>
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" ?>>
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/lib/fontawesome-free-5.15.3-web/css/all.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/lib/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/lib/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css" ?>>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/css/style.css" ?>>
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/css/homepage.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/css/style.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/css/homepage.css" ?>>
 
     <title>Đại học Tôn Đức Thắng</title>
 </head>
@@ -496,9 +496,9 @@
     
     <!-- Optional Bootstrap Bundle with Popper -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src=<?php echo BASE_URL . "/assets/lib/jquery.min.js" ?>></script>
+    <script src=<?php echo BASE_URL . "/lib/jquery.min.js" ?>></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-    <script src=<?php echo BASE_URL . "/assets/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js" ?>></script>
-    <script src=<?php echo BASE_URL . "/assets/js/faculty-silder.js" ?>></script>
+    <script src=<?php echo BASE_URL . "/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js" ?>></script>
+    <script src=<?php echo BASE_URL . "/js/faculty-silder.js" ?>></script>
 </body>
 </html>

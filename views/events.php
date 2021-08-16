@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- LIB -->
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/lib/fontawesome-free-5.15.3-web/css/all.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/lib/fontawesome-free-5.15.3-web/css/all.css" ?>>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/css/style.css" ?>>
-    <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/css/events.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/css/style.css" ?>>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/css/events.css" ?>>
 
     <title>Sự kiện | Đại học Tôn Đức Thắng</title>
 </head>
