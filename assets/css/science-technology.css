@@ -1,0 +1,112 @@
+/* CSS for Home link */
+.home-link{
+    padding: 1% 0;
+}
+.home-link h2{
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.home-link h2:hover{
+    color: #CD2122;
+}
+
+
+/* CSS for Science Technology */
+.science-technology{
+    padding: 3% 0;
+}
+
+.science-technology-title{
+    padding: 2% 0;
+}
+.science-technology-title h2{
+    color: #0057ac;
+    font-size: 1.5rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.science-technology-block{
+    margin: 3% 0;
+}
+.science-technology-block>.content h4{
+    padding: 3% 0;
+    font-size: 1rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+.science-technology-block>.content p{
+    margin: 0 0 2%;
+}
+.science-technology-block>.content a{
+    color: #CD2122;
+}
+.science-technology-block>.content a:hover{
+    text-decoration: underline;
+}
+
+/* CSS for link */
+.link>.container{
+    padding: 3% 0;
+    background-color: #F6F6F6;
+}
+
+.link-title h2{
+    color: #0057ac;
+    font-size: 1.5rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.link-block{
+    margin: 0 0 3%;
+    position: relative;
+}
+.link-block>.link-icon{
+    font-size: 1.9rem;
+    color: #CD2122 !important;
+}
+.link-block>.link-title{
+    padding: 4% 20%;
+}
+.link-block>.link-title:after{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 1;
+}
+.link-block>.link-title h4{
+    font-size: 1rem;
+    transition: all 0.35s;
+}
+.link-block>.link-title h4:hover{
+    color: #CD2122 !important;
+}
+
+
+/* CSS for Spotlight */
+.spotlight{
+    padding: 3% 0;
+}
+
+.spotlight-title h2{
+    color: #0057ac;
+    font-size: 1.5rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.spotlight-block{
+    margin: 1% 0 5%;
+}
+.spotlight-block>.content h4{
+    padding: 2% 0;
+    font-size: 1.1rem;
+    text-align: justify;
+    text-justify: inter-character;
+    transition: all 0.35s;
+}
+.spotlight-block>.content h4:hover{
+    color: #CD2122;
+}

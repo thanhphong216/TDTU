@@ -1,0 +1,264 @@
+/* CSS for Home link */
+.home-link{
+    padding: 1% 0;
+}
+.home-link h2{
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.home-link h2:hover{
+    color: #CD2122;
+}
+
+
+/* CSS for About */
+.about{
+    padding: 2% 0;
+}
+
+.about-title h2{
+    font-size: 1.5rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    color: #0067ac;
+}
+
+.about-detail{
+    padding: 1% 10% 2%;
+}
+.about-detail p{
+    color: #555555;
+    font-size: 1.4rem;
+    font-family: 'Roboto Slab', serif;
+    padding: 1% 0;
+}
+
+.about-detail-block{
+    margin: 1% 0;
+}
+.about-detail-block>div{
+    height: 100%;
+    background-color: #CD2122;
+    color: #ffffff;
+    padding: 7% 5%;
+}
+.about-detail-block>div p{
+    font-size: 1.2rem;
+    padding: 1%;
+}
+
+.about-desc-block{
+    color: #CD2122;
+    font-family: 'Roboto Slab', sans-serif;
+    padding: 2% 0;
+}
+.about-desc-block>i{
+    font-size: 2rem;
+    margin: 2%;
+}
+.about-desc-block>h3{
+    margin: 3%;
+    font-size: 1.6rem;
+    font-family: 'Roboto Slab', sans-serif !important;
+}
+.about-desc-block>p{
+    color: #333333;
+    font-size: 0.9rem;
+    margin: 5%;
+}
+
+
+/* CSS for Expand */
+.expand{
+    padding: 1% 0;
+}
+
+.expand-title h2{
+    font-size: 1.5rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    color: #0067ac;
+}
+
+.expand-block{
+    padding: 1%;
+}
+.expand-block .content{
+    width: 100%;
+    height: 100%;
+    padding: 15% 10%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    transition: all 0.35s;
+    overflow: hidden;
+}
+.expand-block .content:hover{
+    background: rgba(0, 0, 0, 0.8);
+}
+.expand-block .content:hover p{
+    margin: 0;
+}
+
+.expand-block .content h4{
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+.expand-block .content p{
+    color: #CD2122;
+    padding: 15% 0;
+    margin: 25% 0 0;
+    font-size: 0.9rem;
+    transition: all 0.45s;
+}
+.expand-block .content a{
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+}
+.expand-block .content a:hover{
+    text-decoration: underline;
+}
+
+
+/* CSS for Leader, Resource */
+.leader,
+.resource{
+    padding: 3% 0;
+}
+
+.leader-title h2,
+.resource-title h2{
+    font-size: 1.5rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    color: #0067ac;
+}
+
+.leader-block,
+.resource-block{
+    padding: 1%;
+    margin: 1% 0 5%;
+}
+.leader-block>.content h4,
+.resource-block>.content h4{
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    margin: 4% 0;
+    font-size: 1rem;
+}
+.leader-block>.content p,
+.resource-block>.content p{
+    margin: 2% 0;
+    color: #333333;
+    font-size: 1rem;
+}
+.leader-block>.content a,
+.resource-block>.content a{
+    color: #CD2122;
+    font-size: 0.9rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+.leader-block>.content a:hover,
+.resource-block>.content a:hover{
+    text-decoration: underline;
+}
+
+
+/* CSS for Discover */
+.discover{
+    padding: 3% 0;
+}
+
+.discover-title h2{
+    font-size: 1.5rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    color: #0067ac;
+}
+
+.discover-block{
+    padding: 1%;
+    margin: 1% 0 0;
+}
+.discover-block>div img{
+    transition: all 1.7s;
+}
+.discover-block>div:hover>.content{
+    opacity: 1;
+}
+.discover-block>div:hover>img{
+    transform: scale(1.3);
+}
+.discover-block .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transition: all 0.35s;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    opacity: 0;
+}
+.discover-block .content button{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border: 50%;
+    transition: all 0.35s;
+    z-index: 99;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+.discover-block .content button:hover{
+    background-color: #CD2122;
+}
+.discover-block .content p{
+    color: #ffffff;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    padding: 2% 4%;
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+
+/* Css for Rating */
+.rating{
+    padding: 4% 0;
+    background-color: #F6F6F6;
+}
+
+.rating-title h2{
+    font-size: 1.5rem;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+    color: #0067ac;
+}
+
+.rating-carousel{
+    margin: 1% 0;
+}
+.rating-carousel .item{
+    padding: 0 5% 0 0;
+}
+.rating-block .quote{
+    position: absolute;
+    color: #ffffff;
+    background-color: #CD2122;
+    top: 0;
+    padding: 4% 8%;
+}
+.rating-block>.content>.detail{
+    color: #333333;
+    margin: 0 0 5%;
+}
+.rating-block>.content>.author{
+    color: #888888;
+    font-size: 0.9rem;
+}
+.rating-block>.content>.author>.title{
+    color: #CD2122;
+    font-size: 1rem;
+}

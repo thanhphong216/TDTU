@@ -1,0 +1,100 @@
+/* CSS for Home link */
+.home-link{
+    padding: 1% 0;
+}
+.home-link h2{
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.home-link h2:hover{
+    color: #CD2122;
+}
+
+
+/* CSS for Events */
+.events-title{
+    color: #fff !important;
+    background-color: #CD2122;
+    padding: 0.5%;
+    margin: 0 0 2%;
+}
+.events-title h2{
+    font-size: 1.4rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.events-block{
+    padding: 0 0 1%;
+}
+.event-block{
+    margin: 0 0 2%;
+}
+.event-block>.content h4{
+    color: #222222;
+    font-size: 1.1rem;
+    font-family: 'roboto slab', serif;
+    padding: 2% 0;
+    transition: all 0.35s;
+}
+.event-block>.content h4:hover{
+    color: #CD2122;
+}
+.event-block>.content p{
+    padding: 1% 0;
+}
+.events-block .nav-btns>button{
+    color: #262c38;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    transition: all 0.4s;
+    width: 37px;
+    height: 40px;
+    margin: 5px;
+    padding: 5px 14px;
+}
+.events-block .nav-btns{
+    padding: 4% 0 8%;
+}
+.events-block .nav-btns>button:hover{
+    color: #CD2122;
+    background-color: #eeeeee;
+}
+
+.event-new-title{
+    margin-right: 5%;
+}
+.event-new-title h3{
+    color: #222;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+    font-size: 1.2rem;
+}
+
+.events-new-block{
+    margin-top: 5%;
+}
+.event-new-block{
+    margin-bottom: 5%;
+}
+.event-new-block>.date{
+    color: #ffffff;
+    background-color: #CD2122;
+    width: 110px;
+    height: 75px;
+    padding: 0 3%;
+    margin-right: 5%;
+    box-sizing: content-box;
+}
+.event-new-block>.date>.day{
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.event-new-block>.date>.month{
+    font-size: 1.1rem;
+}
+.event-new-block>.content a{
+    transition: all 0.35s;
+}
+.event-new-block>.content a:hover{
+    color: #CD2122;
+}

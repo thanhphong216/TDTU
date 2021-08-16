@@ -1,0 +1,112 @@
+/* CSS for Home link */
+.home-link{
+    padding: 1% 0;
+}
+.home-link h2{
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.home-link h2:hover{
+    color: #CD2122;
+}
+
+
+/* CSS for education */
+.education{
+    padding: 3% 0;
+}
+
+.education-title{
+    font-size: 1.5rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+    color: #0067ac;
+}
+
+.education-box{
+    padding: 1% 2% 10%;
+}
+.education-box>.content>h4{
+    font-size: 1.1rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    padding: 4% 0px;
+    color: #262c38;
+}
+.education-box>.content>p{
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 3%;
+}
+.education-box>.content>a{
+    font-size: 0.9rem;
+    color: #CD2122;
+    font-family: "Roboto", sans-serif;
+    transition: color 0.35s;
+}
+.education-box>.content>a:hover{
+    text-decoration: underline;
+}
+
+
+/* CSS for Student page */
+.student-page{
+    padding: 1%;
+}
+.student-page-title{
+    padding: 2%;
+    color: #ffffff;
+    background: #cd2122;
+    box-shadow: 10px 10px #fa6900;
+    border-radius: 8px;
+}
+.student-page-title h2{
+    font-size: 1.4rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+
+/* CSS for Student service */
+.student-service{
+    padding: 4% 0;
+}
+.student-service h2{
+    font-size: 1.5rem;
+    color: #0067ac;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+.service-content{
+    background-color: #e7e7e7;
+    margin: 2%;
+    padding: 10%;
+    transition: all 0.35s;
+}
+.service-content:hover{
+    box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 10%);
+}
+.service-content>.content-img{
+    padding: 0 25%;
+}
+.service-content>.content-title{
+    font-size: 1.1rem;
+    color: #333;
+    position: relative;
+    padding: 6% 0;
+    margin: 5%;
+    transition: all 0.35s;
+}
+.service-content>.content-title:hover{
+    color: #CD2122;
+}
+.service-content>.content-title:after{
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #222;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -25px;
+    z-index: 1;
+}
+.service-content>.content-desc{
+    padding: 0 10%;
+}

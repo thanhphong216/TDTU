@@ -6,9 +6,28 @@
         include_once ROOT_PATH . '/' . $class_name . '.php';
     });
 
-    Router::get('/TDTU/haha', function(){
+
+
+    Router::get('/TDTU/', function(){
         include_once(ROOT_PATH . '/views/homepage.php');
     });
+    Router::get('/gioi-thieu', function(){
+        include_once(ROOT_PATH . '/views/introduce.php');
+    });
+    Router::get('/giao-duc', function(){
+        include_once(ROOT_PATH . '/views/academic.php');
+    });
+    Router::get('/khoa-hoc-cong-nghe', function(){
+        include_once(ROOT_PATH . '/views/science-technology.php');
+    });
+    Router::get('/quoc-te-hoa', function(){
+        include_once(ROOT_PATH . '/views/international.php');
+    });
+    Router::get('/tuyen-sinh', function(){
+        include_once(ROOT_PATH . '/views/admission.php');
+    });
+
+
 
     // Lấy url hiện tại của trang web. Mặc định la /
     $request_url = !empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';

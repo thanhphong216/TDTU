@@ -1,0 +1,228 @@
+/* CSS for Slide */
+.slide-introduce{
+    width: 100%;
+    max-height: 540px;
+    overflow: hidden;
+}
+.slide-introduce>.carousel{
+    width: 100%;
+}
+
+
+/* CSS for News */
+.news{
+    padding: 3% 0px;
+}
+.news-title{
+    color: #0067ac;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+}
+
+.news-content{
+    margin: 1% 0px;
+}
+
+.post-block{
+    margin: 2% 0px;
+}
+.post-img{
+    overflow: hidden;
+}
+.post-img>img{
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    object-position: center;
+}
+.post-img>img:hover{
+    transform: scale(1.1);
+    transition: all 0.4s;
+}
+.post-title{
+    padding: 2% 0px 1%;
+}
+.post-title a{
+    font-size: 1.2rem;
+    font-family: 'roboto slab', serif;
+    transition: all 0.35s;
+}
+.post-title>a:hover{
+    color: #CD2122;
+}
+
+.post-meta{
+    font-size: 0.8rem;
+}
+.post-categories>a{
+    color: #CD2122;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.news-link{
+    padding: 2%;
+}
+.news-link>.btn{
+    background: transparent;
+    color: #cd2122 !important;
+    float: right;
+    transition: all 0.35s;
+}
+.news-link>.btn:hover{
+    background: #cd2122 !important;
+    color: #fff !important;
+}
+
+
+/* CSS for Admissions */
+.admissions{
+    background-color:#959595;
+    padding: 3% 0px;
+}
+.admissions-title{
+    color: #0067ac;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+}
+
+.admissions-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 2% 0px;
+}
+
+
+/* CSS for Events */
+.events{
+    background-color: #f9fadc;
+    padding: 2% 0px 4%;
+}
+.events .row [class*='col-12']{
+    margin: 2% 0px;
+}
+.events-title{
+    color: #0067ac;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+}
+
+.event-post-block{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+.btn-time-event-img{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+    padding: 2% 5%;
+    background-color: #cd2122;
+    color: #ffffff;
+}
+.event-post-content{
+    padding: 2%;
+}
+.event-post-title{
+    font-size: 1.2rem;
+    transition: all 0.35s;
+}
+.event-post-title:hover{
+    color: #cd2122;
+}
+
+.event-item{
+    margin: 0 0 30px;
+}
+.event-date{
+    background-color: #cd2122;
+    color: #ffffff;
+    width: 110px;
+    padding: 0px 3% 1%;
+    margin: 0px 3%;
+}
+.event-date>.day{
+    font-size: 1.8rem;
+    font-family: "Roboto", sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.event-date>.month{
+    font-size: 1.1rem;
+}
+.event-content>a{
+    font-size: 1rem;
+    color: #262C38 !important;
+}
+.event-content>a:hover{
+    color: #cd2122 !important;
+}
+
+.events-link>.btn{
+    font-weight: bold;
+    background: transparent;
+    color: #cd2122 !important;
+    float: right;
+    transition: all 0.35s;
+}
+.events-link>.btn:hover {
+    background: #cd2122 !important;
+    color: #fff !important;
+}
+
+
+/* CSS for Faculty */
+.faculty{
+    padding: 3% 0px;
+}
+
+.faculty-title{
+    color: #0067ac;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif !important;
+}
+
+.faculty-carousel{
+    margin: 2% 0px;
+}
+.faculty-carousel .item{
+    padding: 5%;
+}
+.faculty-carousel-img>.img-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000 !important;
+    opacity: 0.4;
+    transform: scale(0);
+    transition: all 0.35s;
+}
+.faculty-carousel .item:hover .faculty-carousel-img>.img-bg{
+    transform: scale(1);
+}
+.faculty-carousel-img>.faculty-link{
+    position: absolute;
+    bottom: -10%;
+    width: 100%;
+    transition: all 0.35s;
+    visibility: hidden;
+}
+.faculty-carousel-img>.faculty-link>a{
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+}
+.faculty-carousel-img>.faculty-link>a:hover{
+    text-decoration: underline;
+    color: #ffffff;
+}
+.faculty-carousel .item:hover .faculty-carousel-img>.faculty-link{
+    bottom: 20%;
+    visibility: visible;
+}
+.faculty-carousel-title{
+    font-size: 1.2rem;
+    padding: 5% 0px;
+}
+.faculty-carousel-title>a{
+    transition: all 0.35s;
+    font-family: "Roboto", sans-serif;  
+}
+.faculty-carousel-title>a:hover{
+    color: #cd2122 !important;
+}

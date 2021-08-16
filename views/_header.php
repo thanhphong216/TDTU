@@ -118,7 +118,7 @@
             
             <div class="row">
                 <div class="col-12 col-lg-6 display-flex align-items-center justify-content-start">
-                    <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Brand-left-vi-1_0_0.png" alt="Logo"></a>
+                    <a href="/"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Brand-left-vi-1_0_0.png" alt="Logo"></a>
                 </div>
 
                 <div class="col-12 col-lg-6 d-none d-lg-block display-flex align-items-center justify-content-end">
@@ -139,19 +139,19 @@
                 <nav class="navbar navbar-expand-lg navbar-light navbar-link">
                     <ul class="navbar-nav d-none d-lg-flex">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Giới thiệu<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="/gioi-thieu">Giới thiệu<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Giáo dục</a>
+                            <a class="nav-link" href="/giao-duc">Giáo dục</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Khoa học-Công nghệ</a>
+                            <a class="nav-link" href="/khoa-hoc-cong-nghe">Khoa học-Công nghệ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Quốc tế hóa</a>
+                            <a class="nav-link" href="/quoc-te-hoa">Quốc tế hóa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tuyển sinh</a>
+                            <a class="nav-link" href="/tuyen-sinh">Tuyển sinh</a>
                         </li>
                     </ul>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -170,19 +170,19 @@
 
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="#" class="text-uppercase">Giới thiệu</a>
+                                    <a href="/gioi-thieu" class="text-uppercase">Giới thiệu</a>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#" class="text-uppercase">Giáo dục</a>
+                                    <a href="/giao-duc" class="text-uppercase">Giáo dục</a>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#" class="text-uppercase">Khoa học-Công nghệ</a>
+                                    <a href="/khoa-hoc-cong-nghe" class="text-uppercase">Khoa học-Công nghệ</a>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#" class="text-uppercase">Quốc tế hóa</a>
+                                    <a href="/quoc-te-hoa" class="text-uppercase">Quốc tế hóa</a>
                                 </div>
                                 <div class="col-12">
-                                    <a href="#" class="text-uppercase">Tuyển sinh</a>
+                                    <a href="/tuyen-sinh" class="text-uppercase">Tuyển sinh</a>
                                 </div>
                                 <div class="col-12">
                                     <a href="#"><p>Giảng viên/Viên chức</p></a>
