@@ -16,6 +16,9 @@
         Router::get('/TDTU/', function(){
         include_once(ROOT_PATH . '/views/homepage.php');
         });
+        Router::get('/', function(){
+            include_once(ROOT_PATH . '/views/homepage.php');
+            });
         Router::get('/gioi-thieu', function(){
             include_once(ROOT_PATH . '/views/introduce.php');
         });

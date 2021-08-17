@@ -25,6 +25,7 @@
     <link rel="stylesheet" href=<?php echo BASE_URL . "/css/style.css" ?>>
     <link rel="stylesheet" href=<?php echo BASE_URL . "/css/homepage.css" ?>>
 
+    <link rel="shortcut icon" href="https://www.tdtu.edu.vn/sites/www/files/TDTU-favicon.png" type="image/png">
     <title>Đại học Tôn Đức Thắng</title>
 </head>
 <body>
