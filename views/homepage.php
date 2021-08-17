@@ -1,7 +1,7 @@
 <?php
-
-    
-
+    $listCurrentEvent = getListCurrentEvent(2);
+    $listNewestEvent = getListNewestEvent(4, 0);
+    $listNewestPost = getListNewestPost(3);
 ?>
 
 
@@ -71,76 +71,40 @@
                 </div>
 
                 <div class="row news-content">
-                    <div class="col-12 col-lg-4 post-block">
-                        <div class="display-flex align-items-center justify-content-center post-img">
-                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY">
-                        </div>
 
-                        <div class="post-content">
-                            <div class="post-title">
-                                <a class="fw-bold" href="#">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
+                    <?php 
+                        for($i = 0; $i < count($listNewestPost); $i++){
+                    ?>
+                        <div class="col-12 col-lg-4 post-block">
+                            <div class="display-flex align-items-center justify-content-center post-img">
+                                <img class="img-responsive" src=<?php echo $listNewestPost[$i]['img']; ?>>
                             </div>
 
-                            <div class="post-meta">
-                                <span class="post-categories"><a class="text-uppercase" href="#">Khoa học-Công nghệ</a></span>
-                                &nbsp;|&nbsp;
-                                <span class="post-created">03/08/2021</span>
-                            </div>
+                            <div class="post-content">
+                                <div class="post-title">
+                                    <a class="fw-bold" href=<?php echo $listNewestPost[$i]['link']; ?>><?php echo $listNewestPost[$i]['title']; ?></a>
+                                </div>
 
-                            <div class="post-sum">
-                                Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.
-                            </div>
-                        </div>
-                    </div>
+                                <div class="post-meta">
+                                    <span class="post-categories"><a class="text-uppercase" href="#">Khoa học-Công nghệ</a></span>
+                                    &nbsp;|&nbsp;
+                                    <span class="post-created"><?php echo date('d/m/y', $listNewestPost[$i]['time_create']); ?></span>
+                                </div>
 
-                    <div class="col-12 col-lg-4 post-block">
-                        <div class="display-flex align-items-center justify-content-center post-img">
-                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu">
-                        </div>
-
-                        <div class="post-content">
-                            <div class="post-title">
-                                <a class="fw-bold" href="#">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
-                            </div>
-
-                            <div class="post-meta">
-                                <span class="post-categories"><a class="text-uppercase" href="#">Khoa học-Công nghệ</a></span>
-                                &nbsp;|&nbsp;
-                                <span class="post-created">03/08/2021</span>
-                            </div>
-
-                            <div class="post-sum">
-                                Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.
+                                <div class="post-sum">
+                                    <?php echo $listNewestPost[$i]['detail']; ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4 post-block">
-                        <div class="display-flex align-items-center justify-content-center post-img">
-                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Thu-Hang-0.jpg?itok=_rgwOUbA">
-                        </div>
+                    <?php
+                        }
+                    ?>
                     
-                        <div class="post-content">
-                            <div class="post-title">
-                                <a class="fw-bold" href="#">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
-                            </div>
-
-                            <div class="post-meta">
-                                <span class="post-categories"><a class="text-uppercase" href="#">Khoa học-Công nghệ</a></span>
-                                &nbsp;|&nbsp;
-                                <span class="post-created">03/08/2021</span>
-                            </div>
-
-                            <div class="post-sum">
-                                Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col news-link">
-                        <a href="#" class="btn btn-lg text-uppercase">Trang tin tức >></a>
+                        <a href="/tin-tuc" class="btn btn-lg text-uppercase">Trang tin tức >></a>
                     </div>
                 </div>
 
@@ -183,98 +147,58 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-4">
 
-                        <div class="event-post-block">
-                            <div class="position-relative">
-                                <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg"></a>
-                                <span class="btn-time-event-img"><i class="fas fa-history"></i> 5 - Tháng 8</span>
-                            </div>
-    
-                            <div class="event-post-content">
-                                <div class="event-post-title fw-bold">
-                                    Seminar khoa học: Spike Protein 501Y.V2 chống lại kháng thể trung hòa trong mô phỏng nguyên tử
-                                </div>
-        
-                                <div class="event-post-desc">
-                                    Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.
-                                </div>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <div class="col-12 col-lg-4">
-                        
-                        <div class="event-post-block">
-                            <div class="position-relative">
-                                <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/events/2021/science-seminar_0.png"></a>
-                                <span class="btn-time-event-img"><i class="fas fa-history"></i> 5 - Tháng 8</span>
-                            </div>
-    
-                            <div class="event-post-content">
-                                <div class="event-post-title fw-bold">
-                                    Seminar: Potential inhibitors for SARS-CoV-2 Mpro from marine compounds
-                                </div>
-        
-                                <div class="event-post-desc">
-                                    Phòng Quản lý Phát triển Khoa học Công nghệ Demasted - TDTU thông báo chương trình Seminar định kỳ tháng 7/2021.
-                                </div>
-                            </div>
-                        </div>
+                    <?php 
+                        for($i = 0; $i < count($listCurrentEvent); $i++){
+                    ?>
+                            <div class="col-12 col-lg-4">
 
-                    </div>
+                                <div class="event-post-block">
+                                    <div class="position-relative">
+                                        <a href=<?php echo $listCurrentEvent[$i]['link']; ?>><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg"></a>
+                                        <span class="btn-time-event-img"><i class="fas fa-history"></i> <?php echo (int)date('d', $listCurrentEvent[$i]['time_end']); ?> - Tháng <?php echo (int)date('m', $listCurrentEvent[$i]['time_end']); ?></span>
+                                    </div>
+
+                                    <div class="event-post-content">
+                                        <div class="event-post-title fw-bold">
+                                            <?php echo $listCurrentEvent[$i]['title']; ?>
+                                        </div>
+
+                                        <div class="event-post-desc">
+                                            <?php echo $listCurrentEvent[$i]['detail']; ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                    <?php
+                        }
+                    ?>
+                    
                     <div class="col-12 col-lg-4">
                         
                         <div class="events-block">
                             <ul>
-                                <li>
-                                    <div class="display-flex event-item">
-                                        <div class="event-date">
-                                            <span class="display-block day">14</span>
-                                            <span class="display-block month">Tháng 5</span>
-                                        </div>
 
-                                        <div class="event-content">
-                                            <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="display-flex event-item">
-                                        <div class="event-date">
-                                            <span class="display-block day">14</span>
-                                            <span class="display-block month">Tháng 5</span>
-                                        </div>
+                                <?php 
+                                    for($i = 0; $i < count($listNewestEvent); $i++){
+                                ?>
+                                    <li>
+                                        <div class="display-flex event-item">
+                                            <div class="event-date">
+                                                <span class="display-block day"><?php echo (int)date('d', $listNewestEvent[$i]['time_start']); ?></span>
+                                                <span class="display-block month">Tháng <?php echo (int)date('m', $listNewestEvent[$i]['time_start']); ?></span>
+                                            </div>
 
-                                        <div class="event-content">
-                                            <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
+                                            <div class="event-content">
+                                                <a class="fw-bold" href=<?php echo $listNewestEvent[$i]['link']; ?>><?php echo $listNewestEvent[$i]['title']; ?></a>
+                                            </div>
                                         </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="display-flex event-item">
-                                        <div class="event-date">
-                                            <span class="display-block day">14</span>
-                                            <span class="display-block month">Tháng 5</span>
-                                        </div>
+                                    </li>
+                                <?php
+                                    }
+                                ?>
 
-                                        <div class="event-content">
-                                            <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="display-flex event-item">
-                                        <div class="event-date">
-                                            <span class="display-block day">14</span>
-                                            <span class="display-block month">Tháng 5</span>
-                                        </div>
-
-                                        <div class="event-content">
-                                            <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                        </div>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
 
@@ -283,7 +207,7 @@
 
                 <div class="row">
                     <div class="col-12 events-link">
-                        <a href="#" class="btn btn-lg text-uppercase">Trang sự kiện >></a>
+                        <a href="/su-kien" class="btn btn-lg text-uppercase">Trang sự kiện >></a>
                         <div class="clear-both"></div>
                     </div>
                 </div>
@@ -297,7 +221,7 @@
 
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="text-center text-uppercase fw-bold faculty-title"><?php echo mysqli_num_rows($listFaculties); ?> Khoa</h2>
+                        <h2 class="text-center text-uppercase fw-bold faculty-title"><?php echo count($listFaculties); ?> Khoa</h2>
                     </div>
                 </div>
                 
@@ -306,58 +230,26 @@
                         <div class="owl-carousel owl-theme faculty-carousel">
 
                             <?php
-                                for($i = 0; $i < 9; $i++){
+                                for($i = 0; $i < count($listFaculties); $i++){
                             ?>
                                 <div class="item">
                                     <div class="position-relative faculty-carousel-img">
-                                        <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
+                                        <img class="img-responsive" src=<?php echo BASE_URL . $listFaculties[$i]['img']; ?>>
 
                                         <div class="img-bg"></div>
 
                                         <div class="faculty-link text-center">
-                                            <a class="fw-bold text-uppercase" href="#">Visit the website</a>
+                                            <a class="fw-bold text-uppercase" href=<?php echo $listFaculties[$i]['link_page']; ?>>Visit the website</a>
                                         </div>
                                     </div>
 
                                     <div class="faculty-carousel-title">
-                                        <a class="fw-bold" href="#"><?php echo "A" . $i ?></a>
+                                        <a class="fw-bold" href=<?php echo $listFaculties[$i]['link_page']; ?>><?php echo $listFaculties[$i]['short_name']; ?></a>
                                     </div>
                                 </div>
                             <?php
                                 }
                             ?>
-
-                            <!-- <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-KTCT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">TEST</a>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <div class="position-relative faculty-carousel-img">
-                                    <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Faculty/new/Khoa-CNTT-new.jpg">
-
-                                    <div class="img-bg"></div>
-
-                                    <div class="faculty-link text-center">
-                                        <a class="fw-bold text-uppercase" href="#">Visit the website</a>
-                                    </div>
-                                </div>
-
-                                <div class="faculty-carousel-title">
-                                    <a class="fw-bold" href="#">HiHi</a>
-                                </div>
-                            </div> -->
                             
                         </div>
                     </div>

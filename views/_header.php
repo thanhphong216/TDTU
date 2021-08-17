@@ -26,12 +26,10 @@
                                 <ul>
 
                                     <?php
-                                        if(mysqli_num_rows($listSubSchool) > 0){
-                                            while($row = mysqli_fetch_assoc($listSubSchool)){
+                                        for($i = 0; $i < count($listSubSchool); $i++){
                                     ?>
-                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                            <li class="display-block"><a href=<?php echo $listSubSchool[$i]['link_page']; ?>><?php echo $listSubSchool[$i]['name']; ?></a></li>
                                     <?php
-                                            }
                                         }
                                     ?>
                                     
@@ -47,12 +45,10 @@
                                 <ul>
 
                                     <?php
-                                        if(mysqli_num_rows($listFaculties) > 0){
-                                            while($row = mysqli_fetch_assoc($listFaculties)){
+                                        for($i = 0; $i < count($listFaculties); $i++){
                                     ?>
-                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                            <li class="display-block"><a href=<?php echo $listFaculties[$i]['link_page']; ?>><?php echo $listFaculties[$i]['name']; ?></a></li>
                                     <?php
-                                            }
                                         }
                                     ?>       
 
@@ -68,12 +64,10 @@
                                 <ul>
 
                                     <?php
-                                        if(mysqli_num_rows($listInstitution) > 0){
-                                            while($row = mysqli_fetch_assoc($listInstitution)){
+                                        for($i = 0; $i < count($listInstitution); $i++){
                                     ?>
-                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                            <li class="display-block"><a href=<?php echo $listInstitution[$i]['link_page']; ?>><?php echo $listInstitution[$i]['name']; ?></a></li>
                                     <?php
-                                            }
                                         }
                                     ?>    
 
@@ -89,12 +83,10 @@
                                 <ul>
 
                                     <?php
-                                        if(mysqli_num_rows($listCenter) > 0){
-                                            while($row = mysqli_fetch_assoc($listCenter)){
+                                        for($i = 0; $i < count($listCenter); $i++){
                                     ?>
-                                                <li class="display-block"><a href=<?php echo $row['link_page']; ?>><?php echo $row['name']; ?></a></li>
+                                            <li class="display-block"><a href=<?php echo $listCenter[$i]['link_page']; ?>><?php echo $listCenter[$i]['name']; ?></a></li>
                                     <?php
-                                            }
                                         }
                                     ?>  
 
