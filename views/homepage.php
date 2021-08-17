@@ -86,7 +86,7 @@
                                 </div>
 
                                 <div class="post-meta">
-                                    <span class="post-categories"><a class="text-uppercase" href="#">Khoa học-Công nghệ</a></span>
+                                    <span class="post-categories"><a class="text-uppercase" href=<?php echo $listNewestPost[$i]['link_page']; ?>><?php echo $listNewestPost[$i]['name']; ?></a></span>
                                     &nbsp;|&nbsp;
                                     <span class="post-created"><?php echo date('d/m/y', $listNewestPost[$i]['time_create']); ?></span>
                                 </div>

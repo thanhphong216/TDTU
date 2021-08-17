@@ -115,7 +115,7 @@
         global $conn;
         $data = [];
 
-        $sql = "select * from new_page order by time_create desc limit " . $count;
+        $sql = "select * from news_page, news_category where news_page.category_id = news_category.id order by time_create desc limit " . $count;
         $result = mysqli_query($conn, $sql);
 
         while($row = $result->fetch_assoc()) {
