@@ -78,7 +78,8 @@
 .event-new-block>.date{
     color: #ffffff;
     background-color: #CD2122;
-    width: 110px;
+    width: 90px;
+    min-width: 90px;
     height: 75px;
     padding: 0 3%;
     margin-right: 5%;

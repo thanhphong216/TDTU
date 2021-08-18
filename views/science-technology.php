@@ -71,7 +71,7 @@
                     <div class="col-12 col-lg-4 science-technology-block">
                         <div>
                             <a href="#">
-                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Research/T%E1%BB%95%20ch%E1%BB%A9c%20KH-CN.jpg">
+                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Research/Ngu%E1%BB%93n%20l%E1%BB%B1c%20KHCN.jpg">
                             </a>
                         </div>
 
@@ -86,7 +86,7 @@
                     <div class="col-12 col-lg-4 science-technology-block">
                         <div>
                             <a href="#">
-                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Research/T%E1%BB%95%20ch%E1%BB%A9c%20KH-CN.jpg">
+                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Research/S%E1%BA%A3n%20ph%E1%BA%A9m%20KHCN.jpg">
                             </a>
                         </div>
 

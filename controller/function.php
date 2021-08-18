@@ -98,7 +98,7 @@
         global $conn;
         $data = [];
 
-        $sql = "select * from event order by time_start desc limit " . $page * $count . "," . $count;
+        $sql = "select * from event_page order by time_start desc limit " . $page * $count . "," . $count;
         $result = mysqli_query($conn, $sql);
 
         while($row = $result->fetch_assoc()) {
@@ -110,7 +110,7 @@
         global $conn;
         $data = [];
 
-        $sql = "select * from event order by time_create desc limit " . $count;
+        $sql = "select * from event_page order by time_create desc limit " . $count;
         $result = mysqli_query($conn, $sql);
 
         while($row = $result->fetch_assoc()) {

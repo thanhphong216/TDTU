@@ -1,3 +1,10 @@
+<?php
+    $listNewsetEvent = getListNewestEvent(6);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +28,7 @@
 <body>
     
     <!-- START HEADER -->
-    <?php include_once('_header.php') ?>
+    <?php include_once('layout/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -31,7 +38,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="#"><h2>Trang chủ -</h2></a>
+                <a href="/"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -126,78 +133,26 @@
                         <div class="row">
                             <div class="col-12 events-new-block">
                                 <ul>
-                                    <li>
-                                        <div class="display-flex event-new-block">
-                                            <div class="date">
-                                                <span class="display-block day">14</span>
-                                                <span class="display-block month">Tháng 5</span>
+
+                                    <?php 
+                                        for($i = 0; $i < count($listNewsetEvent); $i++){
+                                    ?>
+                                        <li>
+                                            <div class="display-flex event-new-block">
+                                                <div class="date">
+                                                    <span class="display-block day"><?php echo (int)date('d', $listNewsetEvent[$i]['time_start']); ?></span>
+                                                    <span class="display-block month">Tháng <?php echo (int)date('m', $listNewsetEvent[$i]['time_create']); ?></span>
+                                                </div>
+        
+                                                <div class="content">
+                                                    <a class="fw-bold" href="#"><?php echo $listNewsetEvent[$i]['title']; ?></a>
+                                                </div>
                                             </div>
-    
-                                            <div class="content">
-                                                <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="display-flex event-new-block">
-                                            <div class="date">
-                                                <span class="display-block day">14</span>
-                                                <span class="display-block month">Tháng 5</span>
-                                            </div>
-    
-                                            <div class="content">
-                                                <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="display-flex event-new-block">
-                                            <div class="date">
-                                                <span class="display-block day">14</span>
-                                                <span class="display-block month">Tháng 5</span>
-                                            </div>
-    
-                                            <div class="content">
-                                                <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="display-flex event-new-block">
-                                            <div class="date">
-                                                <span class="display-block day">14</span>
-                                                <span class="display-block month">Tháng 5</span>
-                                            </div>
-    
-                                            <div class="content">
-                                                <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="display-flex event-new-block">
-                                            <div class="date">
-                                                <span class="display-block day">14</span>
-                                                <span class="display-block month">Tháng 5</span>
-                                            </div>
-    
-                                            <div class="content">
-                                                <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="display-flex event-new-block">
-                                            <div class="date">
-                                                <span class="display-block day">14</span>
-                                                <span class="display-block month">Tháng 5</span>
-                                            </div>
-    
-                                            <div class="content">
-                                                <a class="fw-bold" href="#">Ngày hội việc làm Đại học Tôn Đức Thắng 2021</a>
-                                            </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    <?php
+                                        }
+                                    ?>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -216,7 +171,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once('_footer.php') ?>
+    <?php include_once('layout/_footer.php') ?>
     <!-- END FOOTER -->
 
 

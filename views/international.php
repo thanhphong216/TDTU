@@ -1,3 +1,10 @@
+<?php
+    $listNewsIntercational = getListNewestPostDependType(3, 5);
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +28,7 @@
 <body>
     
     <!-- START HEADER -->
-    <?php include_once('_header.php') ?>
+    <?php include_once('layout/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -31,7 +38,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="#"><h2>Trang chủ -</h2></a>
+                <a href="/"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -72,64 +79,36 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-4 news-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Dec/visegrad4/visegrad-0.jpg?itok=DLtHIVH6" class="img-responsive">
-                            </a>
+
+                    <?php 
+                        for($i = 0; $i < count($listNewsIntercational); $i++){
+                    ?>
+                        <div class="col-12 col-lg-4 news-block">
+                            <div>
+                                <a href=<?php echo $listNewsIntercational[$i]['link']; ?>>
+                                    <img src=<?php echo $listNewsIntercational[$i]['img']; ?> class="img-responsive">
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="fw-bold">
+                                    <a href=<?php echo $listNewsIntercational[$i]['link']; ?>><?php echo $listNewsIntercational[$i]['title']; ?></a>
+                                </h4>
+
+                                <p class="date"><?php echo date('d/m/y', $listNewsIntercational[$i]['time_create']); ?></p>
+
+                                <p class="desc"><?php echo $listNewsIntercational[$i]['detail']; ?></p>
+                            </div>
                         </div>
-
-                        <div class="content">
-                            <h4 class="fw-bold">
-                                <a href="#">Triển lãm tranh cổ động nhân kỷ niệm 30 năm thành lập nhóm Visegrad</a>
-                            </h4>
-
-                            <p class="date">14/12/2020</p>
-
-                            <p class="desc">Triển lãm là hoạt động có ý nghĩa thắt chặt tình hữu nghị giữa Việt Nam và các nước V4, đặc biệt trong lĩnh vực giáo dục...</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4 news-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Dec/visegrad4/visegrad-0.jpg?itok=DLtHIVH6" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="content">
-                            <h4 class="fw-bold">
-                                <a href="#">Triển lãm tranh cổ động nhân kỷ niệm 30 năm thành lập nhóm Visegrad</a>
-                            </h4>
-
-                            <p class="date">14/12/2020</p>
-
-                            <p class="desc">Triển lãm là hoạt động có ý nghĩa thắt chặt tình hữu nghị giữa Việt Nam và các nước V4, đặc biệt trong lĩnh vực giáo dục...</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-4 news-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Dec/visegrad4/visegrad-0.jpg?itok=DLtHIVH6" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="content">
-                            <h4 class="fw-bold">
-                                <a href="#">Triển lãm tranh cổ động nhân kỷ niệm 30 năm thành lập nhóm Visegrad</a>
-                            </h4>
-
-                            <p class="date">14/12/2020</p>
-
-                            <p class="desc">Triển lãm là hoạt động có ý nghĩa thắt chặt tình hữu nghị giữa Việt Nam và các nước V4, đặc biệt trong lĩnh vực giáo dục...</p>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    ?>
+                    
                 </div>
 
                 <div class="row">
                     <div class="col-12 display-flex justify-content-end">
-                        <a class="btn text-uppercase fw-bold news-link" href="#">Tin khác >></a>
+                        <a class="btn text-uppercase fw-bold news-link" href="/tin-tuc/quoc-te-hoa">Tin khác >></a>
                     </div>
                 </div>
 
@@ -156,7 +135,7 @@
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Hợp tác quốc tế về giáo dục</h4>
 
                             <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
 
@@ -166,14 +145,14 @@
                     <div class="col-12 col-lg-4 cooperation-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-4.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Hợp tác quốc tế về nghiên cứu</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Các chương trình và dự án hợp tác nghiên cứu với các đại học và tổ chức quốc tế khác</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -181,14 +160,14 @@
                     <div class="col-12 col-lg-4 cooperation-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/Hop-tac-quoc-te.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Phát triển đối tác quốc tế</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Mở rộng hợp tác với các đại học top 500 thế giới</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -213,14 +192,14 @@
                     <div class="col-12 col-lg-4 human-resource-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-6.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Chính sách phát triển nguồn nhân lực quốc tế</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Tăng cường tuyển dụng nhân sự quốc tế và quốc tế hóa nguồn nhân lực tại chỗ</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -228,14 +207,14 @@
                     <div class="col-12 col-lg-4 human-resource-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-5.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Thông tin nhân sự quốc tế</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Thông tin về giảng viên, chuyên gia quốc tế đang làm việc tại TDTU</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -243,14 +222,14 @@
                     <div class="col-12 col-lg-4 human-resource-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-7.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Thông tin tuyển dụng quốc tế</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Tuyển dụng giảng viên, nghiên cứu viên, chuyên gia quốc tế</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -275,14 +254,14 @@
                     <div class="col-12 col-lg-4 student-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-1.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Các chương trình tuyển sinh quốc tế</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Thông tin tuyển sinh quốc tế bậc sau đại học, đại học và các chương trình ngắn hạn</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -290,14 +269,14 @@
                     <div class="col-12 col-lg-4 student-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-2.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Hỗ trợ tài chính cho sinh viên quốc tế</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Học bổng và các chính sách hỗ trợ dành cho sinh viên quốc tế</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -305,14 +284,14 @@
                     <div class="col-12 col-lg-4 student-block">
                         <div>
                             <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/GV-quoc-te.jpg" class="img-responsive">
+                                <img src="https://www.tdtu.edu.vn/sites/www/files/Internationalization/image/International-400x300-3.jpg" class="img-responsive">
                             </a>
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold" >Hợp tác quốc tế về giáo dục</h4>
+                            <h4 class="fw-bold">Sinh viên quốc tế tại TDTU</h4>
 
-                            <p>Hợp tác giáo dục bậc sau đại học, đại học và trao đổi ngắn hạn</p>
+                            <p>Hoạt động của sinh viên quốc tế tại TDTU</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -348,7 +327,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once('_footer.php') ?>
+    <?php include_once('layout/_footer.php') ?>
     <!-- END FOOTER -->
 
 

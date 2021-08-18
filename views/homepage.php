@@ -1,5 +1,5 @@
 <?php
-    $listCurrentEvent = getListCurrentEvent(2);
+    $listCurrentEvent = getListCurrentEvent(2, 0);
     $listNewestEvent = getListNewestEvent(4, 0);
     $listNewestPost = getListNewestPost(3);
 ?>
