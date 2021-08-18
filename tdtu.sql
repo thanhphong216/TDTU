@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 17, 2021 at 10:39 AM
+-- Generation Time: Aug 18, 2021 at 08:18 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -97,7 +97,7 @@ CREATE TABLE `faculty` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `short_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -146,6 +146,90 @@ INSERT INTO `institution` (`id`, `name`, `link_page`) VALUES
 (3, 'Viện nghiên cứu di truyền và giống', '#'),
 (4, 'Viện tiên tiến khoa học vật liệu', '#'),
 (5, 'Viện chính sách kinh tế và kinh doanh', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `introduce_page`
+--
+
+CREATE TABLE `introduce_page` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `title_id` int(10) UNSIGNED NOT NULL,
+  `detail` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `introduce_page`
+--
+
+INSERT INTO `introduce_page` (`id`, `name`, `title_id`, `detail`, `img`, `link_page`) VALUES
+(1, 'Lịch sử hình thành và phát triển', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg', '#'),
+(2, 'Sứ mạng, tầm nhìn, chính sách chất lượng', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/su-mang-tam-nhin-cs-cl.jpg', '#'),
+(3, 'Định hướng phát triển', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/dinh-huong-phat-trien-tdtu.jpg', '#'),
+(4, 'Số liệu tổng quan', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Phat-trien.jpg', '#'),
+(5, 'Xếp hạng đại học', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Nha-trang_0.jpg', '#'),
+(6, 'Đảm bảo chất lượng', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/bao-loc_0.jpg', '#'),
+(7, 'Thành tích', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/thanh-tich.jpg', '#'),
+(8, 'Phát triển bền vững', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/So-lieu_0.jpg', '#'),
+(9, 'Hội đồng trường', 2, 'Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg', '#'),
+(10, 'Đảng, đoàn thể', 2, 'Đảng bộ TDTU là tổ chức cơ sở Đảng thuộc Đảng bộ khối Đại học, Cao đẳng Thành phố Hồ Chí Minh.', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-2.jpg', '#'),
+(11, 'Ban giám hiệu', 2, 'Ban giám hiệu trực tiếp quản lý và điều hành các hoạt động của Nhà trường theo quy định của pháp luật.', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-3.png', '#'),
+(12, 'Giảng viên - Nhà khoa học', 3, 'Đội ngũ giảng viên - chuyên gia - nhà khoa học là nguồn lực quan trọng trong quá trình phát triển của TDTU', 'https://www.tdtu.edu.vn/sites/www/files/About/Nhà%20khoa%20học.jpg', '#'),
+(13, 'Các đơn vị trực thuộc', 3, 'Danh mục các đơn vị thuộc TDTU được xếp theo khối Khoa-Trường, Viện-Trung tâm và Phòng-Ban', 'https://www.tdtu.edu.vn/sites/www/files/About/Don-vi.jpg', '#'),
+(14, 'Cơ sở vật chất', 3, 'TDTU có trụ sở chính tại Quận 7 và các cơ sở đào tạo tại Nha Trang, Bảo Lộc, Cà Mau; tất cả được đầu tư đầy đủ và hiện đại bậc nhất Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/About/Cơ%20sở%20vật%20chất-1.jpg', '#'),
+(15, 'Những đánh giá về Trường', 4, NULL, NULL, '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `introduce_rating_page`
+--
+
+CREATE TABLE `introduce_rating_page` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `rate` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `author` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `job` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `introduce_rating_page`
+--
+
+INSERT INTO `introduce_rating_page` (`id`, `rate`, `author`, `job`, `img`, `link_page`) VALUES
+(1, '\"... khi ai hỏi tôi gởi con học ở đâu, thì tôi khuyên nên nghĩ đến TDTU trước. Ở nước ngoài, giáo sư hỏi muốn hợp tác với ai ở Việt Nam, tôi nói hãy nghĩ đến với TDTU vì tính minh bạch và tuyệt đối không có chuyện \'under the table\'.\"', 'Nguyễn Văn Tuấn', 'Giáo sư Đại học New South Wales, Úc', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/gs-tuan-6.png', '#'),
+(2, '\"Sau 10 năm tự chủ, Đại học Tôn Đức Thắng đã trở thành một trong những trường đại học hàng đầu Việt Nam, được xếp hạng bởi nhiều tổ chức quốc tế uy tín.\"', 'VTV1', 'Truyền hình Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/VTV1.png', '#'),
+(3, '\"TDTU như một “báu vật” quốc gia, vì là nơi đào tạo ra các kỹ sư có trình độ tiên tiến, phục vụ cho sự phát triển của nền công nghiệp 4.0\"', 'Ông Izumi Matsumoto', 'Tổng giám đốc Công ty Mitsubishi Electric Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Izumi-Matsumoto.jpg', '#'),
+(4, '\"Giáo viên Phần Lan là những chuyên gia đẳng cấp thế giới. Tôi mong rằng thông qua VFIS, họ có thể đóng góp những kinh nghiệm quý báu của mình cho nền giáo dục Việt Nam,...\"', 'Ông Janne Oksanen', 'Tham tán, Phó đại sứ Phần Lan tại Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Janne-Oksanen.jpg', '#'),
+(5, '\"VFIS là minh chứng hữu hình của mối quan hệ Việt Nam Phần Lan. Thật tuyệt vời khi được tận mắt tham quan ngôi trường này, nhưng sẽ còn tuyệt vời hơn nữa khi các em học sinh vào đây học.\"', 'Ông Peter Vesterbacka', 'Nhà sáng lập Công ty giải trí Rovio, đơn vị cung cấp trò chơi Angry Birds nổi tiếng thế giới.', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Peter-Vesterbacka.jpg', '#'),
+(6, '\"Tôi tin tưởng chắc chắn rằng Trường đại học Tôn Đức Thắng sắp tới nhất định sẽ có bước phát triển mới, mạnh mẽ hơn nữa, xứng đáng với vinh dự được mang tên bác Tôn kính yêu...\"', 'Ông Trương Tấn Sang', 'Chủ tịch nước', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Truong-tan-sang.jpg', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `introduce_title`
+--
+
+CREATE TABLE `introduce_title` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(150) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `introduce_title`
+--
+
+INSERT INTO `introduce_title` (`id`, `title`) VALUES
+(3, 'Con người và cơ sở vật chất'),
+(1, 'Hình thành và phát triển'),
+(2, 'Lãnh đạo trường'),
+(4, 'Những đánh gia về trường');
 
 -- --------------------------------------------------------
 
@@ -202,7 +286,8 @@ CREATE TABLE `news_page` (
 INSERT INTO `news_page` (`id`, `title`, `img`, `link`, `category_id`, `detail`, `time_create`) VALUES
 (1, '323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-', '#', 1, 'Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.', 1628640000),
 (2, 'Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY', '#', 2, 'Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.', 1627948800),
-(3, 'Seminar: Nghiên cứu khoa học trong lĩnh vực Kế toán và Kinh tế kỷ nguyên 4.0', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu', '#', 2, 'Sự kiện học thuật khoa Kế toán tổ chức với sự tham gia của nhiều chuyên gia đến từ Anh Quốc, Malaysia, Đài Loan, Ấn Độ, Indonesia.', 1627776000);
+(3, 'Seminar: Nghiên cứu khoa học trong lĩnh vực Kế toán và Kinh tế kỷ nguyên 4.0', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu', '#', 2, 'Sự kiện học thuật khoa Kế toán tổ chức với sự tham gia của nhiều chuyên gia đến từ Anh Quốc, Malaysia, Đài Loan, Ấn Độ, Indonesia.', 1627776000),
+(5, 'Bằng sáng chế USPTO thứ 8 của Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/BSC/BSC.jpg?itok=_TYR1BCc', '#', 2, 'Sáng chế này ứng dụng khả năng phân hủy rác thải hữu cơ của giun đất, tạo ra một quy trình xử lý rác thải hữu cơ mini khép kín,...', 1615248000);
 
 -- --------------------------------------------------------
 
@@ -211,7 +296,7 @@ INSERT INTO `news_page` (`id`, `title`, `img`, `link`, `category_id`, `detail`, 
 --
 
 CREATE TABLE `office` (
-  `id` int(10) NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -224,6 +309,17 @@ INSERT INTO `office` (`id`, `name`, `link_page`) VALUES
 (1, 'Giảng viên/Viên chức', '#'),
 (2, 'Sinh viên', '#'),
 (3, 'Cựu sinh viên', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `research_group`
+--
+
+CREATE TABLE `research_group` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -244,6 +340,29 @@ CREATE TABLE `sub_school` (
 INSERT INTO `sub_school` (`id`, `name`, `link_page`) VALUES
 (1, 'Trường TCCN Tôn Đức Thắng', '#'),
 (2, 'Trường quốc tế Việt Nam-Phần Lan', '#');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `office_id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_research_group`
+--
+
+CREATE TABLE `user_research_group` (
+  `uid` int(10) UNSIGNED NOT NULL,
+  `rgid` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Indexes for dumped tables
@@ -278,6 +397,28 @@ ALTER TABLE `institution`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `introduce_page`
+--
+ALTER TABLE `introduce_page`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`),
+  ADD KEY `title_id` (`title_id`);
+
+--
+-- Indexes for table `introduce_rating_page`
+--
+ALTER TABLE `introduce_rating_page`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `author` (`author`);
+
+--
+-- Indexes for table `introduce_title`
+--
+ALTER TABLE `introduce_title`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`);
+
+--
 -- Indexes for table `news_category`
 --
 ALTER TABLE `news_category`
@@ -299,6 +440,13 @@ ALTER TABLE `office`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `research_group`
+--
+ALTER TABLE `research_group`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `name` (`name`);
+
+--
 -- Indexes for table `sub_school`
 --
 ALTER TABLE `sub_school`
@@ -306,14 +454,47 @@ ALTER TABLE `sub_school`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `office_id` (`office_id`);
+
+--
+-- Indexes for table `user_research_group`
+--
+ALTER TABLE `user_research_group`
+  ADD PRIMARY KEY (`uid`,`rgid`),
+  ADD KEY `rgid` (`rgid`);
+
+--
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `introduce_page`
+--
+ALTER TABLE `introduce_page`
+  ADD CONSTRAINT `introduce_page_ibfk_1` FOREIGN KEY (`title_id`) REFERENCES `introduce_title` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `news_page`
 --
 ALTER TABLE `news_page`
   ADD CONSTRAINT `news_page_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `news_category` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`) ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user_research_group`
+--
+ALTER TABLE `user_research_group`
+  ADD CONSTRAINT `user_research_group_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_research_group_ibfk_2` FOREIGN KEY (`rgid`) REFERENCES `research_group` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

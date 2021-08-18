@@ -105,6 +105,7 @@
 }
 .expand-block .content p{
     color: #CD2122;
+    position: absolute;
     padding: 15% 0;
     margin: 25% 0 0;
     font-size: 0.9rem;

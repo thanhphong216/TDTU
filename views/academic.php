@@ -21,7 +21,7 @@
 <body>
 
     <!-- START HEADER -->
-    <?php include_once('_header.php') ?>
+    <?php include_once('layout/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -31,7 +31,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="#"><h2>Trang chủ -</h2></a>
+                <a href="/"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold">Sau dai hoc</h4>
+                            <h4 class="fw-bold">Sau đại học</h4>
 
                             <p>Cao học, Nghiên cứu sinh trong nước, Nghiên cứu sinh quốc tế</p>
 
@@ -62,39 +62,39 @@
                     </div>
                     <div class="col-12 col-lg-3 education-box">
                         <div>
-                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/%C4%90%C3%A0o%20t%E1%BA%A1o%20S%C4%90H.jpg" alt="">
+                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Đào%20tạo%20ĐH.jpg" alt="">
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold">Sau dai hoc</h4>
+                            <h4 class="fw-bold">Đại học</h4>
 
-                            <p>Cao học, Nghiên cứu sinh trong nước, Nghiên cứu sinh quốc tế</p>
+                            <p>Các chương trình giáo dục đại học</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
                     </div>
                     <div class="col-12 col-lg-3 education-box">
                         <div>
-                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/%C4%90%C3%A0o%20t%E1%BA%A1o%20S%C4%90H.jpg" alt="">
+                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Cao-dang-image.jpg" alt="">
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold">Sau dai hoc</h4>
+                            <h4 class="fw-bold">Cao đẳng</h4>
 
-                            <p>Cao học, Nghiên cứu sinh trong nước, Nghiên cứu sinh quốc tế</p>
+                            <p>Cao đẳng và Trung cấp chuyên nghiệp</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
                     </div>
                     <div class="col-12 col-lg-3 education-box">
                         <div>
-                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/%C4%90%C3%A0o%20t%E1%BA%A1o%20S%C4%90H.jpg" alt="">
+                            <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Dao-tao-ngan-han-image.jpg" alt="">
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold">Sau dai hoc</h4>
+                            <h4 class="fw-bold">Ngắn hạn</h4>
 
-                            <p>Cao học, Nghiên cứu sinh trong nước, Nghiên cứu sinh quốc tế</p>
+                            <p>Các khóa học ngắn hạn dành cho sinh viên và người đi làm</p>
 
                             <a class="text-uppercase fw-bold" href="#">Chi tiết</a>
                         </div>
@@ -129,7 +129,7 @@
                 
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h2 class="text-uppercase fw-bold">Thong tin hoc vu</h2>
+                        <h2 class="text-uppercase fw-bold">Thông tin học vụ</h2>
                     </div>
                 </div>
 
@@ -150,40 +150,40 @@
                     <div class="col-12 col-lg-3">
                         <div class="service-content">
                             <div class="content-img">
-                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Bi%E1%BB%83u%20m%E1%BA%ABu%20Icon.png" alt="">
+                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Lich%20dao%20tao%20Icon.png" alt="">
                             </div>
 
                             <div class="content-title text-center">
-                                <a href="#">Danh mục ngành</a>
+                                <a href="#">Các tiện ích</a>
                             </div>
 
-                            <div class="content-desc text-center">Ngành học xếp theo tên ngành từ A đến Z</div>
+                            <div class="content-desc text-center">Thông tin về các tiện ích khi học tại TDTU</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-3">
                         <div class="service-content">
                             <div class="content-img">
-                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Bi%E1%BB%83u%20m%E1%BA%ABu%20Icon.png" alt="">
+                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Quy%20ch%E1%BA%BF%20Icon.png" alt="">
                             </div>
 
                             <div class="content-title text-center">
-                                <a href="#">Danh mục ngành</a>
+                                <a href="#">Qui chế đào tạo</a>
                             </div>
 
-                            <div class="content-desc text-center">Ngành học xếp theo tên ngành từ A đến Z</div>
+                            <div class="content-desc text-center">Các qui định và thủ tục học vụ cho từng hệ đào tạo</div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-3">
                         <div class="service-content">
                             <div class="content-img">
-                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/Bi%E1%BB%83u%20m%E1%BA%ABu%20Icon.png" alt="">
+                                <img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Academics/guide-icon.png" alt="">
                             </div>
 
                             <div class="content-title text-center">
-                                <a href="#">Danh mục ngành</a>
+                                <a href="#">Hướng dẫn học vụ</a>
                             </div>
 
-                            <div class="content-desc text-center">Ngành học xếp theo tên ngành từ A đến Z</div>
+                            <div class="content-desc text-center">Hướng dẫn thủ tục học vụ và hỗ trợ sinh viên</div>
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@
 
     
     <!-- START FOOTER -->
-    <?php include_once('_footer.php') ?>
+    <?php include_once('layout/_footer.php') ?>
     <!-- END FOOTER -->
 
 

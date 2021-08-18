@@ -24,4 +24,9 @@
     if(!$page){
         include_once(ROOT_PATH . '/views/_404.php');
     }
+
+
+
+    //Exit
+    exits();
 ?>

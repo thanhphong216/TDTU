@@ -1,3 +1,19 @@
+<?php
+    $countStudent = getCountStudent();
+    $countTeacher = getCountTeacher();
+    $countFaculty = count(getListFaculties());
+    $countResearchGroup = getCountResearchGroup();
+
+    $listPageHistoryExpand = getListPageIntroduce(1);
+    $listPageLeader = getListPageIntroduce(2);
+    $listPageResource = getListPageIntroduce(3);
+
+    $listPageRating = getListPageIntroduceRating();
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +39,7 @@
 <body>
 
     <!-- START HEADER -->
-    <?php include_once('_header.php') ?>
+    <?php include_once('layout/_header.php') ?>
     <!-- END HEADER -->
     
 
@@ -33,7 +49,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="#"><h2>Trang chủ -</h2></a>
+                <a href="/"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -87,30 +103,30 @@
                     <div class="col-12 col-12 col-lg-3 text-center about-desc-block">
                         <i class="fas fa-graduation-cap"></i>
 
-                        <h3 class=" text-uppercase fw-bold">23,792</h3>
+                        <h3 class=" text-uppercase fw-bold"><?php echo $countStudent; ?></h3>
 
                         <p class="text-center text-uppercase">Sinh viên/Học viên</p>
                     </div>
                     <div class="col-12 col-12 col-lg-3 text-center about-desc-block">
                         <i class="fas fa-user-friends"></i>
 
-                        <h3 class=" text-uppercase fw-bold">23,792</h3>
+                        <h3 class=" text-uppercase fw-bold"><?php echo $countTeacher; ?></h3>
 
-                        <p class="text-center text-uppercase">Sinh viên/Học viên</p>
+                        <p class="text-center text-uppercase">Giảng viên/Viên chức</p>
                     </div>
                     <div class="col-12 col-12 col-lg-3 text-center about-desc-block">
                         <i class="fas fa-university"></i>
 
-                        <h3 class=" text-uppercase fw-bold">23,792</h3>
+                        <h3 class=" text-uppercase fw-bold"><?php echo $countFaculty; ?></h3>
 
-                        <p class="text-center text-uppercase">Sinh viên/Học viên</p>
+                        <p class="text-center text-uppercase">Khoa chuyên môn</p>
                     </div>
                     <div class="col-12 col-12 col-lg-3 text-center about-desc-block">
                         <i class="fas fa-search"></i>
 
-                        <h3 class=" text-uppercase fw-bold">23,792</h3>
+                        <h3 class=" text-uppercase fw-bold"><?php echo $countResearchGroup; ?></h3>
 
-                        <p class="text-center text-uppercase">Sinh viên/Học viên</p>
+                        <p class="text-center text-uppercase">Nhóm nghiên cứu</p>
                     </div>
                 </div>
 
@@ -129,110 +145,27 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
 
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
+                    <?php 
+                        for($i = 0; $i < count($listPageHistoryExpand); $i++){
+                    ?>
+                        <div class="col-12 col-md-5 col-lg-3 expand-block">
+                            <div class="position-relative">
+                                <a href=<?php echo $listPageHistoryExpand[$i]['link_page']; ?>>
+                                    <img src=<?php echo $listPageHistoryExpand[$i]['img']; ?> class="img-responsive">
+                                </a>
+
+                                <div class="content">
+                                    <h4 class="text-uppercase fw-bold"><?php echo $listPageHistoryExpand[$i]['name']; ?></h4>
+        
+                                    <p><a href=<?php echo $listPageHistoryExpand[$i]['link_page']; ?> class="text-uppercase fw-bold">Chi tiết</a></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
+                    <?php
+                        }
+                    ?>
 
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
-
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
-
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
-
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
-
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
-
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5 col-lg-3 expand-block">
-                        <div class="position-relative">
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg" class="img-responsive">
-                            </a>
-
-                            <div class="content">
-                                <h4 class="text-uppercase fw-bold">Lịch sử hình thành và phát triển</h4>
-    
-                                <p><a href="#" class="text-uppercase fw-bold">Chi tiết</a></p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -250,51 +183,29 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-4 leader-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg" class="img-responsive">
-                            </a>
-                        </div>
 
-                        <div class="content">
-                            <h4 class="fw-bold">Hội đồng trường</h4>
+                    <?php 
+                        for($i = 0; $i < count($listPageLeader); $i++){
+                    ?>
+                        <div class="col-12 col-lg-4 leader-block">
+                            <div>
+                                <a href=<?php echo $listPageLeader[$i]['link_page']; ?>>
+                                    <img src=<?php echo $listPageLeader[$i]['img']; ?> class="img-responsive">
+                                </a>
+                            </div>
 
-                            <p>Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.</p>
-                        
-                            <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 leader-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg" class="img-responsive">
-                            </a>
-                        </div>
+                            <div class="content">
+                                <h4 class="fw-bold"><?php echo $listPageLeader[$i]['name']; ?></h4>
 
-                        <div class="content">
-                            <h4 class="fw-bold">Hội đồng trường</h4>
-
-                            <p>Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.</p>
-                        
-                            <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
+                                <p><?php echo $listPageLeader[$i]['detail']; ?></p>
+                            
+                                <a href=<?php echo $listPageLeader[$i]['link_page']; ?> class="text-uppercase fw-bold">Chi tiết</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4 leader-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg" class="img-responsive">
-                            </a>
-                        </div>
+                    <?php
+                        }
+                    ?>
 
-                        <div class="content">
-                            <h4 class="fw-bold">Hội đồng trường</h4>
-
-                            <p>Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.</p>
-                        
-                            <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -312,51 +223,29 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-4 resource-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg" class="img-responsive">
-                            </a>
-                        </div>
 
-                        <div class="content">
-                            <h4 class="fw-bold">Hội đồng trường</h4>
+                    <?php 
+                        for($i = 0; $i < count($listPageResource); $i++){
+                    ?>
+                        <div class="col-12 col-lg-4 resource-block">
+                            <div>
+                                <a href=<?php echo $listPageResource[$i]['link_page']; ?>>
+                                    <img src=<?php echo $listPageResource[$i]['img']; ?> class="img-responsive">
+                                </a>
+                            </div>
 
-                            <p>Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.</p>
-                        
-                            <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 resource-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg" class="img-responsive">
-                            </a>
-                        </div>
+                            <div class="content">
+                                <h4 class="fw-bold"><?php echo $listPageResource[$i]['name']; ?></h4>
 
-                        <div class="content">
-                            <h4 class="fw-bold">Hội đồng trường</h4>
-
-                            <p>Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.</p>
-                        
-                            <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
+                                <p><?php echo $listPageResource[$i]['detail']; ?></p>
+                            
+                                <a href=<?php echo $listPageResource[$i]['link_page']; ?> class="text-uppercase fw-bold">Chi tiết</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4 resource-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg" class="img-responsive">
-                            </a>
-                        </div>
+                    <?php
+                        }
+                    ?>
 
-                        <div class="content">
-                            <h4 class="fw-bold">Hội đồng trường</h4>
-
-                            <p>Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.</p>
-                        
-                            <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -446,7 +335,7 @@
                 
                 <div class="row">
                     <div class="col-12 text-center rating-title">
-                        <h2 class="text-uppercase fw-bold">Nhuững đánh gia về trường</h2>
+                        <h2 class="text-uppercase fw-bold">Những đánh gia về trường</h2>
                     </div>
                 </div>
 
@@ -454,110 +343,39 @@
                     <div class="col-12">
                         
                         <div class="owl-carousel owl-theme rating-carousel">
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-4 rating-block">
-                                        <div class="position-relative">
-                                            <a href="#">
-                                                <img src="https://www.tdtu.edu.vn/sites/www/files/testimonial/PETR-SAHA.jpg" class="img-responsive">
-                                            </a>
-                                            
-                                            <div class="quote">
-                                                <i class="icon fa fa-quote-left"></i>
+
+                            <?php 
+                                for($i = 0; $i < count($listPageRating); $i++){
+                            ?>
+                                <div class="item">
+                                    <div class="row">
+                                        <div class="col-4 rating-block">
+                                            <div class="position-relative">
+                                                <a href=<?php echo $listPageRating[$i]['link_page']; ?>>
+                                                    <img src=<?php echo $listPageRating[$i]['img']; ?> class="img-responsive">
+                                                </a>
+                                                
+                                                <div class="quote">
+                                                    <i class="icon fa fa-quote-left"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 rating-block">
+                                            <div class="content">
+                                                <p class="detail"><?php echo $listPageRating[$i]['rate']; ?></p>
+                                                <p class="author">
+                                                    <span class="title fw-bold"> <?php echo $listPageRating[$i]['author']; ?></span>
+                                                    <span> - </span>
+                                                    <span class="job"> <?php echo $listPageRating[$i]['job']; ?></span>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-8 rating-block">
-                                        <div class="content">
-                                            <p class="detail">"Tôi đã một số lần đến đây rồi. Và lần nào tôi đến, tôi cũng rất nhiều cảm xúc. Lần này 
-                                                được tham quan kĩ hơn và được thuyết minh rõ hơn, tôi thấy rằng đây là mô hình rất đáng được nghiên cứu."</p>
-                                            <p class="author">
-                                                <span class="title fw-bold"> Ông Trương Tấn Sang</span>
-                                                <span> - </span>
-                                                <span class="job"> Chủ tịch nước</span>
-                                            </p>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-4 rating-block">
-                                        <div class="position-relative">
-                                            <a href="#">
-                                                <img src="https://www.tdtu.edu.vn/sites/www/files/testimonial/PETR-SAHA.jpg" class="img-responsive">
-                                            </a>
-                                            
-                                            <div class="quote">
-                                                <i class="icon fa fa-quote-left"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-8 rating-block">
-                                        <div class="content">
-                                            <p class="detail">"Tôi đã một số lần đến đây rồi. Và lần nào tôi đến, tôi cũng rất nhiều cảm xúc. Lần này 
-                                                được tham quan kĩ hơn và được thuyết minh rõ hơn, tôi thấy rằng đây là mô hình rất đáng được nghiên cứu."</p>
-                                            <p class="author">
-                                                <span class="title fw-bold"> Ông Trương Tấn Sang</span>
-                                                <span> - </span>
-                                                <span class="job"> Chủ tịch nước</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-4 rating-block">
-                                        <div class="position-relative">
-                                            <a href="#">
-                                                <img src="https://www.tdtu.edu.vn/sites/www/files/testimonial/PETR-SAHA.jpg" class="img-responsive">
-                                            </a>
-                                            
-                                            <div class="quote">
-                                                <i class="icon fa fa-quote-left"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-8 rating-block">
-                                        <div class="content">
-                                            <p class="detail">"Tôi đã một số lần đến đây rồi. Và lần nào tôi đến, tôi cũng rất nhiều cảm xúc. Lần này 
-                                                được tham quan kĩ hơn và được thuyết minh rõ hơn, tôi thấy rằng đây là mô hình rất đáng được nghiên cứu."</p>
-                                            <p class="author">
-                                                <span class="title fw-bold"> Ông Trương Tấn Sang</span>
-                                                <span> - </span>
-                                                <span class="job"> Chủ tịch nước</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="row">
-                                    <div class="col-4 rating-block">
-                                        <div class="position-relative">
-                                            <a href="#">
-                                                <img src="https://www.tdtu.edu.vn/sites/www/files/testimonial/PETR-SAHA.jpg" class="img-responsive">
-                                            </a>
-                                            
-                                            <div class="quote">
-                                                <i class="icon fa fa-quote-left"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-8 rating-block">
-                                        <div class="content">
-                                            <p class="detail">"Tôi đã một số lần đến đây rồi. Và lần nào tôi đến, tôi cũng rất nhiều cảm xúc. Lần này 
-                                                được tham quan kĩ hơn và được thuyết minh rõ hơn, tôi thấy rằng đây là mô hình rất đáng được nghiên cứu."</p>
-                                            <p class="author">
-                                                <span class="title fw-bold"> Ông Trương Tấn Sang</span>
-                                                <span> - </span>
-                                                <span class="job"> Chủ tịch nước</span>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+
                         </div>
                     
                     </div>
@@ -572,7 +390,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once('_footer.php') ?>
+    <?php include_once('layout/_footer.php') ?>
     <!-- END FOOTER -->
 
 
@@ -583,6 +401,6 @@
     <script src=<?php echo BASE_URL . "/lib/jquery.min.js" ?>></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     <script src=<?php echo BASE_URL . "/lib/OwlCarousel2-2.3.4/dist/owl.carousel.min.js" ?>></script>
-    <script src=<?php echo BASE_URL . "/js/rating-silder.js" ?>></script>
+    <script src=<?php echo BASE_URL . "/js/rating-slider.js" ?>></script>
 </body>
 </html>

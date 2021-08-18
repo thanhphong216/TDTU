@@ -31,7 +31,7 @@
 <body>
     
     <!-- START HEADER -->
-    <?php include_once('_header.php') ?>
+    <?php include_once('layout/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -120,11 +120,11 @@
 
                 <div class="row">
                     <div class="col-12 col-lg-4 admissions-block">
-                        <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Admission/admission_front/image_video.jpg"></a>
+                        <a href="https://www.youtube.com/watch?v=eRKrwM6QpY0"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Admission/admission_front/image_video.jpg"></a>
                     </div>
                     <div class="col-12 col-lg-4 admissions-block">
                         <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Admission/admission_front/Cam-nang.jpg"></a>
-                        <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Admission/admission_front/Tu-van.jpg"></a>
+                        <a href="https://www.facebook.com/tuyensinhtdtu"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Admission/admission_front/Tu-van.jpg"></a>
                         <a href="#"><img class="img-responsive" src="https://www.tdtu.edu.vn/sites/www/files/Admission/admission_front/Kham-pha.jpg"></a>
                     </div>
                     <div class="col-12 col-lg-4 admissions-block">
@@ -265,7 +265,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once('_footer.php') ?>
+    <?php include_once('layout/_footer.php') ?>
     <!-- END FOOTER -->
 
 

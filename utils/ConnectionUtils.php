@@ -9,6 +9,8 @@
         private $username = 'root';
         private $password = '';
 
+        private $conn;
+
 
         private static $ourInstance;
         public static function getInstance(){
@@ -24,8 +26,15 @@
 
 
         public function getConnect(){
-            $conn = mysqli_connect($this->servername, $this->username, $this->password, $this->database, $this->post);
-            return $conn;
+            if(!$this->conn){
+                $this->conn = mysqli_connect($this->servername, $this->username, $this->password, $this->database, $this->post);
+            }
+
+            return $this->conn;
+        }
+
+        public function closeConnect(){
+            return mysqli_close($this->conn);
         }
     }
 

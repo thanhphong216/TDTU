@@ -84,6 +84,7 @@
 }
 .service-content>.content-img{
     padding: 0 25%;
+    height: 140px;
 }
 .service-content>.content-title{
     font-size: 1.1rem;

@@ -1,3 +1,9 @@
+<?php
+    $listNewsSience = getListNewestPostDependType(3, 2);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +27,7 @@
 <body>
 
     <!-- START HEADER -->
-    <?php include_once('_header.php') ?>
+    <?php include_once('layout/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -31,7 +37,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="#"><h2>Trang chủ -</h2></a>
+                <a href="/"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -70,9 +76,9 @@
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold">Tổ chức</h4>
+                            <h4 class="fw-bold">Nguồn lực</h4>
 
-                            <p>Hoạt động Khoa học - Công nghệ tại TDTU với định hướng trở thành đại học nghiên cứu theo chuẩn mực quốc tế</p>
+                            <p>Con người, nguồn tài chính, các dịch vụ Khoa học-Công nghệ và tổ chức tài trợ cho hoạt động nghiên cứu tại TDTU</p>
 
                             <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
                         </div>
@@ -85,9 +91,9 @@
                         </div>
 
                         <div class="content">
-                            <h4 class="fw-bold">Tổ chức</h4>
+                            <h4 class="fw-bold">Sản phẩm</h4>
 
-                            <p>Hoạt động Khoa học - Công nghệ tại TDTU với định hướng trở thành đại học nghiên cứu theo chuẩn mực quốc tế</p>
+                            <p>Bằng sáng chế, bài báo khoa học, sản phẩm chuyển giao Khoa học - Công nghệ và các khóa học chuyên gia</p>
 
                             <a href="#" class="text-uppercase fw-bold">Chi tiết</a>
                         </div>
@@ -195,51 +201,29 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 col-lg-4 spotlight-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                            </a>
-                        </div>
 
-                        <div class="content">
-                            <h4 class="fw-bold"><a href="#">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a></h4>
-                            
-                            <p>Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.</p>
-                            
-                            <p>03/08/2021</p>
-                        </div>
-                    </div>
-                    <div class="col-12 col-lg-4 spotlight-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                            </a>
-                        </div>
+                    <?php
+                        for($i = 0; $i < count($listNewsSience); $i++){
+                    ?>
+                        <div class="col-12 col-lg-4 spotlight-block">
+                            <div>
+                                <a href=<?php echo $listNewsSience[$i]['link']; ?>>
+                                    <img src=<?php echo $listNewsSience[$i]['img']; ?> class="img-responsive">
+                                </a>
+                            </div>
 
-                        <div class="content">
-                            <h4 class="fw-bold"><a href="#">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a></h4>
-                            
-                            <p>Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.</p>
-                            
-                            <p>03/08/2021</p>
+                            <div class="content">
+                                <h4 class="fw-bold"><a href=<?php echo $listNewsSience[$i]['link']; ?>><?php echo $listNewsSience[$i]['title']; ?></a></h4>
+                                
+                                <p><?php echo $listNewsSience[$i]['detail']; ?></p>
+                                
+                                <p><?php echo date('d/m/y', $listNewsSience[$i]['time_create']); ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 col-lg-4 spotlight-block">
-                        <div>
-                            <a href="#">
-                                <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                            </a>
-                        </div>
-
-                        <div class="content">
-                            <h4 class="fw-bold"><a href="#">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a></h4>
-                            
-                            <p>Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.</p>
-                            
-                            <p>03/08/2021</p>
-                        </div>
-                    </div>
+                    <?php
+                        }
+                    ?>
+                    
                 </div>
 
             </div>
@@ -251,7 +235,7 @@
 
     
     <!-- START FOOTER -->
-    <?php include_once('_footer.php') ?>
+    <?php include_once('layout/_footer.php') ?>
     <!-- END FOOTER -->
 
     
