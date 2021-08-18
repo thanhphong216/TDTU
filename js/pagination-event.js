@@ -1,21 +1,16 @@
 $(document).ready(function(){
     $('.nav-btns>button').click(function(){
-        var page = $(this).text();
-
         $(location).attr('href','/su-kien?page=' + $(this).attr('page'));
 
-
-
-
-
-
         // $.ajax({
-        //     type: "POST",
-        //     // url: '/TDTU/views/layout/test.php',
+        //     type: "GET",
+        //     url: '/su-kien?page=' + $(this).attr('page'),
         //     data: {"page": $(this).text()},
-        //     dataType: "html",
+        //     dataType: "text",
         //     success: function (response) {
-        //         // alert(response);
+        //         alert(response);
+        //         $(document).empty();
+        //         $(document).html(response);
         //     },
         //     error: function(request, status, error){
         //         alert("error: " + error.message);
