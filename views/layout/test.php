@@ -1,8 +1,4 @@
-<?php
-    require_once('../utils/constant.php');
 
-    echo $_POST['page'];
-?>
 
 
 

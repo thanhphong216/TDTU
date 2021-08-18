@@ -10,5 +10,10 @@
     
     <h1>404</h1>
 
+    <?php
+        $request_url = !empty($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : '/';
+        echo $request_url;
+    ?>
+
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
     require_once('utils/constant.php');
-    require_once('controller/function.php');
+    require_once('utils/function.php');
     // Autoload class trong PHP
     spl_autoload_register(function (string $class_name) {
         include_once ROOT_PATH . '/' . $class_name . '.php';

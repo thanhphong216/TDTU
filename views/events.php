@@ -41,7 +41,7 @@
 <body>
     
     <!-- START HEADER -->
-    <?php include_once('layout/_header.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layout/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -164,7 +164,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once('layout/_footer.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layout/_footer.php') ?>
     <!-- END FOOTER -->
 
 

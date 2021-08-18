@@ -2,7 +2,7 @@ $(document).ready(function(){
     $('.nav-btns>button').click(function(){
         $.ajax({
             type: "POST",
-            url: '/TDTU/controller/test.php',
+            url: '/TDTU/views/layout/test.php',
             data: {"page": $(this).text()},
             dataType: "html",
             success: function (response) {
