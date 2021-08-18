@@ -1,18 +1,17 @@
 <?php
-    $page = 0;
+    $page = 1;
+    if(isset($_GET['page'])){
+        $page = ((int)$_GET['page']) > 0 ? (int)$_GET['page'] : 1;
+    }
+
+    
     $newsDisplay = 3;
     $countEvent = getCountEvent();
     $countPageEvent = ceil($countEvent / $newsDisplay);
     $maxDisplayPageEvent = 9;
-    $listEvent = getListCurrentEvent($newsDisplay, $page);
+    $rangeDisplayPageEvent = floor($maxDisplayPageEvent / 2);
+    $listEvent = getListCurrentEvent($newsDisplay, $page - 1);
     $listNewestEvent = getListNewestEvent(6);
-
-
-    if(!isset($_COOKIE['page'])){
-        setcookie('page', $page, time() + 60, "/");
-    }else{
-        $page = $_COOKIE['page'];
-    }
 ?>
 
 
@@ -51,7 +50,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="/"><h2>Trang chủ -</h2></a>
+                <a href="/su-kien?page=2"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -97,18 +96,49 @@
 
                         <div class="display-flex align-items-center justify-content-center">
                             <div class="btn-group flex-wrap nav-btns" role="group">
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">1</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">2</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">3</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">4</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">5</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">6</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">7</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">8</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">9</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center" disabled>...</button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">>></button>
-                                <button type="button" class="btn display-flex align-items-center justify-content-center">>|</button>
+
+                                <?php
+                                    if(1 < $page){
+                                        echo '<button type="button" page="1" class="btn display-flex align-items-center justify-content-center">|<</button>';
+                                        echo '<button type="button" page="' . ($page - 1) . '" class="btn display-flex align-items-center justify-content-center"><<</button>';
+                                    }
+                                    if(1 < $page - $rangeDisplayPageEvent){
+                                        echo '<button type="button" class="btn display-flex align-items-center justify-content-center" disabled>...</button>';
+                                    }
+
+                                    $start = $page - $rangeDisplayPageEvent;
+                                    $end = $page + $rangeDisplayPageEvent;
+                                    if($start <= 0){
+                                        $end = ($end - $start + 1 < $countPageEvent) ? $end - $start + 1 : $countPageEvent;
+                                        $start = 1;
+                                    }else if($end > $countPageEvent){
+                                        $start = ($start - ($end - $countPageEvent) > 0) ? $start - ($end - $countPageEvent) : 1;
+                                        $end = $countPageEvent;
+                                    }
+
+
+                                    for($i = $start; $i <= $end; $i++){
+                                        if($i == $page){
+                                ?>
+                                            <button type="button" page=<?php echo $i; ?> class="btn display-flex align-items-center justify-content-center" style="background-color: #eeeeee;"><?php echo $i; ?></button>
+                                <?php
+                                        }else{
+                                ?>
+                                            <button type="button" page=<?php echo $i; ?> class="btn display-flex align-items-center justify-content-center"><?php echo $i; ?></button>
+                                <?php
+                                        }
+                                    }
+                                
+
+                                    if($page + $rangeDisplayPageEvent < $countPageEvent){
+                                        echo '<button type="button" class="btn display-flex align-items-center justify-content-center" disabled>...</button>';
+                                    }
+                                    if($page < $countPageEvent){
+                                        echo '<button type="button" page="' . ($page + 1) . '" class="btn display-flex align-items-center justify-content-center">>></button>';
+                                        echo '<button type="button" page="' . $countPageEvent . '" class="btn display-flex align-items-center justify-content-center">>|</button>';
+                                    }
+                                ?>
+
                             </div>
                         </div>
                     </div>

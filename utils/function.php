@@ -37,8 +37,9 @@
         Router::get('/su-kien', function(){
             include_once(ROOT_PATH . '/views/events.php');
         });
-        Router::get('/su-kien/{page}', 'NewsEventController')->name('index');
-        Router::post('/su-kien/{page}', 'NewsEventController')->name('index');
+        Router::get('/su-kien/{page}', function(){
+            include_once(ROOT_PATH . '/views/events.php');
+        });
     }
     function exits(){
         //Close connection

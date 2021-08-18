@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 08:18 AM
+-- Generation Time: Aug 18, 2021 at 06:45 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `tdtu`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `account`
+--
+
+CREATE TABLE `account` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `uid` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -57,12 +70,13 @@ INSERT INTO `center` (`id`, `name`, `link_page`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event`
+-- Table structure for table `event_page`
 --
 
-CREATE TABLE `event` (
+CREATE TABLE `event_page` (
   `id` int(10) NOT NULL,
   `title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `detail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `time_start` int(15) UNSIGNED NOT NULL,
   `time_end` int(15) UNSIGNED NOT NULL,
@@ -72,20 +86,20 @@ CREATE TABLE `event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Dumping data for table `event`
+-- Dumping data for table `event_page`
 --
 
-INSERT INTO `event` (`id`, `title`, `detail`, `time_start`, `time_end`, `locate`, `link`, `time_create`) VALUES
-(1, 'Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm', 'Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.', 1629293400, 1629300600, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.', '#', 1628293400),
-(2, 'Seminar khoa học: Spike Protein 501Y.V2 chống lại kháng thể trung hòa trong mô phỏng nguyên tử', 'Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.', 1628170200, 1628177400, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.', '#', 1628070200),
-(3, 'Seminar: Potential inhibitors for SARS-CoV-2 Mpro from marine compounds', NULL, 1626355800, 1626363000, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1626255800),
-(4, 'Seminar khoa học tháng 7/2021', NULL, 1625751000, 1625758200, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1625651000),
-(5, 'Ngày hội việc làm Đại học Tôn Đức Thắng 2021', NULL, 1620975600, 1621011600, 'Tầng trệt Nhà thi đấu, TDTU; Số 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh.', '#', 1620875600),
-(6, 'Seminar khoa học tháng 4/2021', NULL, 1619184600, 1619191800, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1619084600),
-(7, 'Đánh giá hiệu năng của các phương pháp tính toán năng lượng tự do khi đánh giá liên kết của các chất ức chế với SARS-CoV-2 Mpro', NULL, 1617195600, 1617202800, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh', '#', 1617095600),
-(8, 'Cuộc thi Mitsubishi Electric Cup Automation 2021', NULL, 1611532800, 1627603200, 'Trường Đại học Tôn Đức Thắng, Trường Đại học Sư phạm Kỹ thuật TP. HCM', '#', 1611432800),
-(9, 'Bright technical careers – Are you ready?', NULL, 1611129600, 1611140400, 'Hội trường 10F, 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh', '#', 1611029600),
-(10, 'Seminar chuyên đề tháng 12/2020', NULL, 1640869200, 1640876400, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1640769200);
+INSERT INTO `event_page` (`id`, `title`, `img`, `detail`, `time_start`, `time_end`, `locate`, `link`, `time_create`) VALUES
+(1, 'Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm', NULL, 'Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.', 1629293400, 1629300600, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.', '#', 1628293400),
+(2, 'Seminar khoa học: Spike Protein 501Y.V2 chống lại kháng thể trung hòa trong mô phỏng nguyên tử', NULL, 'Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.', 1628170200, 1628177400, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.', '#', 1628070200),
+(3, 'Seminar: Potential inhibitors for SARS-CoV-2 Mpro from marine compounds', NULL, NULL, 1626355800, 1626363000, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1626255800),
+(4, 'Seminar khoa học tháng 7/2021', NULL, NULL, 1625751000, 1625758200, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1625651000),
+(5, 'Ngày hội việc làm Đại học Tôn Đức Thắng 2021', NULL, NULL, 1620975600, 1621011600, 'Tầng trệt Nhà thi đấu, TDTU; Số 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh.', '#', 1620875600),
+(6, 'Seminar khoa học tháng 4/2021', NULL, NULL, 1619184600, 1619191800, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1619084600),
+(7, 'Đánh giá hiệu năng của các phương pháp tính toán năng lượng tự do khi đánh giá liên kết của các chất ức chế với SARS-CoV-2 Mpro', NULL, NULL, 1617195600, 1617202800, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh', '#', 1617095600),
+(8, 'Cuộc thi Mitsubishi Electric Cup Automation 2021', NULL, NULL, 1611532800, 1627603200, 'Trường Đại học Tôn Đức Thắng, Trường Đại học Sư phạm Kỹ thuật TP. HCM', '#', 1611432800),
+(9, 'Bright technical careers – Are you ready?', NULL, NULL, 1611129600, 1611140400, 'Hội trường 10F, 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh', '#', 1611029600),
+(10, 'Seminar chuyên đề tháng 12/2020', NULL, NULL, 1640869200, 1640876400, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1640769200);
 
 -- --------------------------------------------------------
 
@@ -349,6 +363,7 @@ INSERT INTO `sub_school` (`id`, `name`, `link_page`) VALUES
 
 CREATE TABLE `user` (
   `id` int(10) UNSIGNED NOT NULL,
+  `account_id` int(10) UNSIGNED NOT NULL,
   `office_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -369,6 +384,13 @@ CREATE TABLE `user_research_group` (
 --
 
 --
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uid` (`uid`);
+
+--
 -- Indexes for table `center`
 --
 ALTER TABLE `center`
@@ -376,9 +398,9 @@ ALTER TABLE `center`
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `event`
+-- Indexes for table `event_page`
 --
-ALTER TABLE `event`
+ALTER TABLE `event_page`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -458,6 +480,7 @@ ALTER TABLE `sub_school`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `account_id` (`account_id`),
   ADD KEY `office_id` (`office_id`);
 
 --
@@ -470,6 +493,12 @@ ALTER TABLE `user_research_group`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `account`
+--
+ALTER TABLE `account`
+  ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `introduce_page`
@@ -487,7 +516,8 @@ ALTER TABLE `news_page`
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_research_group`
