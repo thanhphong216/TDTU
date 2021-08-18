@@ -37,6 +37,7 @@
         Router::get('/su-kien', function(){
             include_once(ROOT_PATH . '/views/events.php');
         });
+        Router::get('/su-kien/{page}', 'NewsEventController')->name('index');
     }
     function exits(){
         //Close connection
@@ -93,6 +94,14 @@
             $data[] = $row;
         }
         return $data;
+    }
+    function getCountEvent(){
+        global $conn;
+
+        $sql = "select count(id) as count from event_page";
+        $result = mysqli_query($conn, $sql);
+
+        return $result->fetch_assoc()['count'];
     }
     function getListCurrentEvent($count = 2, $page = 0){
         global $conn;

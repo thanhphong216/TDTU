@@ -1,5 +1,18 @@
 <?php
-    $listNewsetEvent = getListNewestEvent(6);
+    $page = 0;
+    $newsDisplay = 3;
+    $countEvent = getCountEvent();
+    $countPageEvent = ceil($countEvent / $newsDisplay);
+    $maxDisplayPageEvent = 9;
+    $listEvent = getListCurrentEvent($newsDisplay, $page);
+    $listNewestEvent = getListNewestEvent(6);
+
+
+    if(!isset($_COOKIE['page'])){
+        setcookie('page', $page, time() + 60, "/");
+    }else{
+        $page = $_COOKIE['page'];
+    }
 ?>
 
 
@@ -58,48 +71,28 @@
                     <!-- START LIST EVENT -->
                     <div class="col-12 col-lg-9">
                         <ul>
-                            <li>
-                                <div class="row event-block">
-                                    <div class="col-12 col-lg-5">
-                                        <div><img src="https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg" class="img-responsive"></div>
+
+                            <?php
+                                for($i = 0; $i < count($listEvent); $i++){
+                            ?>
+                                <li>
+                                    <div class="row event-block">
+                                        <div class="col-12 col-lg-5">
+                                            <div><img src="https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg" class="img-responsive"></div>
+                                        </div>
+                                        <div class="col-12 col-lg-7 content">
+                                            <a href=<?php echo $listEvent[$i]['link']; ?>><h4 class="fw-bold"><?php echo $listEvent[$i]['title']; ?></h4></a>
+        
+                                            <p><i class="far fa-calendar-alt"></i> Từ <?php echo date('H:i - d/m/y', $listEvent[$i]['time_start']); ?> đến <?php echo date('H:i - d/m/y', $listEvent[$i]['time_end']); ?>.</p>
+        
+                                            <p><i class="fas fa-map-marker-alt"></i> <?php echo $listEvent[$i]['locate']; ?></p>
+                                        </div>
                                     </div>
-                                    <div class="col-12 col-lg-7 content">
-                                        <a href="#"><h4 class="fw-bold">Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm</h4></a>
-    
-                                        <p><i class="far fa-calendar-alt"></i> Từ 13:30 đến 15:30 ngày 18/08/2021.</p>
-    
-                                        <p><i class="fas fa-map-marker-alt"></i> Trường Đại học Tôn Đức Thắng, khách mời tham dự online.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row event-block">
-                                    <div class="col-12 col-lg-5">
-                                        <div><img src="https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg" class="img-responsive"></div>
-                                    </div>
-                                    <div class="col-12 col-lg-7 content">
-                                        <a href="#"><h4 class="fw-bold">Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm</h4></a>
-    
-                                        <p><i class="far fa-calendar-alt"></i> Từ 13:30 đến 15:30 ngày 18/08/2021.</p>
-    
-                                        <p><i class="fas fa-map-marker-alt"></i> Trường Đại học Tôn Đức Thắng, khách mời tham dự online.</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row event-block">
-                                    <div class="col-12 col-lg-5">
-                                        <div><img src="https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg" class="img-responsive"></div>
-                                    </div>
-                                    <div class="col-12 col-lg-7 content">
-                                        <a href="#"><h4 class="fw-bold">Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm</h4></a>
-    
-                                        <p><i class="far fa-calendar-alt"></i> Từ 13:30 đến 15:30 ngày 18/08/2021.</p>
-    
-                                        <p><i class="fas fa-map-marker-alt"></i> Trường Đại học Tôn Đức Thắng, khách mời tham dự online.</p>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            <?php
+                                }
+                            ?>
+                            
                         </ul>
 
                         <div class="display-flex align-items-center justify-content-center">
@@ -135,17 +128,17 @@
                                 <ul>
 
                                     <?php 
-                                        for($i = 0; $i < count($listNewsetEvent); $i++){
+                                        for($i = 0; $i < count($listNewestEvent); $i++){
                                     ?>
                                         <li>
                                             <div class="display-flex event-new-block">
                                                 <div class="date">
-                                                    <span class="display-block day"><?php echo (int)date('d', $listNewsetEvent[$i]['time_start']); ?></span>
-                                                    <span class="display-block month">Tháng <?php echo (int)date('m', $listNewsetEvent[$i]['time_create']); ?></span>
+                                                    <span class="display-block day"><?php echo (int)date('d', $listNewestEvent[$i]['time_start']); ?></span>
+                                                    <span class="display-block month">Tháng <?php echo (int)date('m', $listNewestEvent[$i]['time_create']); ?></span>
                                                 </div>
         
                                                 <div class="content">
-                                                    <a class="fw-bold" href="#"><?php echo $listNewsetEvent[$i]['title']; ?></a>
+                                                    <a class="fw-bold" href="#"><?php echo $listNewestEvent[$i]['title']; ?></a>
                                                 </div>
                                             </div>
                                         </li>
@@ -179,6 +172,8 @@
 
     <!-- Optional Bootstrap Bundle with Popper -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src=<?php echo BASE_URL . "/lib/jquery.min.js" ?>></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src=<?php echo BASE_URL . "/js/pagination-event.js" ?>></script>
 </body>
 </html>

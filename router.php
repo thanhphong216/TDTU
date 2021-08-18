@@ -1,10 +1,11 @@
 <?php
     require_once('utils/constant.php');
 
+
     class Router{
         private const METHOD_GET  = "GET";
         private const METHOD_POST = "POST";
-        private const PATH_CONTROLLER = '\controllers';
+        private const PATH_CONTROLLER = 'controller';
 
         private static $routes = [];
 
@@ -79,9 +80,9 @@
             if (is_callable($action->getMethod())) {
                 call_user_func_array($action->getMethod(), $params);
             } else {
-                $controller_name = ROOT_PATH . static::PATH_CONTROLLER . '\\' . $action->getController();
+                $controller_name = static::PATH_CONTROLLER . '\\' . $action->getController();
                 $controller = new $controller_name();
-                call_user_func_array([$controller, $action[1]], $params);
+                call_user_func_array([$controller, $action->getMethod()], $params);
             }
         }
     }
