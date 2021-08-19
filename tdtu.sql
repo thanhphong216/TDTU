@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2021 at 06:45 PM
+-- Generation Time: Aug 19, 2021 at 07:24 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -164,13 +164,34 @@ INSERT INTO `institution` (`id`, `name`, `link_page`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `introduce_category`
+--
+
+CREATE TABLE `introduce_category` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(150) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `introduce_category`
+--
+
+INSERT INTO `introduce_category` (`id`, `title`) VALUES
+(3, 'Con người và cơ sở vật chất'),
+(1, 'Hình thành và phát triển'),
+(2, 'Lãnh đạo trường'),
+(4, 'Những đánh gia về trường');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `introduce_page`
 --
 
 CREATE TABLE `introduce_page` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `title_id` int(10) UNSIGNED NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL,
   `detail` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
@@ -180,7 +201,7 @@ CREATE TABLE `introduce_page` (
 -- Dumping data for table `introduce_page`
 --
 
-INSERT INTO `introduce_page` (`id`, `name`, `title_id`, `detail`, `img`, `link_page`) VALUES
+INSERT INTO `introduce_page` (`id`, `name`, `category_id`, `detail`, `img`, `link_page`) VALUES
 (1, 'Lịch sử hình thành và phát triển', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg', '#'),
 (2, 'Sứ mạng, tầm nhìn, chính sách chất lượng', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/su-mang-tam-nhin-cs-cl.jpg', '#'),
 (3, 'Định hướng phát triển', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/dinh-huong-phat-trien-tdtu.jpg', '#'),
@@ -227,27 +248,6 @@ INSERT INTO `introduce_rating_page` (`id`, `rate`, `author`, `job`, `img`, `link
 -- --------------------------------------------------------
 
 --
--- Table structure for table `introduce_title`
---
-
-CREATE TABLE `introduce_title` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(150) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `introduce_title`
---
-
-INSERT INTO `introduce_title` (`id`, `title`) VALUES
-(3, 'Con người và cơ sở vật chất'),
-(1, 'Hình thành và phát triển'),
-(2, 'Lãnh đạo trường'),
-(4, 'Những đánh gia về trường');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `news_category`
 --
 
@@ -288,7 +288,6 @@ CREATE TABLE `news_page` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
   `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
-  `category_id` int(10) UNSIGNED NOT NULL,
   `detail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `time_create` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -297,11 +296,33 @@ CREATE TABLE `news_page` (
 -- Dumping data for table `news_page`
 --
 
-INSERT INTO `news_page` (`id`, `title`, `img`, `link`, `category_id`, `detail`, `time_create`) VALUES
-(1, '323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-', '#', 1, 'Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.', 1628640000),
-(2, 'Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY', '#', 2, 'Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.', 1627948800),
-(3, 'Seminar: Nghiên cứu khoa học trong lĩnh vực Kế toán và Kinh tế kỷ nguyên 4.0', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu', '#', 2, 'Sự kiện học thuật khoa Kế toán tổ chức với sự tham gia của nhiều chuyên gia đến từ Anh Quốc, Malaysia, Đài Loan, Ấn Độ, Indonesia.', 1627776000),
-(5, 'Bằng sáng chế USPTO thứ 8 của Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/BSC/BSC.jpg?itok=_TYR1BCc', '#', 2, 'Sáng chế này ứng dụng khả năng phân hủy rác thải hữu cơ của giun đất, tạo ra một quy trình xử lý rác thải hữu cơ mini khép kín,...', 1615248000);
+INSERT INTO `news_page` (`id`, `title`, `img`, `link`, `detail`, `time_create`) VALUES
+(1, '323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-', '#', 'Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.', 1628640000),
+(2, 'Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY', '#', 'Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.', 1627948800),
+(3, 'Seminar: Nghiên cứu khoa học trong lĩnh vực Kế toán và Kinh tế kỷ nguyên 4.0', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu', '#', 'Sự kiện học thuật khoa Kế toán tổ chức với sự tham gia của nhiều chuyên gia đến từ Anh Quốc, Malaysia, Đài Loan, Ấn Độ, Indonesia.', 1627776000),
+(5, 'Bằng sáng chế USPTO thứ 8 của Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/BSC/BSC.jpg?itok=_TYR1BCc', '#', 'Sáng chế này ứng dụng khả năng phân hủy rác thải hữu cơ của giun đất, tạo ra một quy trình xử lý rác thải hữu cơ mini khép kín,...', 1615248000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news_page_category`
+--
+
+CREATE TABLE `news_page_category` (
+  `page_id` int(10) UNSIGNED NOT NULL,
+  `category_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `news_page_category`
+--
+
+INSERT INTO `news_page_category` (`page_id`, `category_id`) VALUES
+(1, 1),
+(2, 2),
+(3, 2),
+(5, 2),
+(1, 10);
 
 -- --------------------------------------------------------
 
@@ -419,12 +440,19 @@ ALTER TABLE `institution`
   ADD UNIQUE KEY `name` (`name`);
 
 --
+-- Indexes for table `introduce_category`
+--
+ALTER TABLE `introduce_category`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `title` (`title`);
+
+--
 -- Indexes for table `introduce_page`
 --
 ALTER TABLE `introduce_page`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`),
-  ADD KEY `title_id` (`title_id`);
+  ADD KEY `category_id` (`category_id`);
 
 --
 -- Indexes for table `introduce_rating_page`
@@ -432,13 +460,6 @@ ALTER TABLE `introduce_page`
 ALTER TABLE `introduce_rating_page`
   ADD PRIMARY KEY (`id`),
   ADD KEY `author` (`author`);
-
---
--- Indexes for table `introduce_title`
---
-ALTER TABLE `introduce_title`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `title` (`title`);
 
 --
 -- Indexes for table `news_category`
@@ -451,8 +472,14 @@ ALTER TABLE `news_category`
 -- Indexes for table `news_page`
 --
 ALTER TABLE `news_page`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `new_ibfk_1` (`category_id`);
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `news_page_category`
+--
+ALTER TABLE `news_page_category`
+  ADD PRIMARY KEY (`category_id`,`page_id`) USING BTREE,
+  ADD KEY `page_id` (`page_id`);
 
 --
 -- Indexes for table `office`
@@ -504,13 +531,14 @@ ALTER TABLE `account`
 -- Constraints for table `introduce_page`
 --
 ALTER TABLE `introduce_page`
-  ADD CONSTRAINT `introduce_page_ibfk_1` FOREIGN KEY (`title_id`) REFERENCES `introduce_title` (`id`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `introduce_page_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `introduce_category` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints for table `news_page`
+-- Constraints for table `news_page_category`
 --
-ALTER TABLE `news_page`
-  ADD CONSTRAINT `news_page_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `news_category` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `news_page_category`
+  ADD CONSTRAINT `news_page_category_ibfk_1` FOREIGN KEY (`page_id`) REFERENCES `news_page` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `news_page_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `news_category` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`

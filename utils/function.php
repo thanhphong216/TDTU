@@ -133,7 +133,12 @@
         global $conn;
         $data = [];
 
-        $sql = "select * from news_page, news_category where news_page.category_id = news_category.id order by time_create desc limit " . $count;
+        $sql = "select news_page.*, news_category.* 
+        from news_page, news_category, news_page_category 
+        where news_page.id = news_page_category.page_id and news_category.id = news_page_category.category_id 
+        group by news_page_category.page_id 
+        order by time_create desc 
+        limit " . $count;
         $result = mysqli_query($conn, $sql);
 
         while($row = $result->fetch_assoc()) {
@@ -145,7 +150,7 @@
         global $conn;
         $data = [];
 
-        $sql = "select * from news_page where category_id = " . $type . " order by time_create desc limit " . $count;
+        $sql = "select * from news_page, news_page_category where news_page.id = news_page_category.page_id and news_page_category.category_id = " . $type . " order by time_create desc limit " . $count;
         $result = mysqli_query($conn, $sql);
 
         while($row = $result->fetch_assoc()) {
@@ -181,7 +186,7 @@
         global $conn;
         $data = [];
 
-        $sql = "select * from introduce_page where title_id = " . $title;
+        $sql = "select * from introduce_page where category_id = " . $title;
         $result = mysqli_query($conn, $sql);
 
         while($row = $result->fetch_assoc()) {
