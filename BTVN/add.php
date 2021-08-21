@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['uid'])){
+    if(!isset($_SESSION['account_id'])){
         header("location:login.php");
     }
 
@@ -12,8 +12,6 @@
     $message = "";
     if(isset($_GET['add'])){
 
-        $usermane = $_GET['username'];
-        $password = $_GET['password'];
         $name = $_GET['name'];
         $unit = $_GET['unit'];
         $office = $_GET['office'];
@@ -21,7 +19,7 @@
         $email = $_GET['email'];
         $phoneNumber = $_GET['phone_number'];
 
-        if(addUser($usermane, $password, $name, $unit, $office, $companyNumber, $email, $phoneNumber)){
+        if(addUser($name, $unit, $office, $companyNumber, $email, $phoneNumber)){
             header('location:admin.php');
         }else{
             $message = "Lỗi j đó";
@@ -71,14 +69,6 @@
                     <form method="GET">
                         <div class="form-group">
                             <label class="text-danger"><small><?php echo $message; ?></small></label>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Tên đăng nhập</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Username" name="username">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Mật khẩu</label>
-                            <input type="password" class="form-control" id="exampleInputEmail1" placeholder="Password" name="password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Họ và tên</label>

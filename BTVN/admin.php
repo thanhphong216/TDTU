@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['uid'])){
+    if(!isset($_SESSION['account_id'])){
         header("location:login.php");
     }
 
@@ -10,10 +10,10 @@
     $conn = ConnectionUtils::getInstance()->getConnect();
     
     $user;
-    if($_SESSION['uid'] == 0 || empty($_SESSION['uid'])){
+    if($_SESSION['account_id'] == 0 || empty($_SESSION['account_id'])){
         $user = "admin";
     }else{
-        $user = getUser($_SESSION['uid'])[0]['name'];
+        $user = getUserByAccountId($_SESSION['account_id'])[0]['name'];
     }
 
     $listUser = getListUser();

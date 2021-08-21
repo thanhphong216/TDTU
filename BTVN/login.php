@@ -18,7 +18,7 @@
             if(count($result) > 0){
                 // Start session
                 session_start();
-                $_SESSION["uid"] = $result[0]['uid'];
+                $_SESSION["account_id"] = $result[0]['id'];
 
                 header("location:admin.php");
             }else{
