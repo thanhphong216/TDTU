@@ -1,0 +1,179 @@
+/* CSS for Home link */
+.home-link{
+    padding: 1% 0;
+}
+.home-link h2{
+    font-size: 1.3rem;
+    transition: all 0.35s;
+}
+.home-link h2:hover{
+    color: #CD2122;
+}
+
+
+/* CSS for News */
+.news-title{
+    color: #ffffff;
+    background-color: #CD2122;
+    padding: 0.5%;
+    margin: 1% 0;
+}
+.news-title h2{
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-size: 1.4rem;
+}
+
+.post-newest{
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 5%;
+}
+.post-newest>.post-content{
+    padding: 3%;
+}
+.post-newest .post-meta, .post-item .post-meta{
+    font-size: 0.8rem;
+}
+.post-newest .post-category, .post-item .post-category{
+    color: #CD2122;
+}
+.post-newest .post-category a:hover, .post-item .post-category a:hover{
+    text-decoration: underline;
+}
+.post-newest .post-title{
+    padding: 1% 0;
+    text-align: justify;
+}
+.post-newest .post-title a, .post-item .post-title a{
+    font-size: 1.3rem;
+    color: #222222;
+    transition: all 0.35s;
+}
+.post-newest .post-title a:hover, .post-item .post-title a:hover{
+    color: #CD2122;
+}
+.post-newest .post-desc{
+    font-size: 1.1rem;
+    color: #333333;
+    position: relative;
+    padding: 1% 0;
+}
+.post-newest .post-desc:after{
+    content: "";
+    width: 45px;
+    height: 2px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #CD2122;
+    z-index: 1;
+}
+
+.post-item{
+    margin-bottom: 4%;
+}
+.post-item .post-meta{
+    margin-top: 5%;
+}
+
+
+/* CSS for News Category */
+.news-category .category-title{
+    font-size: 1.1rem;
+    color: #262C38;
+    margin-bottom: 20px;
+}
+.news-category .category-title>span{
+    border-bottom: 1px solid #cd2122;
+    padding: 10px 0;
+}
+.news-category .category-title a{
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+    transition: all 0.35s;
+}
+.news-category .category-title a:hover{
+    color: #CD2122;
+}
+
+.category-row{
+    margin-top: 5%;
+}
+
+.news-category .post-content{
+    margin-bottom: 5%;
+}
+.news-category .post-content .post-title{
+    font-size: 1.1rem;
+    text-align: justify;
+    margin: 0 0 3%;
+}
+.news-category .post-content>.post-title{
+    font-size: 1.1rem;
+    text-align: justify;
+    margin: 3% 0 2%;
+}
+.news-category .post-title a{
+    font-family: roboto slab, serif;
+    transition: all 0.35s;
+}
+.news-category .post-title a:hover{
+    color: #CD2122;
+}
+.news-category .post-content p{
+    font-size: 1rem;
+    color: #333333;
+}
+.news-category .post-meta{
+    font-size: 0.8rem;
+    color: #333333;
+}
+
+
+/* CSS for Discover page */
+.discover-page{
+    padding: 5% 0 3%;
+}
+.discover-page .row:first-child{
+    background-image: url('../assets/TDTU-slide-0.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.discover-page-title{
+    padding: 10% 0 2%;
+    color: #ffffff;
+    position: relative;
+}
+.discover-page-title:after{
+    content: "";
+    width: 80px;
+    height: 2px;
+    background: #ffffff;
+    bottom: 0;
+    z-index: 1;
+    position: absolute;
+}
+.discover-page-title h2{
+    background: rgba(1,1,1,0.3);
+    width: fit-content;
+    padding: 1% 2%;
+    font-size: 2.3rem;
+    font-family: "Roboto", Helvetica, Arial, sans-serif !important;
+}
+
+.discover-page-link{
+    padding: 2% 0 4%;
+}
+.discover-page-link a{
+    padding: 1% 2%;
+    color: #ffffff;
+    background-color: #CD2122;
+    box-shadow: 0px 5px 10px 0px rgb(0 0 0 / 10%);
+    border: 2px solid #CD2122;
+    border-radius: 30px;
+    font-family: "Roboto", sans-serif;
+    font-size: 0.7rem;
+    transition: all 0.3s;
+}
+.discover-page-link a:hover{
+    background-color: #ffffff;
+    color: #CD2122;
+}

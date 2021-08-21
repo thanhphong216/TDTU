@@ -1,5 +1,6 @@
 <?php
     require_once('utils/constant.php');
+    require_once('utils/utils.php');
     require_once('utils/function.php');
     // Autoload class trong PHP
     spl_autoload_register(function (string $class_name) {
