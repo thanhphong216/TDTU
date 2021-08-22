@@ -97,6 +97,18 @@
         }
         return $data;
     }
+    function getUnit($id){
+        global $conn;
+        $data = [];
+
+        $sql = "SELECT * FROM unit WHERE id = " . $id;
+        $result = mysqli_query($conn, $sql);
+
+        while($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+        return $data;
+    }
 
     function addUser($name, $unit_id, $office_id, $company_number, $email, $phone_number){
         global $conn;
@@ -125,7 +137,6 @@
         else
             return FALSE;
     }
-
 
     function deleteUser($id){
         global $conn;

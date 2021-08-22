@@ -6,7 +6,25 @@
     // print_r($conn);
 
     $listUser = getListUser();
+    $listUnit = getListUnit();
+    $listOffice = getListOffice();
     // print_r($listUser);
+
+    $unit_name = '';
+    $unit_phone = '';
+    $unit_email = '';
+    $unit_location = '';
+    $unit_website = '';
+    if(isset($_GET['unit'])){
+        $unit = getUnit($_GET['unit']);
+        if(!empty($unit)){
+            $unit_name = $unit[0]['name'];
+            $unit_phone = $unit[0]['phone_number'];
+            $unit_email = $unit[0]['email'];
+            $unit_location = $unit[0]['location'];
+            $unit_website = $unit[0]['website'];
+        }
+    }
 
     ConnectionUtils::getInstance()->closeConnect();
 ?>
@@ -51,6 +69,84 @@
     <main class="main" style="margin-top: 10%;">
         <div class="container">
 
+            <div class="row" style="margin-bottom: 2%;">
+                <div class="col-10">
+
+                    <div class="dropdown float-start">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Đơn vị
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li>
+                                <a class="dropdown-item" href="index.php">All</a>
+                            </li>
+
+                            <?php
+                                for($i = 0; $i < count($listUnit); $i++){
+                            ?>
+                                <li>
+                                    <a class="dropdown-item" href="index.php?unit=<?php echo $listUnit[$i]['id'] ?>"><?php echo $listUnit[$i]['name']; ?></a>
+                                </li>
+                            <?php
+                                }
+                            ?>
+                            
+                        </ul>
+                    </div>
+                    <div class="dropdown float-start">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Chức vụ
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            
+                            <?php
+                                for($i = 0; $i < count($listOffice); $i++){
+                            ?>
+                                <li>
+                                    <div class="form-check text-center">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="<?php echo $listOffice[$i]['id']; ?>">
+                                        <label class="form-check-label" for="exampleCheck1"><?php echo $listOffice[$i]['name']; ?></label>
+                                    </div>
+                                </li>
+                            <?php
+                                }
+                            ?>
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-primary" id="filter">Lọc</button>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <span class="fw-bold"><?php echo $unit_name; ?></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-4">
+                    <span class="fw-bold">Máy trực:</span> <?php echo $unit_phone; ?>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <span class="fw-bold">Email:</span> <?php echo $unit_email; ?>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <span class="fw-bold">Địa chỉ:</span> <?php echo $unit_location; ?>
+                </div>
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <span class="fw-bold">Website:</span> <?php echo $unit_website; ?>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-12">
 
@@ -68,7 +164,7 @@
                                 <th scope="row" class="text-center">Di động</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="infoUser">
 
                             <?php
                                 for($i = 0; $i < count($listUser); $i++){
@@ -95,7 +191,8 @@
     </main>
 
 
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
