@@ -18,6 +18,25 @@
         return $data;
     }
 
+    function searchUser($key){
+        global $conn;
+        $data = [];
+
+        $sql = "SELECT user.id, user.name, office.name as office, info_phone.company_number, info_phone.email, info_phone.phone_number 
+        FROM user
+        LEFT JOIN office
+        ON user.office_id = office.id
+        LEFT JOIN info_phone
+        ON user.id = info_phone.uid 
+        WHERE user.name LIKE '%" . $key . "%' OR office.name LIKE '%" . $key . "%' OR info_phone.company_number LIKE '%" . $key . "%' OR info_phone.email LIKE '%" . $key . "%' OR info_phone.phone_number LIKE '%" . $key . "%'";
+        $result = mysqli_query($conn, $sql);
+
+        while($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+        return $data;
+    }
+
     function login($username, $password){
         global $conn;
         $data = [];

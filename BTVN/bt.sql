@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 21, 2021 at 08:04 PM
+-- Generation Time: Aug 23, 2021 at 05:41 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -90,6 +90,10 @@ INSERT INTO `office` (`id`, `name`) VALUES
 CREATE TABLE `unit` (
   `id` int(10) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `location` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `phone_number` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `website` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `under_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -97,10 +101,10 @@ CREATE TABLE `unit` (
 -- Dumping data for table `unit`
 --
 
-INSERT INTO `unit` (`id`, `name`, `under_id`) VALUES
-(1, 'Trường ĐH Thủy Lợi', NULL),
-(2, 'Khoa CNTT', 1),
-(3, 'Phòng 401', 2);
+INSERT INTO `unit` (`id`, `name`, `location`, `phone_number`, `email`, `website`, `under_id`) VALUES
+(1, 'Trường ĐH Thủy Lợi', NULL, NULL, NULL, NULL, NULL),
+(2, 'Khoa CNTT', NULL, NULL, NULL, NULL, 1),
+(3, 'Phòng 401', NULL, NULL, NULL, NULL, 2);
 
 -- --------------------------------------------------------
 

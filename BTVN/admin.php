@@ -35,6 +35,9 @@
     }
 
     $listUser = getListUser();
+    if(isset($_GET['search'])){
+        $listUser = searchUser($_GET['search']);
+    }
     // print_r($listUser);
 
     ConnectionUtils::getInstance()->closeConnect();
@@ -67,7 +70,7 @@
                     <div class="container-fluid">
                       <a class="navbar-brand">Admin</a>
                       <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                       </form>
                       <a href="logout.php" class="btn btn-success" type="button"><?php echo $user; ?>, Logout</a>

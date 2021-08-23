@@ -5,7 +5,13 @@
     $conn = ConnectionUtils::getInstance()->getConnect();
     // print_r($conn);
 
+
     $listUser = getListUser();
+    if(isset($_GET['search'])){
+        $listUser = searchUser($_GET['search']);
+    }
+    
+
     $listUnit = getListUnit();
     $listOffice = getListOffice();
     // print_r($listUser);
@@ -55,7 +61,7 @@
                     <div class="container-fluid">
                       <a class="navbar-brand">Home</a>
                       <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                       </form>
                       <a href="login.php" class="btn btn-outline-success" type="button">Login</a>
