@@ -127,7 +127,7 @@
     padding: 1% 0;
 }
 .international-page .row:first-child{
-    background-image: url('../assets/Internationalization-home-banner.jpg');
+    background-image: url('../imgs/Internationalization-home-banner.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }

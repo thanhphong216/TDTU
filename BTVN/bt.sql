@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2021 at 05:41 PM
+-- Generation Time: Aug 24, 2021 at 04:18 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -60,7 +60,11 @@ CREATE TABLE `info_phone` (
 --
 
 INSERT INTO `info_phone` (`id`, `uid`, `company_number`, `email`, `phone_number`) VALUES
-(2, 1, '000', 'dungdm62@wru.vn', '0333000808');
+(2, 1, '000', 'dungdm62@wru.vn', '0333000808'),
+(18, 20, '', 'sonkyon@haha.com', ''),
+(30, 32, '', 'com', ''),
+(32, 34, '12345', '', ''),
+(36, 38, '', 'gt.com', '');
 
 -- --------------------------------------------------------
 
@@ -102,9 +106,9 @@ CREATE TABLE `unit` (
 --
 
 INSERT INTO `unit` (`id`, `name`, `location`, `phone_number`, `email`, `website`, `under_id`) VALUES
-(1, 'Trường ĐH Thủy Lợi', NULL, NULL, NULL, NULL, NULL),
-(2, 'Khoa CNTT', NULL, NULL, NULL, NULL, 1),
-(3, 'Phòng 401', NULL, NULL, NULL, NULL, 2);
+(1, 'Trường ĐH Thủy Lợi', NULL, '00022291', NULL, NULL, NULL),
+(2, 'Khoa CNTT', NULL, NULL, NULL, 'gg.com', 1),
+(3, 'Phòng 401', 'Tòa C', NULL, NULL, 'df.vf.com', 2);
 
 -- --------------------------------------------------------
 
@@ -125,7 +129,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `account_id`, `name`, `unit_id`, `office_id`) VALUES
-(1, 1, 'Quách Thanh Phong', NULL, 1);
+(1, 1, 'Quách Thanh Phong', NULL, 1),
+(20, NULL, 'Nguyễn Quang Sơn', 1, 2),
+(32, NULL, 'Phạm Văn Ngọc', 1, 2),
+(34, NULL, 'Nguyễn Tuấn Tú', 3, NULL),
+(35, NULL, 'Hồ Quang Hiếu', 2, 1),
+(38, NULL, 'Vu vo', 3, NULL);
 
 --
 -- Indexes for dumped tables
@@ -143,9 +152,7 @@ ALTER TABLE `account`
 --
 ALTER TABLE `info_phone`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `uid` (`uid`),
-  ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `phone_number` (`phone_number`);
+  ADD UNIQUE KEY `uid` (`uid`);
 
 --
 -- Indexes for table `office`
@@ -185,7 +192,7 @@ ALTER TABLE `account`
 -- AUTO_INCREMENT for table `info_phone`
 --
 ALTER TABLE `info_phone`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `office`
@@ -203,7 +210,7 @@ ALTER TABLE `unit`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Constraints for dumped tables

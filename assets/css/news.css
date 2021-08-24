@@ -133,7 +133,7 @@
     padding: 5% 0 3%;
 }
 .discover-page .row:first-child{
-    background-image: url('../assets/TDTU-slide-0.jpg');
+    background-image: url('../imgs/TDTU-slide-0.jpg');
     background-size: cover;
     background-repeat: no-repeat;
 }

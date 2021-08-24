@@ -133,12 +133,12 @@
         global $conn;
         $data = [];
 
-        $sql = "
-        INSERT INTO user (name, unit_id, office_id) 
-          VALUES('" . $name . "', " . (empty($unit_id) ? NULL : $unit_id) . ", " . (empty($office_id) ? NULL : $office_id) . ");
-        INSERT INTO info_phone (uid, company_number, email, phone_number) 
-          VALUES(LAST_INSERT_ID(), '" . (empty($company_number) ? NULL : $company_number) . "', '" . (empty($email) ? NULL : $email) . "', '" . (empty($phone_number) ? NULL : $phone_number) . "')";
-        if(mysqli_multi_query($conn,$sql))
+        $sql1 = "INSERT INTO user (name, unit_id, office_id) 
+        VALUES('" . $name . "', " . (empty($unit_id) ? NULL : $unit_id) . ", " . (empty($office_id) ? NULL : $office_id) . ");";
+        $sql2 = "INSERT INTO info_phone (uid, company_number, email, phone_number) 
+        VALUES(LAST_INSERT_ID(), '" . (empty($company_number) ? NULL : $company_number) . "', '" . (empty($email) ? NULL : $email) . "', '" . (empty($phone_number) ? NULL : $phone_number) . "');
+        ";
+        if(mysqli_query($conn,$sql1) && mysqli_query($conn,$sql2))
             return TRUE;
         else
             return FALSE;

@@ -26,9 +26,9 @@
         }
         if($unit != null){
             if(empty($office)){
-                $sql = $sql . "office.id = " . $unit;
+                $sql = $sql . "unit_id = " . $unit;
             }else{
-                $sql = $sql . " AND office.id = " . $unit;
+                $sql = $sql . " AND unit_id = " . $unit;
             }
         }
         $result = mysqli_query($conn, $sql);
