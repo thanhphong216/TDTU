@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2021 at 07:24 PM
+-- Generation Time: Aug 24, 2021 at 12:45 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -28,10 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `username` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `uid` int(10) UNSIGNED NOT NULL
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -41,7 +40,7 @@ CREATE TABLE `account` (
 --
 
 CREATE TABLE `center` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -70,45 +69,11 @@ INSERT INTO `center` (`id`, `name`, `link_page`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `event_page`
---
-
-CREATE TABLE `event_page` (
-  `id` int(10) NOT NULL,
-  `title` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `detail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `time_start` int(15) UNSIGNED NOT NULL,
-  `time_end` int(15) UNSIGNED NOT NULL,
-  `locate` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
-  `time_create` int(15) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `event_page`
---
-
-INSERT INTO `event_page` (`id`, `title`, `img`, `detail`, `time_start`, `time_end`, `locate`, `link`, `time_create`) VALUES
-(1, 'Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm', NULL, 'Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.', 1629293400, 1629300600, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.', '#', 1628293400),
-(2, 'Seminar khoa học: Spike Protein 501Y.V2 chống lại kháng thể trung hòa trong mô phỏng nguyên tử', NULL, 'Phòng Quản lý Phát triển Khoa học Công nghệ Đại học Tôn Đức Thắng thông báo chương trình Seminar định kỳ tháng 8/2021.', 1628170200, 1628177400, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.', '#', 1628070200),
-(3, 'Seminar: Potential inhibitors for SARS-CoV-2 Mpro from marine compounds', NULL, NULL, 1626355800, 1626363000, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1626255800),
-(4, 'Seminar khoa học tháng 7/2021', NULL, NULL, 1625751000, 1625758200, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1625651000),
-(5, 'Ngày hội việc làm Đại học Tôn Đức Thắng 2021', NULL, NULL, 1620975600, 1621011600, 'Tầng trệt Nhà thi đấu, TDTU; Số 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh.', '#', 1620875600),
-(6, 'Seminar khoa học tháng 4/2021', NULL, NULL, 1619184600, 1619191800, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1619084600),
-(7, 'Đánh giá hiệu năng của các phương pháp tính toán năng lượng tự do khi đánh giá liên kết của các chất ức chế với SARS-CoV-2 Mpro', NULL, NULL, 1617195600, 1617202800, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh', '#', 1617095600),
-(8, 'Cuộc thi Mitsubishi Electric Cup Automation 2021', NULL, NULL, 1611532800, 1627603200, 'Trường Đại học Tôn Đức Thắng, Trường Đại học Sư phạm Kỹ thuật TP. HCM', '#', 1611432800),
-(9, 'Bright technical careers – Are you ready?', NULL, NULL, 1611129600, 1611140400, 'Hội trường 10F, 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh', '#', 1611029600),
-(10, 'Seminar chuyên đề tháng 12/2020', NULL, NULL, 1640869200, 1640876400, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh.', '#', 1640769200);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `faculty`
 --
 
 CREATE TABLE `faculty` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `short_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -145,7 +110,7 @@ INSERT INTO `faculty` (`id`, `name`, `short_name`, `img`, `link_page`) VALUES
 --
 
 CREATE TABLE `institution` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -164,174 +129,11 @@ INSERT INTO `institution` (`id`, `name`, `link_page`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `introduce_category`
---
-
-CREATE TABLE `introduce_category` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(150) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `introduce_category`
---
-
-INSERT INTO `introduce_category` (`id`, `title`) VALUES
-(3, 'Con người và cơ sở vật chất'),
-(1, 'Hình thành và phát triển'),
-(2, 'Lãnh đạo trường'),
-(4, 'Những đánh gia về trường');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `introduce_page`
---
-
-CREATE TABLE `introduce_page` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `category_id` int(10) UNSIGNED NOT NULL,
-  `detail` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `introduce_page`
---
-
-INSERT INTO `introduce_page` (`id`, `name`, `category_id`, `detail`, `img`, `link_page`) VALUES
-(1, 'Lịch sử hình thành và phát triển', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg', '#'),
-(2, 'Sứ mạng, tầm nhìn, chính sách chất lượng', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/su-mang-tam-nhin-cs-cl.jpg', '#'),
-(3, 'Định hướng phát triển', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/dinh-huong-phat-trien-tdtu.jpg', '#'),
-(4, 'Số liệu tổng quan', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Phat-trien.jpg', '#'),
-(5, 'Xếp hạng đại học', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/Nha-trang_0.jpg', '#'),
-(6, 'Đảm bảo chất lượng', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/bao-loc_0.jpg', '#'),
-(7, 'Thành tích', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/thanh-tich.jpg', '#'),
-(8, 'Phát triển bền vững', 1, NULL, 'https://www.tdtu.edu.vn/sites/www/files/About/So-lieu_0.jpg', '#'),
-(9, 'Hội đồng trường', 2, 'Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg', '#'),
-(10, 'Đảng, đoàn thể', 2, 'Đảng bộ TDTU là tổ chức cơ sở Đảng thuộc Đảng bộ khối Đại học, Cao đẳng Thành phố Hồ Chí Minh.', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-2.jpg', '#'),
-(11, 'Ban giám hiệu', 2, 'Ban giám hiệu trực tiếp quản lý và điều hành các hoạt động của Nhà trường theo quy định của pháp luật.', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-3.png', '#'),
-(12, 'Giảng viên - Nhà khoa học', 3, 'Đội ngũ giảng viên - chuyên gia - nhà khoa học là nguồn lực quan trọng trong quá trình phát triển của TDTU', 'https://www.tdtu.edu.vn/sites/www/files/About/Nhà%20khoa%20học.jpg', '#'),
-(13, 'Các đơn vị trực thuộc', 3, 'Danh mục các đơn vị thuộc TDTU được xếp theo khối Khoa-Trường, Viện-Trung tâm và Phòng-Ban', 'https://www.tdtu.edu.vn/sites/www/files/About/Don-vi.jpg', '#'),
-(14, 'Cơ sở vật chất', 3, 'TDTU có trụ sở chính tại Quận 7 và các cơ sở đào tạo tại Nha Trang, Bảo Lộc, Cà Mau; tất cả được đầu tư đầy đủ và hiện đại bậc nhất Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/About/Cơ%20sở%20vật%20chất-1.jpg', '#'),
-(15, 'Những đánh giá về Trường', 4, NULL, NULL, '#');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `introduce_rating_page`
---
-
-CREATE TABLE `introduce_rating_page` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `rate` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
-  `author` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `job` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `introduce_rating_page`
---
-
-INSERT INTO `introduce_rating_page` (`id`, `rate`, `author`, `job`, `img`, `link_page`) VALUES
-(1, '\"... khi ai hỏi tôi gởi con học ở đâu, thì tôi khuyên nên nghĩ đến TDTU trước. Ở nước ngoài, giáo sư hỏi muốn hợp tác với ai ở Việt Nam, tôi nói hãy nghĩ đến với TDTU vì tính minh bạch và tuyệt đối không có chuyện \'under the table\'.\"', 'Nguyễn Văn Tuấn', 'Giáo sư Đại học New South Wales, Úc', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/gs-tuan-6.png', '#'),
-(2, '\"Sau 10 năm tự chủ, Đại học Tôn Đức Thắng đã trở thành một trong những trường đại học hàng đầu Việt Nam, được xếp hạng bởi nhiều tổ chức quốc tế uy tín.\"', 'VTV1', 'Truyền hình Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/VTV1.png', '#'),
-(3, '\"TDTU như một “báu vật” quốc gia, vì là nơi đào tạo ra các kỹ sư có trình độ tiên tiến, phục vụ cho sự phát triển của nền công nghiệp 4.0\"', 'Ông Izumi Matsumoto', 'Tổng giám đốc Công ty Mitsubishi Electric Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Izumi-Matsumoto.jpg', '#'),
-(4, '\"Giáo viên Phần Lan là những chuyên gia đẳng cấp thế giới. Tôi mong rằng thông qua VFIS, họ có thể đóng góp những kinh nghiệm quý báu của mình cho nền giáo dục Việt Nam,...\"', 'Ông Janne Oksanen', 'Tham tán, Phó đại sứ Phần Lan tại Việt Nam', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Janne-Oksanen.jpg', '#'),
-(5, '\"VFIS là minh chứng hữu hình của mối quan hệ Việt Nam Phần Lan. Thật tuyệt vời khi được tận mắt tham quan ngôi trường này, nhưng sẽ còn tuyệt vời hơn nữa khi các em học sinh vào đây học.\"', 'Ông Peter Vesterbacka', 'Nhà sáng lập Công ty giải trí Rovio, đơn vị cung cấp trò chơi Angry Birds nổi tiếng thế giới.', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Peter-Vesterbacka.jpg', '#'),
-(6, '\"Tôi tin tưởng chắc chắn rằng Trường đại học Tôn Đức Thắng sắp tới nhất định sẽ có bước phát triển mới, mạnh mẽ hơn nữa, xứng đáng với vinh dự được mang tên bác Tôn kính yêu...\"', 'Ông Trương Tấn Sang', 'Chủ tịch nước', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/Truong-tan-sang.jpg', '#');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `news_category`
---
-
-CREATE TABLE `news_category` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
-  `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `news_category`
---
-
-INSERT INTO `news_category` (`id`, `name`, `link_page`) VALUES
-(1, 'Hoạt động chung', '#'),
-(2, 'Khoa học - Công nghệ', '#'),
-(3, 'Tuyển dụng', '#'),
-(4, 'Giáo dục', '#'),
-(5, 'Quốc tế hóa', '#'),
-(6, 'Quan hệ cộng đồng', '#'),
-(7, 'Phát triển bền vững', '#'),
-(8, 'Diễn giả công chúng', '#'),
-(9, 'Viết về TDTU', '#'),
-(10, 'Sinh viên', '#'),
-(11, 'Đoàn thể', '#'),
-(12, 'Tin trên báo', '#'),
-(13, 'Thông báo', '#'),
-(14, 'Tạp bút', '#');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `news_page`
---
-
-CREATE TABLE `news_page` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
-  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
-  `detail` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `time_create` int(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `news_page`
---
-
-INSERT INTO `news_page` (`id`, `title`, `img`, `link`, `detail`, `time_create`) VALUES
-(1, '323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-', '#', 'Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.', 1628640000),
-(2, 'Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY', '#', 'Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.', 1627948800),
-(3, 'Seminar: Nghiên cứu khoa học trong lĩnh vực Kế toán và Kinh tế kỷ nguyên 4.0', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu', '#', 'Sự kiện học thuật khoa Kế toán tổ chức với sự tham gia của nhiều chuyên gia đến từ Anh Quốc, Malaysia, Đài Loan, Ấn Độ, Indonesia.', 1627776000),
-(5, 'Bằng sáng chế USPTO thứ 8 của Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/BSC/BSC.jpg?itok=_TYR1BCc', '#', 'Sáng chế này ứng dụng khả năng phân hủy rác thải hữu cơ của giun đất, tạo ra một quy trình xử lý rác thải hữu cơ mini khép kín,...', 1615248000);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `news_page_category`
---
-
-CREATE TABLE `news_page_category` (
-  `page_id` int(10) UNSIGNED NOT NULL,
-  `category_id` int(10) UNSIGNED NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `news_page_category`
---
-
-INSERT INTO `news_page_category` (`page_id`, `category_id`) VALUES
-(1, 1),
-(2, 2),
-(3, 2),
-(5, 2),
-(1, 10);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `office`
 --
 
 CREATE TABLE `office` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -348,11 +150,223 @@ INSERT INTO `office` (`id`, `name`, `link_page`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+  `id` int(10) NOT NULL,
+  `title` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `detail` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
+  `time_create` int(15) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`id`, `title`, `img`, `detail`, `link`, `time_create`) VALUES
+(1, 'Trường Đại học Tôn Đức Thắng cấp nhiều suất học bổng cho sinh viên quốc tế', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/Hoc-bong-svqt/hoc-bong-sv-0.jpg?itok=y2if0zUs', 'Năm học 2021-2022, số lượng học bổng dự kiến cấp cho người học nước ngoài là 250 suất với tổng giá trị là 1 triệu USD.', '#', 1629676800),
+(2, 'Talkshow: Chinh phục nhà tuyển dụng - Đột phá trong trạng thái mới', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/Talkshow-QTKD/talkshow-0.png?itok=b9g8Zv_n', 'Chương trình đã đem đến cho sinh viên những kiến thức bổ ích, thiết thực về thị trường lao động trong nước và quốc tế.', '#', 1629676800),
+(3, '323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-', 'Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.', '#', 1628640000),
+(4, 'Cuộc thi Kambria online Hackathon II', 'https://www.tdtu.edu.vn/sites/www/files/events/2021/Aug/KO-hackathon.png', 'Các đội thi (TDTU) sẽ được tài trợ robot và phụ kiện để phát triển ý tưởng ứng dụng khả thi trong điều kiện hiện nay nhằm hỗ trợ cộng đồng, với các giải thưởng vô cùng hấp dẫn.', '#', 1630107800),
+(5, 'Seminar khoa học: Vòng kỵ nước xa điều chỉnh vị trí hoạt động của đồng và phản ứng của các polysaccharide monooxygenase AA13', 'https://www.tdtu.edu.vn/sites/www/files/events/2019/Seminar-event.jpg', 'Phòng DEMASTED - TDTU thông báo chương trình Seminar định kỳ tháng 8/2021.', '#', 1629849600),
+(6, 'Seminar khoa học: Cải thiện độ chính xác của AutoDock Vina bằng cách thay đổi các thông số thực nghiệm', NULL, NULL, '#', 1629293400),
+(7, 'Seminar khoa học: Spike Protein 501Y.V2 chống lại kháng thể trung hòa trong mô phỏng nguyên tử', NULL, NULL, '#', 1628170200),
+(8, 'Seminar: Potential inhibitors for SARS-CoV-2 Mpro from marine compounds', NULL, NULL, '#', 1626355800),
+(9, 'Seminar khoa học tháng 7/2021', NULL, NULL, '#', 1625751000),
+(10, 'Ngày hội việc làm Đại học Tôn Đức Thắng 2021', NULL, NULL, '#', 1620950400),
+(11, 'Seminar khoa học tháng 4/2021', NULL, NULL, '#', 1619136000),
+(12, 'Đánh giá hiệu năng của các phương pháp tính toán năng lượng tự do khi đánh giá liên kết của các chất ức chế với SARS-CoV-2 Mpro', NULL, NULL, '#', 1617148800),
+(13, 'Cuộc thi Mitsubishi Electric Cup Automation 2021', NULL, NULL, '#', 1627603200),
+(14, 'Bright technical careers – Are you ready?', NULL, NULL, '#', 1611100800),
+(15, 'Triển lãm tranh cổ động nhân kỷ niệm 30 năm thành lập nhóm Visegrad', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Dec/visegrad4/visegrad-0.jpg?itok=DLtHIVH6', 'Triển lãm là hoạt động có ý nghĩa thắt chặt tình hữu nghị giữa Việt Nam và các nước V4, đặc biệt trong lĩnh vực giáo dục...', '#', 1639440000),
+(16, 'Đại học Tôn Đức Thắng xếp thứ 163 các đại học tốt nhất Châu Á năm 2021', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Nov/QS/QS-Ranking_0.jpg?itok=DofKExvo', 'Có thể thấy rằng việc tăng trưởng về thứ hạng của TDTU trong những năm qua thể hiện xu thế phát triển của TDTU là bền vững.', '#', 1606262400),
+(17, 'Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb', 'Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).', '#', 1603843200),
+(18, '', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/gs-tuan-6.png', '\"... khi ai hỏi tôi gởi con học ở đâu, thì tôi khuyên nên nghĩ đến TDTU trước. Ở nước ngoài, giáo sư hỏi muốn hợp tác với ai ở Việt Nam, tôi nói hãy nghĩ đến với TDTU vì tính minh bạch và tuyệt đối không có chuyện \'under the table\'.\"', '#', 0),
+(19, NULL, 'https://www.tdtu.edu.vn/sites/www/files/testimonial/VTV1.png', '\"Sau 10 năm tự chủ, Đại học Tôn Đức Thắng đã trở thành một trong những trường đại học hàng đầu Việt Nam, được xếp hạng bởi nhiều tổ chức quốc tế uy tín.\"', '#', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_author`
+--
+
+CREATE TABLE `post_author` (
+  `post_id` int(10) NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `job` varchar(180) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post_author`
+--
+
+INSERT INTO `post_author` (`post_id`, `name`, `job`) VALUES
+(18, 'Nguyễn Anh Tuấn', 'Giáo sư Đại học New South Wales, Úc'),
+(19, 'VTV1', 'Truyền hình Việt Nam');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_category`
+--
+
+CREATE TABLE `post_category` (
+  `id` int(10) NOT NULL,
+  `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `detail` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#',
+  `under_id` int(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post_category`
+--
+
+INSERT INTO `post_category` (`id`, `name`, `img`, `detail`, `link`, `under_id`) VALUES
+(3, 'Tin tức', NULL, NULL, '#', NULL),
+(4, 'Sự kiện', NULL, NULL, '#', NULL),
+(5, 'Giáo dục', NULL, NULL, '#', 3),
+(6, 'Hoạt động chung', NULL, NULL, '#', 3),
+(7, 'Tuyển dụng', NULL, NULL, '#', 3),
+(8, 'Khoa học-Công nghệ', NULL, NULL, '#', 3),
+(9, 'Quốc tế hóa', NULL, NULL, '#', 3),
+(10, 'Quan hệ cộng đồng', NULL, NULL, '#', 3),
+(11, 'Phát triển bền vững', NULL, NULL, '#', 3),
+(12, 'Diễn giả công chúng', NULL, NULL, '#', 3),
+(13, 'Viết về TDTU', NULL, NULL, '#', 3),
+(14, 'Sinh viên', NULL, NULL, '#', 3),
+(15, 'Đoàn thể', NULL, NULL, '#', 3),
+(16, 'Tin trên báo', NULL, NULL, '#', 3),
+(17, 'Thông báo', NULL, NULL, '#', 3),
+(18, 'Tạp bút', NULL, NULL, '#', 3),
+(19, 'Giới thiệu', NULL, NULL, '#', NULL),
+(20, 'Hình thành và phát triển', NULL, NULL, '#', 19),
+(21, 'Lãnh đạo trường', NULL, NULL, '#', 19),
+(22, 'Con người và cơ sở vật chất', NULL, NULL, '#', 19),
+(23, 'Khám phá TDTU', NULL, NULL, '#', 19),
+(24, 'Những đánh giá về trường', NULL, NULL, '#', 19),
+(25, 'Lịch sử hình thành và mục tiêu', 'https://www.tdtu.edu.vn/sites/www/files/About/Lich-su-hinh-thanh-tdtu.jpg', NULL, '#', 20),
+(26, 'Sứ mạng, tầm nhìn, chính sách chất lượng', 'https://www.tdtu.edu.vn/sites/www/files/About/su-mang-tam-nhin-cs-cl.jpg', NULL, '#', 20),
+(27, 'Định hướng phát triển', 'https://www.tdtu.edu.vn/sites/www/files/About/dinh-huong-phat-trien-tdtu.jpg', NULL, '#', 20),
+(28, 'Số liệu tổng quan', 'https://www.tdtu.edu.vn/sites/www/files/About/Phat-trien.jpg', NULL, '#', 20),
+(29, 'Xếp hạng đại học', 'https://www.tdtu.edu.vn/sites/www/files/About/Nha-trang_0.jpg', NULL, '#', 20),
+(30, 'Bảo đảm chất lượng', 'https://www.tdtu.edu.vn/sites/www/files/About/bao-loc_0.jpg', NULL, '#', 20),
+(31, 'Thành tích', 'https://www.tdtu.edu.vn/sites/www/files/About/thanh-tich.jpg', NULL, '#', 20),
+(32, 'Phát triển bền vững', 'https://www.tdtu.edu.vn/sites/www/files/About/So-lieu_0.jpg', NULL, '#', 20),
+(33, 'Hội đồng trường', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-1.jpg', 'Thực hiện nhiệm vụ, quyền hạn theo Quy chế tổ chức hoạt động của Trường Đại học Tôn Đức Thắng và quy định của pháp luật.', '#', 21),
+(34, 'Đảng, đoàn thể', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-2.jpg', 'Đảng bộ TDTU là tổ chức cơ sở Đảng thuộc Đảng bộ khối Đại học, Cao đẳng Thành phố Hồ Chí Minh.', '#', 21),
+(35, 'Ban giám hiệu', 'https://www.tdtu.edu.vn/sites/www/files/About/Leader/About-TDTU-3.png', 'Ban giám hiệu trực tiếp quản lý và điều hành các hoạt động của Nhà trường theo quy định của pháp luật.', '#', 21),
+(36, 'Giảng viên - Nhà khoa học', 'https://www.tdtu.edu.vn/sites/www/files/About/Nhà%20khoa%20học.jpg', 'Đội ngũ giảng viên - chuyên gia - nhà khoa học là nguồn lực quan trọng trong quá trình phát triển của TDTU', '#', 22),
+(37, 'Các đơn vị trực thuộc', 'https://www.tdtu.edu.vn/sites/www/files/About/Don-vi.jpg', 'Danh mục các đơn vị thuộc TDTU được xếp theo khối Khoa-Trường, Viện-Trung tâm và Phòng-Ban', '#', 22),
+(38, 'Cơ sở vật chất', 'https://www.tdtu.edu.vn/sites/www/files/About/Cơ%20sở%20vật%20chất-1.jpg', 'TDTU có trụ sở chính tại Quận 7 và các cơ sở đào tạo tại Nha Trang, Bảo Lộc, Cà Mau; tất cả được đầu tư đầy đủ và hiện đại bậc nhất Việt Nam', '#', 22);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_location`
+--
+
+CREATE TABLE `post_location` (
+  `post_id` int(10) NOT NULL,
+  `location` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post_location`
+--
+
+INSERT INTO `post_location` (`post_id`, `location`) VALUES
+(4, 'Phát sóng trực tuyến trên kênh Facebook chính thức Kambria Việt Nam.'),
+(5, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.'),
+(6, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.'),
+(7, 'Trường Đại học Tôn Đức Thắng, khách mời tham dự online.'),
+(8, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.'),
+(9, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.'),
+(10, 'Tầng trệt Nhà thi đấu, TDTU; Số 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, Thành phố Hồ Chí Minh.'),
+(11, 'Phòng họp C, TDTU; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh.'),
+(12, 'Phòng họp C, Đại học Tôn Đức Thắng; 19 Nguyễn Hữu Thọ, Phường Tân Phong, Quận 7, TP. Hồ Chí Minh'),
+(13, 'Trường Đại học Tôn Đức Thắng, Trường Đại học Sư phạm Kỹ thuật TP. HCM'),
+(14, 'Hội trường 10F, 19 Nguyễn Hữu Thọ, phường Tân Phong, Quận 7, TP. Hồ Chí Minh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_post_category`
+--
+
+CREATE TABLE `post_post_category` (
+  `post_id` int(10) NOT NULL,
+  `category_id` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post_post_category`
+--
+
+INSERT INTO `post_post_category` (`post_id`, `category_id`) VALUES
+(1, 5),
+(2, 5),
+(3, 6),
+(4, 4),
+(5, 4),
+(6, 4),
+(7, 4),
+(8, 4),
+(9, 4),
+(10, 4),
+(11, 4),
+(12, 4),
+(13, 4),
+(14, 4),
+(15, 9),
+(16, 9),
+(17, 9),
+(18, 24),
+(19, 24);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post_time_during`
+--
+
+CREATE TABLE `post_time_during` (
+  `post_id` int(10) NOT NULL,
+  `time_start` int(15) UNSIGNED NOT NULL,
+  `time_end` int(15) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `post_time_during`
+--
+
+INSERT INTO `post_time_during` (`post_id`, `time_start`, `time_end`) VALUES
+(4, 1630108800, 1635724800),
+(5, 1629898200, 1629905400),
+(6, 1629293400, 1629300600),
+(7, 1628170200, 1628177400),
+(8, 1626355800, 1626363000),
+(9, 1625751000, 1625758200),
+(10, 1620975600, 1621011600),
+(11, 1619184600, 1619191800),
+(12, 1617195600, 1617202800),
+(13, 1611532800, 1627603200),
+(14, 1611129600, 1611140400),
+(18, 1569402011, 0),
+(19, 1559458800, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `research_group`
 --
 
 CREATE TABLE `research_group` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -363,7 +377,7 @@ CREATE TABLE `research_group` (
 --
 
 CREATE TABLE `sub_school` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
   `name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `link_page` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '#'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -383,9 +397,9 @@ INSERT INTO `sub_school` (`id`, `name`, `link_page`) VALUES
 --
 
 CREATE TABLE `user` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `account_id` int(10) UNSIGNED NOT NULL,
-  `office_id` int(10) UNSIGNED NOT NULL,
+  `id` int(10) NOT NULL,
+  `account_id` int(10) DEFAULT NULL,
+  `office_id` int(10) NOT NULL,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -396,8 +410,8 @@ CREATE TABLE `user` (
 --
 
 CREATE TABLE `user_research_group` (
-  `uid` int(10) UNSIGNED NOT NULL,
-  `rgid` int(10) UNSIGNED NOT NULL
+  `uid` int(10) NOT NULL,
+  `rgid` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -408,8 +422,7 @@ CREATE TABLE `user_research_group` (
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `uid` (`uid`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `center`
@@ -417,12 +430,6 @@ ALTER TABLE `account`
 ALTER TABLE `center`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexes for table `event_page`
---
-ALTER TABLE `event_page`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `faculty`
@@ -440,53 +447,49 @@ ALTER TABLE `institution`
   ADD UNIQUE KEY `name` (`name`);
 
 --
--- Indexes for table `introduce_category`
---
-ALTER TABLE `introduce_category`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `title` (`title`);
-
---
--- Indexes for table `introduce_page`
---
-ALTER TABLE `introduce_page`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`),
-  ADD KEY `category_id` (`category_id`);
-
---
--- Indexes for table `introduce_rating_page`
---
-ALTER TABLE `introduce_rating_page`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `author` (`author`);
-
---
--- Indexes for table `news_category`
---
-ALTER TABLE `news_category`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `name` (`name`);
-
---
--- Indexes for table `news_page`
---
-ALTER TABLE `news_page`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `news_page_category`
---
-ALTER TABLE `news_page_category`
-  ADD PRIMARY KEY (`category_id`,`page_id`) USING BTREE,
-  ADD KEY `page_id` (`page_id`);
-
---
 -- Indexes for table `office`
 --
 ALTER TABLE `office`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `name` (`name`);
+
+--
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `post_author`
+--
+ALTER TABLE `post_author`
+  ADD PRIMARY KEY (`post_id`);
+
+--
+-- Indexes for table `post_category`
+--
+ALTER TABLE `post_category`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `post_category_ibfk_1` (`under_id`);
+
+--
+-- Indexes for table `post_location`
+--
+ALTER TABLE `post_location`
+  ADD PRIMARY KEY (`post_id`);
+
+--
+-- Indexes for table `post_post_category`
+--
+ALTER TABLE `post_post_category`
+  ADD PRIMARY KEY (`post_id`,`category_id`),
+  ADD KEY `post_post_category_ibfk_2` (`category_id`);
+
+--
+-- Indexes for table `post_time_during`
+--
+ALTER TABLE `post_time_during`
+  ADD PRIMARY KEY (`post_id`);
 
 --
 -- Indexes for table `research_group`
@@ -508,6 +511,7 @@ ALTER TABLE `sub_school`
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `account_id` (`account_id`),
+  ADD UNIQUE KEY `account_id_2` (`account_id`),
   ADD KEY `office_id` (`office_id`);
 
 --
@@ -515,37 +519,114 @@ ALTER TABLE `user`
 --
 ALTER TABLE `user_research_group`
   ADD PRIMARY KEY (`uid`,`rgid`),
-  ADD KEY `rgid` (`rgid`);
+  ADD KEY `rgid` (`rgid`),
+  ADD KEY `uid` (`uid`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `center`
+--
+ALTER TABLE `center`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT for table `faculty`
+--
+ALTER TABLE `faculty`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT for table `institution`
+--
+ALTER TABLE `institution`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `office`
+--
+ALTER TABLE `office`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `post_category`
+--
+ALTER TABLE `post_category`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
+--
+-- AUTO_INCREMENT for table `research_group`
+--
+ALTER TABLE `research_group`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `sub_school`
+--
+ALTER TABLE `sub_school`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `account`
+-- Constraints for table `post_author`
 --
-ALTER TABLE `account`
-  ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `post_author`
+  ADD CONSTRAINT `post_author_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `introduce_page`
+-- Constraints for table `post_category`
 --
-ALTER TABLE `introduce_page`
-  ADD CONSTRAINT `introduce_page_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `introduce_category` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `post_category`
+  ADD CONSTRAINT `post_category_ibfk_1` FOREIGN KEY (`under_id`) REFERENCES `post_category` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
--- Constraints for table `news_page_category`
+-- Constraints for table `post_location`
 --
-ALTER TABLE `news_page_category`
-  ADD CONSTRAINT `news_page_category_ibfk_1` FOREIGN KEY (`page_id`) REFERENCES `news_page` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `news_page_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `news_category` (`id`) ON UPDATE CASCADE;
+ALTER TABLE `post_location`
+  ADD CONSTRAINT `post_location_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `post_post_category`
+--
+ALTER TABLE `post_post_category`
+  ADD CONSTRAINT `post_post_category_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `post_post_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `post_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `post_time_during`
+--
+ALTER TABLE `post_time_during`
+  ADD CONSTRAINT `post_time_during_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user`
 --
 ALTER TABLE `user`
-  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`account_id`) REFERENCES `account` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `user_ibfk_2` FOREIGN KEY (`office_id`) REFERENCES `office` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `user_research_group`

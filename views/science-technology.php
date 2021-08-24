@@ -27,7 +27,7 @@
 <body>
 
     <!-- START HEADER -->
-    <?php include_once(ROOT_PATH . '/views/layout/_header.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layouts/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -235,7 +235,7 @@
 
     
     <!-- START FOOTER -->
-    <?php include_once(ROOT_PATH . '/views/layout/_footer.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layouts/_footer.php') ?>
     <!-- END FOOTER -->
 
     

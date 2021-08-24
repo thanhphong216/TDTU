@@ -4,9 +4,9 @@
     $countFaculty = count(getListFaculties());
     $countResearchGroup = getCountResearchGroup();
 
-    $listPageHistoryExpand = getListPageIntroduce(1);
-    $listPageLeader = getListPageIntroduce(2);
-    $listPageResource = getListPageIntroduce(3);
+    $listPageHistoryExpand = getListPageIntroduce(20);
+    $listPageLeader = getListPageIntroduce(21);
+    $listPageResource = getListPageIntroduce(22);
 
     $listPageRating = getListPageIntroduceRating();
 ?>
@@ -39,7 +39,7 @@
 <body>
 
     <!-- START HEADER -->
-    <?php include_once(ROOT_PATH . '/views/layout/_header.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layouts/_header.php') ?>
     <!-- END HEADER -->
     
 
@@ -151,14 +151,14 @@
                     ?>
                         <div class="col-12 col-md-5 col-lg-3 expand-block">
                             <div class="position-relative">
-                                <a href=<?php echo $listPageHistoryExpand[$i]['link_page']; ?>>
+                                <a href=<?php echo $listPageHistoryExpand[$i]['link']; ?>>
                                     <img src=<?php echo $listPageHistoryExpand[$i]['img']; ?> class="img-responsive">
                                 </a>
 
                                 <div class="content">
                                     <h4 class="text-uppercase fw-bold"><?php echo $listPageHistoryExpand[$i]['name']; ?></h4>
         
-                                    <p><a href=<?php echo $listPageHistoryExpand[$i]['link_page']; ?> class="text-uppercase fw-bold">Chi tiết</a></p>
+                                    <p><a href=<?php echo $listPageHistoryExpand[$i]['link']; ?> class="text-uppercase fw-bold">Chi tiết</a></p>
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                     ?>
                         <div class="col-12 col-lg-4 leader-block">
                             <div>
-                                <a href=<?php echo $listPageLeader[$i]['link_page']; ?>>
+                                <a href=<?php echo $listPageLeader[$i]['link']; ?>>
                                     <img src=<?php echo $listPageLeader[$i]['img']; ?> class="img-responsive">
                                 </a>
                             </div>
@@ -199,7 +199,7 @@
 
                                 <p><?php echo $listPageLeader[$i]['detail']; ?></p>
                             
-                                <a href=<?php echo $listPageLeader[$i]['link_page']; ?> class="text-uppercase fw-bold">Chi tiết</a>
+                                <a href=<?php echo $listPageLeader[$i]['link']; ?> class="text-uppercase fw-bold">Chi tiết</a>
                             </div>
                         </div>
                     <?php
@@ -229,7 +229,7 @@
                     ?>
                         <div class="col-12 col-lg-4 resource-block">
                             <div>
-                                <a href=<?php echo $listPageResource[$i]['link_page']; ?>>
+                                <a href=<?php echo $listPageResource[$i]['link']; ?>>
                                     <img src=<?php echo $listPageResource[$i]['img']; ?> class="img-responsive">
                                 </a>
                             </div>
@@ -239,7 +239,7 @@
 
                                 <p><?php echo $listPageResource[$i]['detail']; ?></p>
                             
-                                <a href=<?php echo $listPageResource[$i]['link_page']; ?> class="text-uppercase fw-bold">Chi tiết</a>
+                                <a href=<?php echo $listPageResource[$i]['link']; ?> class="text-uppercase fw-bold">Chi tiết</a>
                             </div>
                         </div>
                     <?php
@@ -351,7 +351,7 @@
                                     <div class="row">
                                         <div class="col-4 rating-block">
                                             <div class="position-relative">
-                                                <a href=<?php echo $listPageRating[$i]['link_page']; ?>>
+                                                <a href=<?php echo $listPageRating[$i]['link']; ?>>
                                                     <img src=<?php echo $listPageRating[$i]['img']; ?> class="img-responsive">
                                                 </a>
                                                 
@@ -362,7 +362,7 @@
                                         </div>
                                         <div class="col-8 rating-block">
                                             <div class="content">
-                                                <p class="detail"><?php echo $listPageRating[$i]['rate']; ?></p>
+                                                <p class="detail"><?php echo $listPageRating[$i]['detail']; ?></p>
                                                 <p class="author">
                                                     <span class="title fw-bold"> <?php echo $listPageRating[$i]['author']; ?></span>
                                                     <span> - </span>
@@ -390,7 +390,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once(ROOT_PATH . '/views/layout/_footer.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layouts/_footer.php') ?>
     <!-- END FOOTER -->
 
 

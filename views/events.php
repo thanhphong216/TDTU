@@ -40,7 +40,7 @@
 <body>
     
     <!-- START HEADER -->
-    <?php include_once(ROOT_PATH . '/views/layout/_header.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layouts/_header.php') ?>
     <!-- END HEADER -->
 
 
@@ -84,7 +84,7 @@
         
                                             <p><i class="far fa-calendar-alt"></i> Từ <?php echo date('H:i - d/m/y', $listEvent[$i]['time_start']); ?> đến <?php echo date('H:i - d/m/y', $listEvent[$i]['time_end']); ?>.</p>
         
-                                            <p><i class="fas fa-map-marker-alt"></i> <?php echo $listEvent[$i]['locate']; ?></p>
+                                            <p><i class="fas fa-map-marker-alt"></i> <?php echo $listEvent[$i]['location']; ?></p>
                                         </div>
                                     </div>
                                 </li>
@@ -194,7 +194,7 @@
 
 
     <!-- START FOOTER -->
-    <?php include_once(ROOT_PATH . '/views/layout/_footer.php') ?>
+    <?php include_once(ROOT_PATH . '/views/layouts/_footer.php') ?>
     <!-- END FOOTER -->
 
 
