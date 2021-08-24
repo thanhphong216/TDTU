@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2021 at 12:45 PM
+-- Generation Time: Aug 24, 2021 at 09:26 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -85,23 +85,23 @@ CREATE TABLE `faculty` (
 --
 
 INSERT INTO `faculty` (`id`, `name`, `short_name`, `img`, `link_page`) VALUES
-(1, 'Khoa công nghệ thông tin', 'Công nghệ thông tin', '/assets/faculty/new/Khoa-CNTT-new.jpg', '#'),
-(2, 'Khoa dược', 'Dược', '/assets/faculty/new/Khoa-Duoc-new.jpg', '#'),
-(3, 'Khoa điện-điện tử', 'Điện - Điện tử', '/assets/faculty/new/Khoa-Dien-DT-new.jpg', '#'),
-(4, 'Khoa giáo dục quốc tế', 'Giáo dục quốc tế', '/assets/faculty/cis.jpg', '#'),
-(5, 'Khoa kế toán', 'Kế toán', '/assets/faculty/new/Khoa-Ke-Toan-new.jpg', '#'),
-(6, 'Khoa khoa học thể thao', 'Khoa học thể thao', '/assets/faculty/new/Khoa-KHTT-new.jpg', '#'),
-(7, 'Khoa khoa học ứng dụng', 'Khoa học ứng dụng', '/assets/faculty/new/Khoa-KHUD-new.jpg', '#'),
-(8, 'Khoa khoa học xã hội và nhân văn', 'Khoa học xã hội & nhân văn', '/assets/faculty/new/Khoa-XHNV-new.jpg', '#'),
-(9, 'Khoa kỹ thuật công trình', 'Kỹ thuật công trình', '/assets/faculty/new/Khoa-KTCT-new.jpg', '#'),
-(10, 'Khoa lao động và công đoàn', 'Lao động & Công đoàn', '/assets/faculty/new/Khoa-QHLD-new.jpg', '#'),
-(11, 'Khoa luật', 'Luật', '/assets/faculty/new/Khoa-luat-new.jpg', '#'),
-(12, 'Khoa môi trường và bảo hộ lao động', 'Môi trường & Bảo hộ lao động', '/assets/faculty/new/Khoa-MTBHLD-new.jpg', '#'),
-(13, 'Khoa mỹ thuật công nghiệp', 'Mỹ thuật công nghiệp', '/assets/faculty/new/Khoa-MTCN-new.jpg', '#'),
-(14, 'Khoa ngoại ngữ', 'Ngoại ngữ', '/assets/faculty/new/Khoa-NN-new.jpg', '#'),
-(15, 'Khoa quản trị kinh doanh', 'Quản trị kinh doanh', '/assets/faculty/new/Khoa-QTKKD-new.jpg', '#'),
-(16, 'Khoa tài chính-ngân hàng', 'Tài chính - Ngân hàng', '/assets/faculty/new/Khoa-TCNH-new.jpg', '#'),
-(17, 'Khoa toán-thống kê', 'Toán - Thống kê', '/assets/faculty/new/Khoa-Toan-new.jpg', '#');
+(1, 'Khoa công nghệ thông tin', 'Công nghệ thông tin', '/assets/imgs/faculty/new/Khoa-CNTT-new.jpg', '#'),
+(2, 'Khoa dược', 'Dược', '/assets/imgs/faculty/new/Khoa-Duoc-new.jpg', '#'),
+(3, 'Khoa điện-điện tử', 'Điện - Điện tử', '/assets/imgs/faculty/new/Khoa-Dien-DT-new.jpg', '#'),
+(4, 'Khoa giáo dục quốc tế', 'Giáo dục quốc tế', '/assets/imgs/faculty/cis.jpg', '#'),
+(5, 'Khoa kế toán', 'Kế toán', '/assets/imgs/faculty/new/Khoa-Ke-Toan-new.jpg', '#'),
+(6, 'Khoa khoa học thể thao', 'Khoa học thể thao', '/assets/imgs/faculty/new/Khoa-KHTT-new.jpg', '#'),
+(7, 'Khoa khoa học ứng dụng', 'Khoa học ứng dụng', '/assets/imgs/faculty/new/Khoa-KHUD-new.jpg', '#'),
+(8, 'Khoa khoa học xã hội và nhân văn', 'Khoa học xã hội & nhân văn', '/assets/imgs/faculty/new/Khoa-XHNV-new.jpg', '#'),
+(9, 'Khoa kỹ thuật công trình', 'Kỹ thuật công trình', '/assets/imgs/faculty/new/Khoa-KTCT-new.jpg', '#'),
+(10, 'Khoa lao động và công đoàn', 'Lao động & Công đoàn', '/assets/imgs/faculty/new/Khoa-QHLD-new.jpg', '#'),
+(11, 'Khoa luật', 'Luật', '/assets/imgs/faculty/new/Khoa-luat-new.jpg', '#'),
+(12, 'Khoa môi trường và bảo hộ lao động', 'Môi trường & Bảo hộ lao động', '/assets/imgs/faculty/new/Khoa-MTBHLD-new.jpg', '#'),
+(13, 'Khoa mỹ thuật công nghiệp', 'Mỹ thuật công nghiệp', '/assets/imgs/faculty/new/Khoa-MTCN-new.jpg', '#'),
+(14, 'Khoa ngoại ngữ', 'Ngoại ngữ', '/assets/imgs/faculty/new/Khoa-NN-new.jpg', '#'),
+(15, 'Khoa quản trị kinh doanh', 'Quản trị kinh doanh', '/assets/imgs/faculty/new/Khoa-QTKKD-new.jpg', '#'),
+(16, 'Khoa tài chính-ngân hàng', 'Tài chính - Ngân hàng', '/assets/imgs/faculty/new/Khoa-TCNH-new.jpg', '#'),
+(17, 'Khoa toán-thống kê', 'Toán - Thống kê', '/assets/imgs/faculty/new/Khoa-Toan-new.jpg', '#');
 
 -- --------------------------------------------------------
 
@@ -185,7 +185,37 @@ INSERT INTO `post` (`id`, `title`, `img`, `detail`, `link`, `time_create`) VALUE
 (16, 'Đại học Tôn Đức Thắng xếp thứ 163 các đại học tốt nhất Châu Á năm 2021', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Nov/QS/QS-Ranking_0.jpg?itok=DofKExvo', 'Có thể thấy rằng việc tăng trưởng về thứ hạng của TDTU trong những năm qua thể hiện xu thế phát triển của TDTU là bền vững.', '#', 1606262400),
 (17, 'Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb', 'Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).', '#', 1603843200),
 (18, '', 'https://www.tdtu.edu.vn/sites/www/files/testimonial/gs-tuan-6.png', '\"... khi ai hỏi tôi gởi con học ở đâu, thì tôi khuyên nên nghĩ đến TDTU trước. Ở nước ngoài, giáo sư hỏi muốn hợp tác với ai ở Việt Nam, tôi nói hãy nghĩ đến với TDTU vì tính minh bạch và tuyệt đối không có chuyện \'under the table\'.\"', '#', 0),
-(19, NULL, 'https://www.tdtu.edu.vn/sites/www/files/testimonial/VTV1.png', '\"Sau 10 năm tự chủ, Đại học Tôn Đức Thắng đã trở thành một trong những trường đại học hàng đầu Việt Nam, được xếp hạng bởi nhiều tổ chức quốc tế uy tín.\"', '#', 0);
+(19, NULL, 'https://www.tdtu.edu.vn/sites/www/files/testimonial/VTV1.png', '\"Sau 10 năm tự chủ, Đại học Tôn Đức Thắng đã trở thành một trong những trường đại học hàng đầu Việt Nam, được xếp hạng bởi nhiều tổ chức quốc tế uy tín.\"', '#', 0),
+(20, 'Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY', 'Vật liệu có nguồn gốc tự nhiên, có khả năng tự phân hủy sinh học và kháng khuẩn, lọc bụi mịn tốt hơn những loại khẩu trang hiện tại.', '#', 1627948800),
+(21, 'Seminar: Nghiên cứu khoa học trong lĩnh vực Kế toán và Kinh tế kỷ nguyên 4.0', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Ke-Toan/W2.png?itok=Cjktrbfu', 'Sự kiện học thuật khoa Kế toán tổ chức với sự tham gia của nhiều chuyên gia đến từ Anh Quốc, Malaysia, Đài Loan, Ấn Độ, Indonesia.', '#', 1627776000),
+(22, 'Bằng sáng chế USPTO thứ 8 của Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/BSC/BSC.jpg?itok=_TYR1BCc', 'Sáng chế này ứng dụng khả năng phân hủy rác thải hữu cơ của giun đất, tạo ra một quy trình xử lý rác thải hữu cơ mini khép kín,...', '#', 1615248000),
+(23, 'Bàn giao Ký túc xá I và H của Đại học Tôn Đức Thắng làm khu cách ly y tế', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jun/KTX/KTX-0.jpg?itok=IPA8fkBD', 'Sinh viên TDTU đã để lại những hình ảnh đẹp khi chung tay dọn dẹp, chuẩn bị.', '#', 1621764420),
+(24, 'Hoàn thành kiểm định 4 chương trình giáo dục bậc đại học theo tiêu chuẩn FIBAA', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/May/Fibaa/FIBA-4.0.jpg?itok=RvHjaEgH', 'Các chuyên gia FIBAA đã có những đánh giá và góp ý cụ thể cho 4 ngành tham gia kiểm định.', '#', 1622393220),
+(25, 'Thông báo về việc tổ chức xét tuyển viên chức đợt 1 năm 2021', NULL, NULL, '#', 1625011200),
+(26, 'Thông báo về việc cấp bằng cho sinh viên tốt nghiệp các đợt từ tháng 4/2020 đến tháng 4/2021', NULL, NULL, '#', 1620345600),
+(27, 'Thông báo về việc tài trợ nghiên cứu cơ bản và ứng dụng năm 2020 (đợt 2) ', NULL, NULL, '#', 1634860800),
+(28, 'Trường Đại học Tôn Đức Thắng hợp tác với Ngân hàng HDBank', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Apr/HDBank/HD-0.jpg?itok=zQmfpgpe', 'Tại sự kiện ký kết hợp tác này, Ngân hàng HDBank cũng đã trao tặng học bổng trị giá 35 triệu đồng cho sinh viên TDTU.', '#', 1619620260),
+(29, 'Đại học Tôn Đức Thắng hợp tác với hệ thống nhà thuốc Long Châu', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/NN-Long-Chau/Duoc-0.jpg?itok=yLetHWH3', 'Hai bên sẽ xây dựng và triển khai các chương trình kiến tập, thực tập và trải nghiệm thực tế tại doanh nghiệp cho sinh viên.', '#', 1615561500),
+(30, 'Văn phòng Kinh tế và Văn hóa Đài Bắc tại Việt Nam thăm và làm việc với Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Mar/VP-Dai-Bac/VP-Dai-Bac-0.png?itok=yNeAlO_I', 'Nội dung buổi làm việc bao gồm trao đổi về việc tổ chức Ngày hội việc làm Đài Loan tại TDTU và tổ chức các khóa trao đổi sinh viên...', '#', 1615577940),
+(31, 'Sẵn sàng cho mạng 5G', 'https://www.tdtu.edu.vn/sites/www/files/articles/2019/Jul/Public-lectures/Public-lectures-0.jpg', NULL, '#', 1563377280),
+(32, 'Về “văn hoá doanh nghiệp: nền tảng để kiến tạo Hoà Bình”', 'https://www.tdtu.edu.vn/sites/www/files/articles/2019/Jan/le-viet-hai/le-viet-hai-01.jpg', NULL, '#', 1547407320),
+(33, 'Sức mạnh của sự chia xẻ', 'https://www.tdtu.edu.vn/sites/www/files/articles/2018/Oct/suc-manh-cua-su-chia-xe/dien-gia-2.1.jpg', NULL, '#', 1540053060),
+(34, 'Đại học Tôn Đức Thắng xếp thứ 163 các đại học tốt nhất Châu Á năm 2021', 'https://www.tdtu.edu.vn/sites/www/files/articles/2020/Nov/QS/QS-Ranking_0.jpg', NULL, '#', 1606309980),
+(35, 'Đại học Tôn Đức Thắng xếp thứ 165 trong Bảng xếp hạng các đại học phát triển bền vững nhất thế giới', 'https://www.tdtu.edu.vn/sites/www/files/articles/2019/Dec/UI/UI-0.jpg', NULL, '#', 1575876720),
+(36, 'Đại học xanh giữa lòng Thành phố', 'https://www.tdtu.edu.vn/sites/www/files/articles/2020/Nov/QS/QS-Ranking_0.jpg', NULL, '#', 1575220980),
+(37, 'Ông Lê Hoài Nam - Thành viên Hội đồng trường Trường Đại học Tôn Đức Thắng là ứng viên Đại biểu Quốc hội', 'https://www.tdtu.edu.vn/sites/www/files/articles/2021/Apr/Le-Hoai-Nam/pgd.jpg', NULL, '#', 1620811380),
+(38, 'SMEI Việt Nam trao chứng chỉ cho sinh viên Đại học Tôn Đức Thắng', 'https://www.tdtu.edu.vn/sites/www/files/articles/2020/Sep/SCPS/scps-0.jpg', NULL, '#', 1600895220),
+(39, 'Trường ĐH Tôn Đức Thắng hợp tác toàn diện với Saigontourist', 'https://www.tdtu.edu.vn/sites/www/files/articles/2020/Sep/saigontourism/saigon-0.jpg', NULL, '#', 1599811200),
+(40, 'Đại học Tôn Đức Thắng vào top 701-800 các đại học xuất sắc nhất thế giới năm 2020', 'https://www.tdtu.edu.vn/sites/www/files/articles/2020/Aug/ARWU/ARWU-0.jpg', NULL, '#', 1597689780),
+(41, 'Phụ huynh có 5 người con/cháu học tại TDTU: ở đây, thày cô dạy cả cái tâm!', 'https://www.tdtu.edu.vn/sites/www/files/articles/2020/Sep/Gia-dinh/Nha-5-con.JPG', NULL, '#', 1600678200),
+(42, 'Campus Bảo Lộc: một ngày mới tinh khôi', 'https://www.tdtu.edu.vn/sites/www/files/articles/2019/Oc/Baoloc/edited/3_0.jpg', NULL, '#', 1570014780),
+(43, 'Cha-con và sự tiếp nối đến tương lai bất tận', 'https://www.tdtu.edu.vn/sites/www/files/2019/Sep/Cam-nhan-cua-thay/2_0.jpg', NULL, '#', 1569301200),
+(44, 'Mưa dông trên Cơ sở Bảo Lộc', 'https://www.tdtu.edu.vn/sites/www/files/articles/2019/Aug/Mua%20dong%20Bao%20Loc/5_0.png', NULL, '#', 1566922440),
+(45, 'Chung kết hội thi Tìm hiểu về luật bầu cử đại biểu Quốc hội và đại biểu Hội đồng nhân dân', 'https://www.tdtu.edu.vn/sites/www/files/articles/2021/May/Bau-cu/Thi-BC-0.jpg', NULL, '#', 1621775520),
+(46, 'Sinh viên Thành phố tìm hiểu luật bầu cử đại biểu Quốc hội và đại biểu Hội đồng nhân dân', 'https://www.tdtu.edu.vn/sites/www/files/articles/2021/May/Bau-cu/bau-cu-0.jpg', NULL, '#', 1620901980),
+(47, 'Kỷ niệm ngày thành lập Đoàn TNCS Hồ Chí Minh: 90 năm tự hào tiếp bước', 'https://www.tdtu.edu.vn/sites/www/files/articles/2021/Mar/Doan/Doan-0.jpg', NULL, '#', 1616970360),
+(48, 'Sinh viên Đại học Tôn Đức Thắng đoạt giải Nhất cuộc thi quốc tế “Colorama Award 2021”', 'https://www.tdtu.edu.vn/sites/www/files/articles/2021/Jul/Thu-Hang-0.jpg', NULL, '#', 1627303020),
+(49, 'Học viên cao học tốt nghiệp với điểm tuyệt đối và hai bài báo khoa học ISI', 'https://www.tdtu.edu.vn/sites/www/files/articles/2021/Jul/Cao-hoc/TTAT.png', NULL, '#', 1627315920);
 
 -- --------------------------------------------------------
 
@@ -311,6 +341,7 @@ INSERT INTO `post_post_category` (`post_id`, `category_id`) VALUES
 (1, 5),
 (2, 5),
 (3, 6),
+(3, 14),
 (4, 4),
 (5, 4),
 (6, 4),
@@ -326,7 +357,37 @@ INSERT INTO `post_post_category` (`post_id`, `category_id`) VALUES
 (16, 9),
 (17, 9),
 (18, 24),
-(19, 24);
+(19, 24),
+(20, 8),
+(21, 8),
+(22, 8),
+(23, 6),
+(24, 6),
+(25, 17),
+(26, 17),
+(27, 17),
+(28, 10),
+(29, 10),
+(30, 10),
+(31, 12),
+(32, 12),
+(33, 12),
+(34, 11),
+(35, 11),
+(36, 11),
+(37, 16),
+(38, 16),
+(39, 16),
+(40, 16),
+(41, 13),
+(42, 13),
+(43, 13),
+(44, 13),
+(45, 15),
+(46, 15),
+(47, 15),
+(48, 14),
+(49, 14);
 
 -- --------------------------------------------------------
 
@@ -560,7 +621,7 @@ ALTER TABLE `office`
 -- AUTO_INCREMENT for table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `post_category`

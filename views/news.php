@@ -1,3 +1,30 @@
+<?php
+    $listNewestPost = getListNewestPost(5);
+    $listNewsActivity = getListNewestPostDependType(3, 6);
+    $listNewsAnnouncement = getListNewestPostDependType(3, 17);
+    $listNewsAcademic = getListNewestPostDependType(2, 5);
+    $listNewsSience = getListNewestPostDependType(2, 8);
+    $listNewsInternational = getListNewestPostDependType(3, 9);
+    $listNewsCooperation = getListNewestPostDependType(3, 10);
+    $listNewsLecture = getListNewestPostDependType(3, 12);
+    $listNewsSustainability = getListNewestPostDependType(3, 11);
+    $listNewsMedia = getListNewestPostDependType(4, 16);
+    $listNewsExperience = getListNewestPostDependType(4, 13);
+    $listNewsUnion = getListNewestPostDependType(3, 15);
+    $listNewsStudent = getListNewestPostDependType(3, 14);
+
+    // echo '<pre>';
+    // echo print_r($listNewsLecture);
+    // echo '</pre>';
+?>
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +43,7 @@
     <link rel="stylesheet" href=<?php echo BASE_URL . "/assets/css/news.css" ?>>
 
     <link rel="shortcut icon" href="https://www.tdtu.edu.vn/sites/www/files/TDTU-favicon.png" type="image/png">
-    <title>Document</title>
+    <title>Tin tức | Đại học Tôn Đức Thắng</title>
 </head>
 <body>
     
@@ -31,7 +58,7 @@
         <!-- START SECTION HOME LINK -->
         <section class="home-link">
             <div class="container">
-                <a href="#"><h2>Trang chủ -</h2></a>
+                <a href="/"><h2>Trang chủ -</h2></a>
             </div>
         </section>
         <!-- END SECTION HOME LINK -->
@@ -50,122 +77,70 @@
 
                 <div class="row">
                     <div class="col-12 col-lg-7">
-                        <div class="post-newest">
-                            <div>
-                                <a href="#">
-                                    <img src="https://www.tdtu.edu.vn/sites/www/files/articles/2021/Aug/COVID-0.jpeg" class="img-responsive">
-                                </a>
-                            </div>
 
-                            <div class="post-content">
-                                <div class="post-meta">
-                                    <span class="post-category">
-                                        <a href="#" class="text-uppercase">Hoạt động chung</a>
-                                        , 
-                                        <a href="#" class="text-uppercase">Hoạt động chung</a>
-                                    </span>
-                                    &nbsp;|&nbsp;
-                                    <span>11/08/2021</span>
+                        <?php
+                            if(!empty($listNewestPost)){
+                        ?>
+                            <div class="post-newest">
+                                <div>
+                                    <a href="<?php echo $listNewestPost[0]['link']; ?>">
+                                        <img src="<?php echo $listNewestPost[0]['img']; ?>" class="img-responsive">
+                                    </a>
                                 </div>
 
-                                <h4 class="post-title">
-                                    <a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a>
-                                </h4>
-                            
-                                <p class="post-desc">Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span class="post-category">
+                                            <a href="<?php echo $listNewestPost[0]['category_link']; ?>" class="text-uppercase"><?php echo $listNewestPost[0]['category_name']; ?></a>
+                                        </span>
+                                        &nbsp;|&nbsp;
+                                        <span><?php echo date('d/m/Y', $listNewestPost[0]['time_create']); ?></span>
+                                    </div>
+
+                                    <h4 class="post-title">
+                                        <a href="<?php echo $listNewestPost[0]['link']; ?>" class="fw-bold"><?php echo $listNewestPost[0]['title']; ?></a>
+                                    </h4>
+                                
+                                    <p class="post-desc"><?php echo $listNewestPost[0]['detail']; ?></p>
+                                </div>
                             </div>
-                        </div>
+                        <?php
+                            }
+                        ?>
+
                     </div>
                     <div class="col-12 col-lg-5">
                         <ul>
-                            <li>
-                                <div class="row post-item">
-                                    <div class="col-12 col-lg-5">
-                                        <a href="#">
-                                            <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                                        </a>
-                                    </div>
 
-                                    <div class="col-12 col-lg-7 post-content">
-                                        <h4 class="post-title">
-                                            <a href="#" class="fw-bold">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
-                                        </h4>
-                                        <div class="post-meta">
-                                            <span class="post-category">
-                                                <a href="#" class="text-uppercase">Hoạt động chung</a>
-                                            </span>
-                                            &nbsp;|&nbsp;
-                                            <span>11/08/2021</span>
+                            <?php
+                                for($i = 1; $i < count($listNewestPost); $i++){
+                            ?>
+                                <li>
+                                    <div class="row post-item">
+                                        <div class="col-12 col-lg-5">
+                                            <a href="<?php echo $listNewestPost[$i]['link']; ?>">
+                                                <img src="<?php echo $listNewestPost[$i]['img']; ?>" class="img-responsive">
+                                            </a>
+                                        </div>
+
+                                        <div class="col-12 col-lg-7 post-content">
+                                            <h4 class="post-title">
+                                                <a href="<?php echo $listNewestPost[$i]['link']; ?>" class="fw-bold"><?php echo $listNewestPost[$i]['title']; ?></a>
+                                            </h4>
+                                            <div class="post-meta">
+                                                <span class="post-category">
+                                                    <a href="<?php echo $listNewestPost[$i]['category_link']; ?>" class="text-uppercase"><?php echo $listNewestPost[$i]['category_name']; ?></a>
+                                                </span>
+                                                &nbsp;|&nbsp;
+                                                <span><?php echo date('d/m/Y', $listNewestPost[$i]['time_create']); ?></span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row post-item">
-                                    <div class="col-12 col-lg-5">
-                                        <a href="#">
-                                            <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                                        </a>
-                                    </div>
-
-                                    <div class="col-12 col-lg-7 post-content">
-                                        <h4 class="post-title">
-                                            <a href="#" class="fw-bold">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
-                                        </h4>
-                                        <div class="post-meta">
-                                            <span class="post-category">
-                                                <a href="#" class="text-uppercase">Hoạt động chung</a>
-                                            </span>
-                                            &nbsp;|&nbsp;
-                                            <span>11/08/2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row post-item">
-                                    <div class="col-12 col-lg-5">
-                                        <a href="#">
-                                            <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                                        </a>
-                                    </div>
-
-                                    <div class="col-12 col-lg-7 post-content">
-                                        <h4 class="post-title">
-                                            <a href="#" class="fw-bold">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
-                                        </h4>
-                                        <div class="post-meta">
-                                            <span class="post-category">
-                                                <a href="#" class="text-uppercase">Hoạt động chung</a>
-                                            </span>
-                                            &nbsp;|&nbsp;
-                                            <span>11/08/2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="row post-item">
-                                    <div class="col-12 col-lg-5">
-                                        <a href="#">
-                                            <img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Jul/Hoang-Chinh/Chinh-0.jpg?itok=QgMjd9zY" class="img-responsive">
-                                        </a>
-                                    </div>
-
-                                    <div class="col-12 col-lg-7 post-content">
-                                        <h4 class="post-title">
-                                            <a href="#" class="fw-bold">Giảng viên Đại học Tôn Đức Thắng sáng chế vật liệu làm khẩu trang tự phân huỷ</a>
-                                        </h4>
-                                        <div class="post-meta">
-                                            <span class="post-category">
-                                                <a href="#" class="text-uppercase">Hoạt động chung</a>
-                                            </span>
-                                            &nbsp;|&nbsp;
-                                            <span>11/08/2021</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            <?php
+                                }
+                            ?>
+                            
                         </ul>
                     </div>
                 </div>
@@ -189,33 +164,23 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 col-lg-4 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
+
+                            <?php
+                                for($i = 0; $i < count($listNewsActivity); $i++){
+                            ?>
+                                <div class="col-12 col-lg-4 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsActivity[$i]['link']; ?>"><img src="<?php echo $listNewsActivity[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+
+                                    <h4 class="post-title"><a href="<?php echo $listNewsActivity[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsActivity[$i]['title']; ?></a></h4>
+
+                                    <p><?php echo $listNewsActivity[$i]['detail']; ?></p>
                                 </div>
-
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
-                            <div class="col-12 col-lg-4 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
-                            <div class="col-12 col-lg-4 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
+                            <?php
+                                }
+                            ?>
+                            
                         </div>
                     </div>
                     <!-- END BLOCK ACTIVITY -->
@@ -229,21 +194,19 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content">
-                                <h4 class="post-title"><a href="#" class="fw-bold">Thông báo về việc tổ chức xét tuyển viên chức đợt 1 năm 2021</a></h4>
 
-                                <div class="post-meta"><span>30/06/2021</span></div>
-                            </div>
-                            <div class="col-12 post-content">
-                                <h4 class="post-title"><a href="#" class="fw-bold">Thông báo về việc tổ chức xét tuyển viên chức đợt 1 năm 2021</a></h4>
+                            <?php
+                                for($i = 0; $i < count($listNewsAnnouncement); $i++){
+                            ?>
+                                <div class="col-12 post-content">
+                                    <h4 class="post-title"><a href="<?php echo $listNewsAnnouncement[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsAnnouncement[$i]['title']; ?></a></h4>
 
-                                <div class="post-meta"><span>30/06/2021</span></div>
-                            </div>
-                            <div class="col-12 post-content">
-                                <h4 class="post-title"><a href="#" class="fw-bold">Thông báo về việc tổ chức xét tuyển viên chức đợt 1 năm 2021</a></h4>
-
-                                <div class="post-meta"><span>30/06/2021</span></div>
-                            </div>
+                                    <div class="post-meta"><span><?php echo date('d/m/Y', $listNewsAnnouncement[$i]['time_create']); ?></span></div>
+                                </div>
+                            <?php
+                                }
+                            ?>
+                            
                         </div>
                     </div>
                     <!-- END BLOCK ANNOUNCEMENT -->
@@ -262,24 +225,23 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 col-lg-6 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
+
+                            <?php
+                                for($i = 0; $i < count($listNewsAcademic); $i++){
+                            ?>
+                                <div class="col-12 col-lg-6 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsAcademic[$i]['link']; ?>"><img src="<?php echo $listNewsAcademic[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+
+                                    <h4 class="post-title"><a href="<?php echo $listNewsAcademic[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsAcademic[$i]['title']; ?></a></h4>
+
+                                    <p><?php echo $listNewsAcademic[$i]['detail']; ?></p>
                                 </div>
+                            <?php
+                                }
+                            ?>
 
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
-                            <div class="col-12 col-lg-6 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
                         </div>
 
                     </div>
@@ -295,24 +257,23 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 col-lg-6 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
+
+                            <?php
+                                for($i = 0; $i < count($listNewsSience); $i++){
+                            ?>
+                                <div class="col-12 col-lg-6 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsSience[$i]['link']; ?>"><img src="<?php echo $listNewsSience[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+
+                                    <h4 class="post-title"><a href="<?php echo $listNewsSience[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsSience[$i]['title']; ?></a></h4>
+
+                                    <p><?php echo $listNewsSience[$i]['detail']; ?></p>
                                 </div>
-
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
-                            <div class="col-12 col-lg-6 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-
-                                <p>Đây là các sinh viên ở lại ký túc xá của trường trong thời gian dịch bệnh COVID-19 bùng phát tại TP. Hồ Chí Minh.</p>
-                            </div>
+                            <?php
+                                }
+                            ?>
+                            
                         </div>
 
                     </div>
@@ -331,39 +292,25 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content row">
-                                <div class="col-12 col-lg-4">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb" class="img-responsive"></a>
-                                </div>
-                                
-                                <div class="col-12 col-lg-8">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới</a></h4>
 
-                                    <p>Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).</p>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-12 col-lg-4">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb" class="img-responsive"></a>
-                                </div>
-                                
-                                <div class="col-12 col-lg-8">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới</a></h4>
+                            <?php
+                                for($i = 0; $i < count($listNewsInternational); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-12 col-lg-4">
+                                        <a href="<?php echo $listNewsInternational[$i]['link']; ?>"><img src="<?php echo $listNewsInternational[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+                                    
+                                    <div class="col-12 col-lg-8">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsInternational[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsInternational[$i]['title']; ?></a></h4>
 
-                                    <p>Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).</p>
+                                        <p><?php echo $listNewsInternational[$i]['detail']; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-12 col-lg-4">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb" class="img-responsive"></a>
-                                </div>
-                                
-                                <div class="col-12 col-lg-8">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới</a></h4>
-
-                                    <p>Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).</p>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+                            
                         </div>
                     </div>
                     <!-- END BLOCK INTERNATIONAL -->
@@ -377,39 +324,25 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content row">
-                                <div class="col-12 col-lg-4">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb" class="img-responsive"></a>
-                                </div>
-                                
-                                <div class="col-12 col-lg-8">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới</a></h4>
 
-                                    <p>Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).</p>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-12 col-lg-4">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb" class="img-responsive"></a>
-                                </div>
-                                
-                                <div class="col-12 col-lg-8">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới</a></h4>
+                            <?php
+                                for($i = 0; $i < count($listNewsCooperation); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-12 col-lg-4">
+                                        <a href="<?php echo $listNewsCooperation[$i]['link']; ?>"><img src="<?php echo $listNewsCooperation[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+                                    
+                                    <div class="col-12 col-lg-8">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsCooperation[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsCooperation[$i]['title']; ?></a></h4>
 
-                                    <p>Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).</p>
+                                        <p><?php echo $listNewsCooperation[$i]['detail']; ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-12 col-lg-4">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2020/Oct/US%20NEW/us_new_0.jpg?itok=snP4x4Mb" class="img-responsive"></a>
-                                </div>
-                                
-                                <div class="col-12 col-lg-8">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">Đại học Tôn Đức Thắng vào Top 700 đại học tốt nhất thế giới</a></h4>
+                            <?php
+                                }
+                            ?>
 
-                                    <p>Với mục tiêu được xác định rõ ràng và chiến lược phù hợp, TDTU đã đi đúng hướng và đạt được những thành tựu quan trọng sau 13 năm thực hiện kế hoạch (từ năm 2007).</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- END BLOCK COOPERATION -->
@@ -427,31 +360,35 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            
+                            <?php
+                                if(!empty($listNewsLecture)){
+                            ?>
+                                <div class="col-12 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsLecture[0]['link']; ?>"><img src="<?php echo $listNewsLecture[0]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
+                                    <h4 class="post-title"><a href="<?php echo $listNewsLecture[0]['link']; ?>" class="fw-bold"><?php echo $listNewsLecture[0]['title']; ?></a></h4>
                                 </div>
+                            <?php
+                                }
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                                for($i = 1; $i < count($listNewsLecture); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-3">
+                                        <a href="<?php echo $listNewsLecture[$i]['link']; ?>"><img src="<?php echo $listNewsLecture[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                    <div class="col-9">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsLecture[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsLecture[$i]['title']; ?></a></h4>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+
                         </div>
                     </div>
                     <!-- END BLOCK LECTURES -->
@@ -465,31 +402,35 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
 
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                if(!empty($listNewsSustainability)){
+                            ?>
+                                <div class="col-12 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsSustainability[0]['link']; ?>"><img src="<?php echo $listNewsSustainability[0]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                    <h4 class="post-title"><a href="<?php echo $listNewsSustainability[0]['link']; ?>" class="fw-bold"><?php echo $listNewsSustainability[0]['title']; ?></a></h4>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                }
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                for($i = 1; $i < count($listNewsSustainability); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-3">
+                                        <a href="<?php echo $listNewsSustainability[$i]['link']; ?>"><img src="<?php echo $listNewsSustainability[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsSustainability[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsSustainability[$i]['title']; ?></a></h4>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+
                         </div>
                     </div>
                     <!-- END BLOCK SUSTAINABILITY -->
@@ -503,51 +444,23 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
 
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                for($i = 0; $i < count($listNewsMedia); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-5">
+                                        <a href="<?php echo $listNewsMedia[$i]['link']; ?>"><img src="<?php echo $listNewsMedia[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                    <div class="col-7">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsMedia[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsMedia[$i]['title']; ?></a></h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+                            
                         </div>
                     </div>
                     <!-- END BLOCK MEDIA -->
@@ -565,51 +478,23 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
 
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                for($i = 0; $i < count($listNewsExperience); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-5">
+                                        <a href="<?php echo $listNewsExperience[$i]['link']; ?>"><img src="<?php echo $listNewsExperience[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                    <div class="col-7">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsExperience[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsExperience[$i]['title']; ?></a></h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                }
+                            ?>
 
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-5">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
-
-                                <div class="col-7">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <!-- END BLOCK EXPERIENCE -->
@@ -623,31 +508,35 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
 
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                if(!empty($listNewsUnion)){
+                            ?>
+                                <div class="col-12 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsUnion[0]['link']; ?>"><img src="<?php echo $listNewsUnion[0]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                    <h4 class="post-title"><a href="<?php echo $listNewsUnion[0]['link']; ?>" class="fw-bold"><?php echo $listNewsUnion[0]['title']; ?></a></h4>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                }
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                for($i = 1; $i < count($listNewsUnion); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-3">
+                                        <a href="<?php echo $listNewsUnion[$i]['link']; ?>"><img src="<?php echo $listNewsUnion[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsUnion[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsUnion[$i]['title']; ?></a></h4>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+
                         </div>
                     </div>
                     <!-- END BLOCK UNION -->
@@ -661,31 +550,35 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-12 post-content">
-                                <div>
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
 
-                                <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                if(!empty($listNewsStudent)){
+                            ?>
+                                <div class="col-12 post-content">
+                                    <div>
+                                        <a href="<?php echo $listNewsStudent[0]['link']; ?>"><img src="<?php echo $listNewsStudent[0]['img']; ?>" class="img-responsive"></a>
+                                    </div>
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                    <h4 class="post-title"><a href="<?php echo $listNewsStudent[0]['link']; ?>" class="fw-bold"><?php echo $listNewsStudent[0]['title']; ?></a></h4>
                                 </div>
-                            </div>
-                            <div class="col-12 post-content row">
-                                <div class="col-3">
-                                    <a href="#"><img src="https://www.tdtu.edu.vn/sites/www/files/styles/small/public/articles/2021/Aug/COVID-0.jpeg?itok=m6Gi7zQ-" class="img-responsive"></a>
-                                </div>
+                            <?php
+                                }
 
-                                <div class="col-9">
-                                    <h4 class="post-title"><a href="#" class="fw-bold">323 sinh viên nội trú của Đại học Tôn Đức Thắng được tiêm vaccine ngừa COVID-19</a></h4>
+                                for($i = 1; $i < count($listNewsStudent); $i++){
+                            ?>
+                                <div class="col-12 post-content row">
+                                    <div class="col-3">
+                                        <a href="<?php echo $listNewsStudent[$i]['link']; ?>"><img src="<?php echo $listNewsStudent[$i]['img']; ?>" class="img-responsive"></a>
+                                    </div>
+
+                                    <div class="col-9">
+                                        <h4 class="post-title"><a href="<?php echo $listNewsStudent[$i]['link']; ?>" class="fw-bold"><?php echo $listNewsStudent[$i]['title']; ?></a></h4>
+                                    </div>
                                 </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
+
                         </div>
                     </div>
                     <!-- END BLOCK STUDENTS -->

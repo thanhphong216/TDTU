@@ -11,8 +11,7 @@
     init();
 
 
-
-
+    
     // Lấy url hiện tại của trang web. Mặc định la /
     $request_url = !empty($_SERVER['REQUEST_URI']) ? explode('?', $_SERVER['REQUEST_URI'], 2)[0] : '/';
 
