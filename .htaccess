@@ -1,9 +1,12 @@
+# https://www.youtube.com/watch?v=3IJXgVbYXOg
+
+Options +FollowSymLinks -MultiViews
 # enable apache rewrite engine
 RewriteEngine On
 
 # set your rewrite base
 # Edit this in your init method too if you script lives in a subfolder
-RewriteBase /
+RewriteBase /TDTU/
 
 # Deliver the folder or file directly if it exists on the server
 RewriteCond %{REQUEST_FILENAME} !-d 
@@ -15,4 +18,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 # QSA = Query String Append, just in case you've got something like ?like=penguins on the end which you want to keep and pass to index.php.
 
 # Push every request to index.php
-RewriteRule ^(.*)$ /TDTU/index.php/$1 [L,QSA]
+RewriteRule ^(.*)$ /TDTU/index.php [QSA,L]
