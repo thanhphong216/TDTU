@@ -1,6 +1,5 @@
 # https://www.youtube.com/watch?v=3IJXgVbYXOg
 
-Options +FollowSymLinks -MultiViews
 # enable apache rewrite engine
 RewriteEngine On
 

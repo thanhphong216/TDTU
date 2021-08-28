@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.header{
+    padding: 0 1%;
+    z-index: 9999;
+}
+
+#menu{
+    padding-top: 20%;
+}
