@@ -57,6 +57,9 @@
     color: #CD2122;
     font-family: "Roboto", Helvetica, Arial, sans-serif !important;
 }
+.post-categories>a:hover{
+    text-decoration: underline;
+}
 
 .news-link{
     padding: 2%;
