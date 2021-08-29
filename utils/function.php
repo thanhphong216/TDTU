@@ -171,4 +171,17 @@
         }
         return $data;
     }
+
+    function login($username, $password){
+        global $conn;
+        $data = [];
+
+        $sql = "SELECT * FROM account WHERE username = '" . $username . "' and password = '" . hashData($password) . "'";
+        $result = mysqli_query($conn, $sql);
+        
+        while($row = $result->fetch_assoc()) {
+            $data[] = $row;
+        }
+        return empty($data) ? null : $data[0];
+    }
 ?>

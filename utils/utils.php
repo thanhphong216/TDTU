@@ -16,7 +16,7 @@
         });
         Router::get('/', function(){
             include_once(ROOT_PATH . '/views/homepage.php');
-            });
+        });
         Router::get('/gioi-thieu', function(){
             include_once(ROOT_PATH . '/views/introduce.php');
         });
@@ -40,6 +40,15 @@
         });
         Router::get('/tin-tuc', function(){
             include_once(ROOT_PATH . '/views/news.php');
+        });
+        Router::get('/admin', function(){
+            include_once(ROOT_PATH . '/admin/index.php');
+        });
+        Router::get('/admin/login', function(){
+            include_once(ROOT_PATH . '/admin/login.php');
+        });
+        Router::post('/admin/login', function(){
+            include_once(ROOT_PATH . '/admin/login.php');
         });
     }
     function exits(){
